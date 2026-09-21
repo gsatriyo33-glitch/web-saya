@@ -6,6 +6,13 @@
 <meta name="theme-color" content="#231914">
 <title>The Wedding of Puji & Sukma</title>
 
+<!-- META PREVIEW WHATSAPP RESMI -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Undangan Pernikahan Puji & Sukma">
+<meta property="og:description" content="Selasa, 06 Oktober 2026 — Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Hadir di Hari Bahagia Kami.">
+<meta property="og:image" content="https://gsatriyo33-glitch.github.io/web-saya/foto1.jpg">
+<meta property="og:url" content="https://gsatriyo33-glitch.github.io/web-saya/">
+
 <!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +44,6 @@ body {
 .serif { font-family: 'Cinzel', serif; }
 .script { font-family: 'Great Vibes', cursive; }
 
-/* BATIK & FLORAL ACCENT OVERLAY */
 .bg-batik {
   position: absolute;
   inset: 0;
@@ -71,7 +77,6 @@ body {
   transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
 }
 
-/* BINGKAI GUNUNGAN ARCH */
 .gunungan-frame {
   width: 220px;
   height: 290px;
@@ -116,7 +121,7 @@ body {
 }
 .btn-open:active { transform: scale(0.96); }
 
-/* ANIMASI KUPU-KUPU BETERRBANGAN */
+/* KUPU-KUPU */
 .butterfly {
   position: absolute;
   font-size: 19px;
@@ -138,7 +143,7 @@ body {
   100% { transform: translateY(-600px) translateX(-10px) rotate(0deg) scale(0.7); opacity: 0; }
 }
 
-/* SECTION ISI (KREM ELEGAN & GUNUNGAN THEME) */
+/* KONTEN KREM & CARD */
 .page-paper {
   background-color: var(--cream-bg);
   color: var(--text-dark);
@@ -150,7 +155,6 @@ body {
   color: #57483d;
   font-style: italic;
   margin: 18px 0;
-  position: relative;
 }
 
 .arch-card {
@@ -178,7 +182,6 @@ body {
 .count-cell b { font-size: 26px; display: block; color: var(--gold); }
 .count-cell span { font-size: 9px; letter-spacing: 1px; }
 
-/* GALERI 4 FOTO MEWAH */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -205,22 +208,30 @@ body {
   font-size: 14px;
 }
 
-.music-btn {
+/* FLOATING CONTROLS (MUSIK & AUTO-SCROLL) */
+.floating-panel {
   position: fixed;
   bottom: 22px;
-  right: 22px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.float-btn {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background: #1f1612;
   border: 1.5px solid var(--gold);
   color: var(--gold);
-  z-index: 99;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  font-size: 14px;
 }
 .spin { animation: rotate 5s linear infinite; }
 @keyframes rotate { to { transform: rotate(360deg); } }
@@ -231,7 +242,12 @@ body {
 
 <body>
 
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">♫</button>
+<!-- TOMBOL KONTROL MENGAMBANG -->
+<div class="floating-panel hidden" id="floatingControls">
+  <button class="float-btn" id="scrollBtn" onclick="toggleAutoScroll()" title="Auto Scroll">⏬</button>
+  <button class="float-btn" id="musicBtn" onclick="toggleMusic()" title="Musik">♫</button>
+</div>
+
 <audio id="audioTrack" loop src="musik.mp3"></audio>
 
 <!-- KUPU-KUPU BETERRBANGAN -->
@@ -248,12 +264,10 @@ body {
     <p class="serif" style="font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">The Wedding Of</p>
     <h1 class="script" style="font-size: 60px; color: #f5eedb; margin: 4px 0 14px;">Puji &amp; Sukma</h1>
 
-    <!-- BINGKAI GUNUNGAN -->
     <div class="gunungan-frame">
       <img src="foto1.jpg" alt="Puji & Sukma">
     </div>
 
-    <!-- KEPADA TAMU -->
     <div class="guest-card">
       <p style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #cfbfb2;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
       <h3 class="serif" id="guestName" style="font-size: 20px; color: #f5eedb; margin-top: 6px; font-weight: 600;">Nama Tamu</h3>
@@ -282,7 +296,7 @@ body {
 
       <p style="font-size: 14px; line-height: 1.8; color: #4e3d31;">
         Assalamu’alaikum Warahmatullahi Wabarakatuh.<br>
-        Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami:
+        Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara syukuran pernikahan kami:
       </p>
 
       <div style="margin: 24px 0;">
@@ -402,7 +416,7 @@ body {
 </main>
 
 <script>
-// NAMA TAMU OTOMATIS DARI LINK (?to=Nama+Tamu)
+// NAMA TAMU OTOMATIS (?to=Nama+Tamu)
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('to');
 if (namaTamu) {
@@ -410,27 +424,72 @@ if (namaTamu) {
   document.getElementById('namaTamuInput').value = namaTamu;
 }
 
-// BUKA UNDANGAN DENGAN TRANSISI ELEGAN
+// BUKA UNDANGAN & AUTO-SCROLL
 const audio = document.getElementById("audioTrack");
 const musicBtn = document.getElementById("musicBtn");
+const scrollBtn = document.getElementById("scrollBtn");
+const controls = document.getElementById("floatingControls");
+
+let isAutoScrolling = false;
+let scrollInterval = null;
 
 function openInvitation() {
   const cover = document.getElementById("coverPage");
   const main = document.getElementById("mainPage");
 
-  cover.style.transform = "scale(1.15)";
+  cover.style.transform = "scale(1.12)";
   cover.style.opacity = "0";
 
   setTimeout(() => {
     cover.classList.add("hidden");
     main.classList.remove("hidden");
+    controls.classList.remove("hidden");
     window.scrollTo(0, 0);
+
+    // Otomatis mulai auto-scroll pelan 1 detik setelah dibuka
+    setTimeout(startAutoScroll, 1200);
   }, 700);
 
   audio.play().then(() => {
     musicBtn.classList.add("spin");
   }).catch(() => {});
 }
+
+// MESIN AUTO SCROLL HALUS
+function startAutoScroll() {
+  if (isAutoScrolling) return;
+  isAutoScrolling = true;
+  scrollBtn.textContent = "⏸";
+  scrollBtn.style.color = "#d8b473";
+
+  scrollInterval = setInterval(() => {
+    window.scrollBy(0, 1);
+    // Jika sampai di dasar halaman, hentikan
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+      stopAutoScroll();
+    }
+  }, 28); // Kecepatan scroll perlahan & nyaman dibaca
+}
+
+function stopAutoScroll() {
+  isAutoScrolling = false;
+  clearInterval(scrollInterval);
+  scrollBtn.textContent = "⏬";
+  scrollBtn.style.color = "#aaa";
+}
+
+function toggleAutoScroll() {
+  if (isAutoScrolling) {
+    stopAutoScroll();
+  } else {
+    startAutoScroll();
+  }
+}
+
+// HENTIKAN SEMENTARA JIKA LAYAR DISENTUH TAMU
+window.addEventListener("touchstart", () => {
+  if (isAutoScrolling) stopAutoScroll();
+}, { passive: true });
 
 function toggleMusic() {
   if (audio.paused) {
@@ -463,7 +522,7 @@ function kirimRSVP() {
   const nama = document.getElementById("namaTamuInput").value.trim() || "Tamu";
   const ucapan = document.getElementById("pesanInput").value.trim() || "Selamat menempuh hidup baru Puji & Sukma!";
   const noWA = "6285879637293";
-  const pesan = `Halo Puji & Sukma,\n\nSaya *${nama}* mengonfirmasi kehadiran pada acara pernikahan Selasa, 06 Oktober 2026.\n\nUcapan & Doa:\n"${ucapan}"`;
+  const pesan = `Halo Puji & Sukma,\n\nSaya *${nama}* mengonfirmasi kehadiran pada acara pernikahan Selasa, 06 Oktober 2026.\n\nUcapan & Doa:\n"${pesan}"`;
   window.open(`https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`, "_blank");
 }
 </script>
