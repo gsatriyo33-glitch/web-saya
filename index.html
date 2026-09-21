@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#231914">
-<title>The Wedding of Puji & Sukma</title>
+<meta name="theme-color" content="#1a110a">
+<title>The Wedding of Puji & Sukma | Javanese Royal Edition</title>
 
 <!-- META PREVIEW WHATSAPP RESMI -->
 <meta property="og:type" content="website">
@@ -16,27 +16,27 @@
 <!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --mocha-dark: #1f1612;
-  --mocha-mid: #382820;
-  --mocha-soft: #634b3d;
-  --terracotta: #8a644f;
-  --cream-bg: #f9f5ed;
-  --cream-card: #f2ebd9;
-  --gold: #c69f58;
-  --gold-glow: rgba(198, 159, 88, 0.35);
-  --text-dark: #2c221c;
-  --text-muted: #7d6e64;
+  --keraton-dark: #160e08;
+  --keraton-wood: #26180f;
+  --keraton-brown: #3d2719;
+  --ivory-paper: #fbf6ec;
+  --ivory-card: #f4ecdc;
+  --gold-prada: linear-gradient(135deg, #d4af37 0%, #fff2be 35%, #b38728 70%, #d4af37 100%);
+  --gold-solid: #cda250;
+  --gold-glow: rgba(205, 162, 80, 0.3);
+  --text-dark: #2c1e14;
+  --text-muted: #735c4c;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--mocha-dark);
+  background-color: var(--keraton-dark);
   color: #fff;
   overflow-x: hidden;
 }
@@ -44,14 +44,21 @@ body {
 .serif { font-family: 'Cinzel', serif; }
 .script { font-family: 'Great Vibes', cursive; }
 
-.bg-batik {
+.gold-prada-text {
+  background: var(--gold-prada);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* WATERMARK BATIK KAWUNG ELEGAN */
+.bg-kawung {
   position: absolute;
   inset: 0;
-  opacity: 0.07;
+  opacity: 0.08;
   pointer-events: none;
-  background-image: radial-gradient(#d4af37 1.5px, transparent 1.5px), radial-gradient(#d4af37 1.5px, #1f1612 1.5px);
-  background-size: 36px 36px;
-  background-position: 0 0, 18px 18px;
+  background-image: radial-gradient(circle at center, #d4af37 2px, transparent 2px),
+                    radial-gradient(circle at 50% 50%, transparent 12px, #d4af37 13px, transparent 15px);
+  background-size: 48px 48px;
 }
 
 .page {
@@ -59,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 55px 20px;
   position: relative;
   overflow: hidden;
 }
@@ -73,97 +80,102 @@ body {
 
 /* COVER SECTION */
 #coverPage {
-  background: radial-gradient(circle at 50% 30%, #4a3429 0%, #1c130f 75%);
+  background: radial-gradient(circle at 50% 35%, #3a2315 0%, #160e08 80%);
   transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
 }
 
-.gunungan-frame {
+/* GAPURA / GUNUNGAN KERATON */
+.royal-arch {
   width: 220px;
-  height: 290px;
+  height: 295px;
   margin: 0 auto 20px;
-  border-radius: 110px 110px 18px 18px;
-  padding: 6px;
-  background: linear-gradient(145deg, #d8b473, #6b4d30, #d8b473);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 25px var(--gold-glow);
+  border-radius: 110px 110px 20px 20px;
+  padding: 5px;
+  background: var(--gold-prada);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.65), 0 0 25px var(--gold-glow);
   position: relative;
 }
 
-.gunungan-frame img {
+.royal-arch::before {
+  content: "꧁ ❖ ꧂";
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: var(--gold-solid);
+  letter-spacing: 2px;
+}
+
+.royal-arch img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  border-radius: 104px 104px 12px 12px;
+  border-radius: 105px 105px 15px 15px;
+  border: 2px solid var(--keraton-wood);
 }
 
-.guest-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(216, 180, 115, 0.35);
+.guest-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(205, 162, 80, 0.35);
   border-radius: 16px;
   padding: 16px 20px;
-  margin: 20px 0 24px;
+  margin: 22px 0 24px;
   backdrop-filter: blur(10px);
 }
 
 .btn-open {
-  background: linear-gradient(135deg, #d8b473, #a1783f);
-  color: #17110c;
+  background: var(--gold-prada);
+  color: #1a110a;
   font-weight: 700;
   border: none;
   border-radius: 50px;
-  padding: 13px 36px;
-  font-size: 14px;
-  letter-spacing: 1.5px;
+  padding: 14px 38px;
+  font-size: 13.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
   box-shadow: 0 8px 24px var(--gold-glow);
-  transition: transform 0.3s;
+  transition: transform 0.25s;
 }
 .btn-open:active { transform: scale(0.96); }
 
-/* KUPU-KUPU */
+/* KUPU-KUPU BETERRBANGAN */
 .butterfly {
   position: absolute;
-  font-size: 19px;
+  font-size: 20px;
   opacity: 0;
   pointer-events: none;
   z-index: 8;
   animation: flutter 9s infinite ease-in-out;
 }
-.b1 { left: 10%; top: 80%; animation-delay: 0s; }
-.b2 { left: 82%; top: 75%; animation-delay: 2.2s; }
-.b3 { left: 24%; top: 85%; animation-delay: 4.5s; }
-.b4 { left: 70%; top: 90%; animation-delay: 6.8s; }
+.b1 { left: 10%; top: 85%; animation-delay: 0s; }
+.b2 { left: 82%; top: 78%; animation-delay: 2.2s; }
+.b3 { left: 22%; top: 88%; animation-delay: 4.5s; }
+.b4 { left: 74%; top: 92%; animation-delay: 6.8s; }
 
 @keyframes flutter {
   0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
-  20% { opacity: 0.8; transform: translateY(-120px) translateX(25px) rotate(15deg) scale(1); }
-  50% { opacity: 0.9; transform: translateY(-280px) translateX(-20px) rotate(-15deg) scale(1.1); }
-  80% { opacity: 0.7; transform: translateY(-440px) translateX(20px) rotate(10deg) scale(0.9); }
+  20% { opacity: 0.85; transform: translateY(-120px) translateX(25px) rotate(15deg) scale(1); }
+  50% { opacity: 0.95; transform: translateY(-280px) translateX(-20px) rotate(-15deg) scale(1.1); }
+  80% { opacity: 0.75; transform: translateY(-440px) translateX(20px) rotate(10deg) scale(0.9); }
   100% { transform: translateY(-600px) translateX(-10px) rotate(0deg) scale(0.7); opacity: 0; }
 }
 
-/* KONTEN KREM & CARD */
-.page-paper {
-  background-color: var(--cream-bg);
+/* SECTION KERTAS SERAT GADING (IVORY PAPER) */
+.page-ivory {
+  background-color: var(--ivory-paper);
   color: var(--text-dark);
 }
 
-.quote-box {
-  font-size: 13.5px;
-  line-height: 1.9;
-  color: #57483d;
-  font-style: italic;
-  margin: 18px 0;
-}
-
 .arch-card {
-  background: var(--cream-card);
-  border: 1px solid rgba(138, 100, 79, 0.25);
+  background: var(--ivory-card);
+  border: 1px solid rgba(115, 92, 76, 0.22);
   border-radius: 18px;
   padding: 24px 20px;
   margin: 16px 0;
-  box-shadow: 0 10px 25px rgba(60, 44, 32, 0.07);
+  box-shadow: 0 10px 25px rgba(44, 30, 20, 0.06);
 }
 
 .count-grid {
@@ -173,15 +185,16 @@ body {
   margin: 22px 0;
 }
 .count-cell {
-  background: #281c15;
-  border: 1px solid #c69f58;
+  background: #23160e;
+  border: 1px solid var(--gold-solid);
   border-radius: 12px;
   padding: 12px 2px;
   color: #f7ede1;
 }
-.count-cell b { font-size: 26px; display: block; color: var(--gold); }
+.count-cell b { font-size: 26px; display: block; color: var(--gold-solid); }
 .count-cell span { font-size: 9px; letter-spacing: 1px; }
 
+/* GALERI 4 FOTO MEWAH */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -193,14 +206,14 @@ body {
   height: 220px;
   object-fit: cover;
   border-radius: 14px;
-  border: 2px solid rgba(198, 159, 88, 0.4);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  border: 2px solid rgba(205, 162, 80, 0.4);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
 }
 
 .input-field {
   width: 100%;
   background: #ffffff;
-  border: 1px solid #bba18e;
+  border: 1px solid #c2ad9d;
   border-radius: 12px;
   padding: 13px;
   margin: 7px 0;
@@ -208,7 +221,7 @@ body {
   font-size: 14px;
 }
 
-/* FLOATING CONTROLS (MUSIK & AUTO-SCROLL) */
+/* KONTROL MENGAMBANG (AUTO SCROLL & LAGU) */
 .floating-panel {
   position: fixed;
   bottom: 22px;
@@ -223,14 +236,14 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #1f1612;
-  border: 1.5px solid var(--gold);
-  color: var(--gold);
+  background: #1e140d;
+  border: 1.5px solid var(--gold-solid);
+  color: var(--gold-solid);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.45);
   font-size: 14px;
 }
 .spin { animation: rotate 5s linear infinite; }
@@ -245,7 +258,7 @@ body {
 <!-- TOMBOL KONTROL MENGAMBANG -->
 <div class="floating-panel hidden" id="floatingControls">
   <button class="float-btn" id="scrollBtn" onclick="toggleAutoScroll()" title="Auto Scroll">⏬</button>
-  <button class="float-btn" id="musicBtn" onclick="toggleMusic()" title="Musik">♫</button>
+  <button class="float-btn" id="musicBtn" onclick="toggleMusic()" title="Lagu">♫</button>
 </div>
 
 <audio id="audioTrack" loop src="musik.mp3"></audio>
@@ -258,18 +271,20 @@ body {
 
 <!-- COVER / OPENING SCREEN -->
 <section class="page" id="coverPage">
-  <div class="bg-batik"></div>
+  <div class="bg-kawung"></div>
   <div class="content-box">
     
-    <p class="serif" style="font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase;">The Wedding Of</p>
-    <h1 class="script" style="font-size: 60px; color: #f5eedb; margin: 4px 0 14px;">Puji &amp; Sukma</h1>
+    <p class="serif" style="font-size: 11px; letter-spacing: 5px; color: var(--gold-solid); text-transform: uppercase;">Pawiwahan Ageng</p>
+    <h1 class="script gold-prada-text" style="font-size: 60px; margin: 4px 0 14px;">Puji &amp; Sukma</h1>
 
-    <div class="gunungan-frame">
+    <!-- GAPURA GUNUNGAN -->
+    <div class="royal-arch">
       <img src="foto1.jpg" alt="Puji & Sukma">
     </div>
 
-    <div class="guest-card">
-      <p style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #cfbfb2;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+    <!-- KEPADA TAMU -->
+    <div class="guest-pill">
+      <p style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #cfbfb2;">Katur Dhumateng Panjenenganipun:</p>
       <h3 class="serif" id="guestName" style="font-size: 20px; color: #f5eedb; margin-top: 6px; font-weight: 600;">Nama Tamu</h3>
     </div>
 
@@ -280,40 +295,40 @@ body {
 <!-- KONTEN UTAMA SETELAH DIBUKA -->
 <main id="mainPage" class="hidden">
 
-  <!-- AYAT SUCI -->
-  <section class="page page-paper">
+  <!-- AYAT SUCI AR-RUM -->
+  <section class="page page-ivory">
     <div class="content-box">
-      <div class="gunungan-frame" style="width: 180px; height: 230px; margin-bottom: 24px;">
+      <div class="royal-arch" style="width: 175px; height: 230px; margin-bottom: 24px;">
         <img src="foto3.jpg" alt="Puji & Sukma">
       </div>
 
-      <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--terracotta);">SURAT AR-RUM : 21</p>
-      <p class="quote-box">
+      <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--text-muted);">SURAT AR-RUM : 21</p>
+      <p style="font-size: 13.5px; line-height: 1.9; color: #4e382a; font-style: italic; margin: 16px 0;">
         “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”
       </p>
 
-      <div style="font-size: 24px; color: var(--gold); margin: 15px 0;">꧁ ❦ ꧂</div>
+      <div style="font-size: 22px; color: var(--gold-solid); margin: 15px 0;">꧁ ❦ ꧂</div>
 
-      <p style="font-size: 14px; line-height: 1.8; color: #4e3d31;">
+      <p style="font-size: 14px; line-height: 1.8; color: #443226;">
         Assalamu’alaikum Warahmatullahi Wabarakatuh.<br>
-        Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara syukuran pernikahan kami:
+        Kanthi nyenyuwun berkah lan rahmatipun Gusti Allah SWT, lumantar serat punika kula sakulawarga nyuwun rawuh panjenengan wonten pahargyan dhaup suci:
       </p>
 
       <div style="margin: 24px 0;">
-        <h2 class="script" style="font-size: 50px; color: var(--terracotta);">Puji</h2>
-        <p style="font-size: 13px; color: var(--text-muted);">Mempelai Pria</p>
-        <p class="script" style="font-size: 30px; color: var(--gold); margin: 4px 0;">&amp;</p>
-        <h2 class="script" style="font-size: 50px; color: var(--terracotta);">Sukma</h2>
-        <p style="font-size: 13px; color: var(--text-muted);">Mempelai Wanita</p>
+        <h2 class="script" style="font-size: 52px; color: #5c3b24;">Puji</h2>
+        <p style="font-size: 13px; color: var(--text-muted);">Putra Kakung</p>
+        <p class="script" style="font-size: 32px; color: var(--gold-solid); margin: 4px 0;">&amp;</p>
+        <h2 class="script" style="font-size: 52px; color: #5c3b24;">Sukma</h2>
+        <p style="font-size: 13px; color: var(--text-muted);">Putri Putri</p>
       </div>
     </div>
   </section>
 
   <!-- HITUNG MUNDUR -->
-  <section class="page" style="background: #17110d;">
-    <div class="bg-batik"></div>
+  <section class="page" style="background: #140d07;">
+    <div class="bg-kawung"></div>
     <div class="content-box">
-      <p class="serif" style="font-size: 11px; letter-spacing: 4px; color: var(--gold);">MENUJU HARI BAHAGIA</p>
+      <p class="serif" style="font-size: 11px; letter-spacing: 4px; color: var(--gold-solid);">MENUJU DINA BAHAGYA</p>
       <h2 class="serif" style="font-size: 24px; margin: 8px 0 20px;">Hitung Mundur</h2>
 
       <div class="count-grid">
@@ -323,48 +338,48 @@ body {
         <div class="count-cell"><b id="seconds">0</b><span>DETIK</span></div>
       </div>
 
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Puji+%26+Sukma&dates=20261006T060000/20261006T150000&details=Pernikahan+Puji+dan+Sukma+di+Rembang&location=Ds.+Sumber,+Kecamatan+Sumber,+Kabupaten+Rembang" target="_blank" style="display:inline-block; border:1px solid var(--gold); border-radius:50px; padding:10px 24px; color:var(--gold); text-decoration:none; font-size:12px; letter-spacing:1px; margin-top:10px;">
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Puji+%26+Sukma&dates=20261006T060000/20261006T150000&details=Pernikahan+Puji+dan+Sukma+di+Rembang&location=Ds.+Sumber,+Kecamatan+Sumber,+Kabupaten+Rembang" target="_blank" style="display:inline-block; border:1px solid var(--gold-solid); border-radius:50px; padding:10px 24px; color:var(--gold-solid); text-decoration:none; font-size:12px; letter-spacing:1px; margin-top:10px;">
         📅 Simpan ke Google Calendar
       </a>
     </div>
   </section>
 
-  <!-- RANGKAIAN ACARA -->
-  <section class="page page-paper">
+  <!-- WAKTU & TEMPAT -->
+  <section class="page page-ivory">
     <div class="content-box">
-      <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--terracotta);">WAKTU & TEMPAT</p>
-      <h2 class="serif" style="font-size: 26px; margin: 6px 0 20px; color: var(--text-dark);">Rangkaian Acara</h2>
+      <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--text-muted);">RANGKAIAN ACARA</p>
+      <h2 class="serif" style="font-size: 26px; margin: 6px 0 20px; color: var(--text-dark);">Waktu &amp; Tempat</h2>
 
       <div class="arch-card">
-        <h3 class="serif" style="color: var(--terracotta); font-size: 18px;">AKAD NIKAH</h3>
+        <h3 class="serif" style="color: #633f28; font-size: 18px;">AKAD NIKAH</h3>
         <p style="margin: 8px 0; font-weight: 600;">Selasa, 06 Oktober 2026</p>
-        <p style="font-size: 14px; color: var(--text-muted);">Pukul 06.00 WIB — Selesai</p>
+        <p style="font-size: 14px; color: var(--text-muted);">Tabuh 06.00 WIB — Selesai</p>
       </div>
 
       <div class="arch-card">
-        <h3 class="serif" style="color: var(--terracotta); font-size: 18px;">RESEPSI</h3>
+        <h3 class="serif" style="color: #633f28; font-size: 18px;">PAHARGYAN / RESEPSI</h3>
         <p style="margin: 8px 0; font-weight: 600;">Selasa, 06 Oktober 2026</p>
-        <p style="font-size: 14px; color: var(--text-muted);">Pukul 08.00 WIB — Selesai</p>
+        <p style="font-size: 14px; color: var(--text-muted);">Tabuh 08.00 WIB — Selesai</p>
       </div>
 
       <div class="arch-card">
-        <h3 class="serif" style="color: var(--terracotta); font-size: 18px;">LOKASI</h3>
+        <h3 class="serif" style="color: #633f28; font-size: 18px;">PAPAPAN ACARA</h3>
         <p style="font-size: 14px; line-height: 1.6; margin: 8px 0;">
           Ds. Sumber, Kec. Sumber<br>Kabupaten Rembang, Jawa Tengah
         </p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Ds.+Sumber+Kecamatan+Sumber+Kabupaten+Rembang" target="_blank" style="display:inline-block; margin-top:8px; background:var(--terracotta); color:#fff; padding:10px 22px; border-radius:50px; text-decoration:none; font-size:13px;">
-          📍 Petunjuk Google Maps
+        <a href="https://www.google.com/maps/search/?api=1&query=Ds.+Sumber+Kecamatan+Sumber+Kabupaten+Rembang" target="_blank" style="display:inline-block; margin-top:8px; background:#633f28; color:#fff; padding:10px 24px; border-radius:50px; text-decoration:none; font-size:13px;">
+          📍 Peta Google Maps
         </a>
       </div>
     </div>
   </section>
 
   <!-- GALERI -->
-  <section class="page" style="background: #17110d;">
-    <div class="bg-batik"></div>
+  <section class="page" style="background: #140d07;">
+    <div class="bg-kawung"></div>
     <div class="content-box">
-      <p class="serif" style="font-size: 11px; letter-spacing: 4px; color: var(--gold);">MOMEN BAHAGIA</p>
-      <h2 class="serif" style="font-size: 26px; margin: 6px 0 20px;">Galeri Prewedding</h2>
+      <p class="serif" style="font-size: 11px; letter-spacing: 4px; color: var(--gold-solid);">MEMORI INDAH</p>
+      <h2 class="serif" style="font-size: 26px; margin: 6px 0 20px;">Galeri Momen</h2>
 
       <div class="gallery-grid">
         <img src="foto1.jpg" alt="Foto 1">
@@ -375,17 +390,17 @@ body {
     </div>
   </section>
 
-  <!-- TANDA KASIH / DANA -->
-  <section class="page page-paper">
+  <!-- AMPLOP DIGITAL -->
+  <section class="page page-ivory">
     <div class="content-box">
-      <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--terracotta);">TANDA KASIH</p>
+      <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--text-muted);">TANDA TRESNO</p>
       <h2 class="serif" style="font-size: 26px; margin: 6px 0 16px; color: var(--text-dark);">Amplop Digital</h2>
 
       <div class="arch-card">
         <h3 class="serif" style="font-size: 20px; color: #118eea;">DANA</h3>
         <p style="font-size: 25px; font-weight: 700; letter-spacing: 2px; margin: 12px 0; color: #2e231c;">085879637299</p>
         <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">a.n. Puji &amp; Sukma</p>
-        <button onclick="salinDana()" style="background:transparent; border:1.5px solid var(--terracotta); color:var(--terracotta); padding:9px 24px; border-radius:50px; font-weight:600; cursor:pointer;">
+        <button onclick="salinDana()" style="background:transparent; border:1.5px solid #633f28; color:#633f28; padding:9px 24px; border-radius:50px; font-weight:600; cursor:pointer;">
           📋 Salin Nomor DANA
         </button>
       </div>
@@ -393,14 +408,14 @@ body {
   </section>
 
   <!-- RSVP WHATSAPP -->
-  <section class="page" style="background: #17110d;">
-    <div class="bg-batik"></div>
+  <section class="page" style="background: #140d07;">
+    <div class="bg-kawung"></div>
     <div class="content-box">
-      <p class="serif" style="font-size: 11px; letter-spacing: 4px; color: var(--gold);">KONFIRMASI</p>
-      <h2 class="serif" style="font-size: 26px; margin: 6px 0 16px;">RSVP &amp; Ucapan Doa</h2>
+      <p class="serif" style="font-size: 11px; letter-spacing: 4px; color: var(--gold-solid);">KONFIRMASI</p>
+      <h2 class="serif" style="font-size: 26px; margin: 6px 0 16px;">RSVP &amp; Doa Pangestu</h2>
 
-      <input class="input-field" id="namaTamuInput" placeholder="Nama Anda">
-      <textarea class="input-field" id="pesanInput" rows="3" placeholder="Tuliskan ucapan atau doa restu..."></textarea>
+      <input class="input-field" id="namaTamuInput" placeholder="Asma / Nama Panjenengan">
+      <textarea class="input-field" id="pesanInput" rows="3" placeholder="Paringi donga restu..."></textarea>
 
       <button class="btn-open" style="width: 100%; margin-top: 10px;" onclick="kirimRSVP()">
         Kirim via WhatsApp
@@ -416,7 +431,7 @@ body {
 </main>
 
 <script>
-// NAMA TAMU OTOMATIS (?to=Nama+Tamu)
+// AMBIL NAMA TAMU DARI PARAMETER URL (?to=Nama+Tamu)
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('to');
 if (namaTamu) {
@@ -424,7 +439,7 @@ if (namaTamu) {
   document.getElementById('namaTamuInput').value = namaTamu;
 }
 
-// BUKA UNDANGAN & AUTO-SCROLL
+// BUKA UNDANGAN & AUTO SCROLL
 const audio = document.getElementById("audioTrack");
 const musicBtn = document.getElementById("musicBtn");
 const scrollBtn = document.getElementById("scrollBtn");
@@ -446,29 +461,27 @@ function openInvitation() {
     controls.classList.remove("hidden");
     window.scrollTo(0, 0);
 
-    // Otomatis mulai auto-scroll pelan 1 detik setelah dibuka
     setTimeout(startAutoScroll, 1200);
-  }, 10);
+  }, 700);
 
   audio.play().then(() => {
     musicBtn.classList.add("spin");
   }).catch(() => {});
 }
 
-// MESIN AUTO SCROLL HALUS
+// SISTEM AUTO-SCROLL (KEPATAN 10 MS)
 function startAutoScroll() {
   if (isAutoScrolling) return;
   isAutoScrolling = true;
   scrollBtn.textContent = "⏸";
-  scrollBtn.style.color = "#d8b473";
+  scrollBtn.style.color = "#d4af37";
 
   scrollInterval = setInterval(() => {
     window.scrollBy(0, 1);
-    // Jika sampai di dasar halaman, hentikan
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
       stopAutoScroll();
     }
-  }, 10); // Kecepatan scroll perlahan & nyaman dibaca
+  }, 10);
 }
 
 function stopAutoScroll() {
@@ -486,7 +499,7 @@ function toggleAutoScroll() {
   }
 }
 
-// HENTIKAN SEMENTARA JIKA LAYAR DISENTUH TAMU
+// JIKA LAYAR DISENTUH, BERHENTI SEMENTARA
 window.addEventListener("touchstart", () => {
   if (isAutoScrolling) stopAutoScroll();
 }, { passive: true });
@@ -510,19 +523,19 @@ setInterval(() => {
   document.getElementById("hours").textContent = Math.floor((selisih / (1000 * 60 * 60)) % 24);
   document.getElementById("minutes").textContent = Math.floor((selisih / 1000 / 60) % 60);
   document.getElementById("seconds").textContent = Math.floor((selisih / 1000) % 60);
-}, 10);
+}, 1000);
 
 function salinDana() {
   navigator.clipboard.writeText("085879637299").then(() => {
-    alert("Nomor DANA 085879637299 berhasil disalin!");
+    alert("Nomor DANA 085879637299 kasil kasalin!");
   });
 }
 
 function kirimRSVP() {
-  const nama = document.getElementById("namaTamuInput").value.trim() || "Tamu";
-  const ucapan = document.getElementById("pesanInput").value.trim() || "Selamat menempuh hidup baru Puji & Sukma!";
+  const nama = document.getElementById("namaTamuInput").value.trim() || "Tamu Undangan";
+  const ucapan = document.getElementById("pesanInput").value.trim() || "Nderek mangayubagya, mugi dados kaluwarga ingkang sakinah mawaddah warahmah.";
   const noWA = "6285879637293";
-  const pesan = `Halo Puji & Sukma,\n\nSaya *${nama}* mengonfirmasi kehadiran pada acara pernikahan Selasa, 06 Oktober 2026.\n\nUcapan & Doa:\n"${pesan}"`;
+  const pesan = `Halo Puji & Sukma,\n\nKula *${nama}* ngaturaken konfirmasi rawuh wonten pahargyan dinten Selasa, 06 Oktober 2026.\n\nDonga pangestu:\n"${ucapan}"`;
   window.open(`https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`, "_blank");
 }
 </script>
