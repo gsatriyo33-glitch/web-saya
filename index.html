@@ -448,7 +448,7 @@ function openInvitation() {
 
     // Otomatis mulai auto-scroll pelan 1 detik setelah dibuka
     setTimeout(startAutoScroll, 1200);
-  }, 700);
+  }, 10);
 
   audio.play().then(() => {
     musicBtn.classList.add("spin");
@@ -468,7 +468,7 @@ function startAutoScroll() {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
       stopAutoScroll();
     }
-  }, 15); // Kecepatan scroll perlahan & nyaman dibaca
+  }, 10); // Kecepatan scroll perlahan & nyaman dibaca
 }
 
 function stopAutoScroll() {
@@ -510,7 +510,7 @@ setInterval(() => {
   document.getElementById("hours").textContent = Math.floor((selisih / (1000 * 60 * 60)) % 24);
   document.getElementById("minutes").textContent = Math.floor((selisih / 1000 / 60) % 60);
   document.getElementById("seconds").textContent = Math.floor((selisih / 1000) % 60);
-}, 1000);
+}, 10);
 
 function salinDana() {
   navigator.clipboard.writeText("085879637299").then(() => {
