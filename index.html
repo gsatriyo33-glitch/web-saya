@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#11100d">
-<title>Undangan Pernikahan | Nama Mempelai</title>
+<title>Undangan Pernikahan | Puji & Sukma</title>
 <style>
 :root{
   --cream:#f5ecd9;--paper:#fcf6e9;--ink:#282219;--gold:#bd9148;
@@ -66,11 +66,6 @@ textarea.field{min-height:100px;resize:vertical}
 
 <body>
 
-<!-- =========================================================
-     TEMPLATE UNDANGAN JAWA
-     EDIT DATA CUKUP DI BAGIAN "DATA UNDANGAN" DI BAWAH
-========================================================= -->
-
 <button class="music" id="musicBtn" onclick="toggleMusic()">♪</button>
 <audio id="music" loop src="musik.mp3"></audio>
 
@@ -83,8 +78,8 @@ textarea.field{min-height:100px;resize:vertical}
   <div class="content">
     <div class="orn">꧁ ✦ ꧂</div>
     <div class="kecil">The Wedding Of</div>
-    <h1 id="coverNames">Nama<br>&amp;<br>Pasangan</h1>
-    <p id="coverDate">12 Desember 2026</p>
+    <h1 id="coverNames">Puji<br>&amp;<br>Sukma</h1>
+    <p id="coverDate">Selasa, 06 Oktober 2026</p>
     <button class="btn" onclick="openInvitation()">Buka Undangan</button>
     <div class="scroll">↓ gulir untuk melihat undangan ↓</div>
   </div>
@@ -99,9 +94,8 @@ textarea.field{min-height:100px;resize:vertical}
     <div class="orn">❧</div>
     <p>Dengan memohon rahmat dan ridho Allah SWT,<br>
     kami bermaksud menyelenggarakan acara pernikahan kami.</p>
-    <div class="names" id="mainNames">Nama<br>&amp;<br>Pasangan</div>
-    <p id="parents">Putra dari Bapak ... &amp; Ibu ...<br>
-    Putri dari Bapak ... &amp; Ibu ...</p>
+    <div class="names" id="mainNames">Puji<br>&amp;<br>Sukma</div>
+    <p id="parents">Mempelai Pria &amp; Mempelai Wanita</p>
     <div class="orn" style="margin-top:25px">⌁</div>
   </div>
 </section>
@@ -118,7 +112,7 @@ textarea.field{min-height:100px;resize:vertical}
       <div class="box"><b id="minutes">0</b><span>MENIT</span></div>
       <div class="box"><b id="seconds">0</b><span>DETIK</span></div>
     </div>
-    <p id="countDate">Sabtu, 12 Desember 2026</p>
+    <p id="countDate">Selasa, 06 Oktober 2026</p>
   </div>
 </section>
 
@@ -131,17 +125,17 @@ textarea.field{min-height:100px;resize:vertical}
 
     <div class="card">
       <h3>Akad Nikah</h3>
-      <p id="akad">Sabtu, 12 Desember 2026<br>08.00 WIB — selesai</p>
+      <p id="akad">Selasa, 06 Oktober 2026<br>06.00 WIB — selesai</p>
     </div>
 
     <div class="card">
       <h3>Resepsi</h3>
-      <p id="resepsi">Sabtu, 12 Desember 2026<br>11.00 WIB — 15.00 WIB</p>
+      <p id="resepsi">Selasa, 06 Oktober 2026<br>08.00 WIB — selesai</p>
     </div>
 
     <div class="card">
-      <h3>Lokasi</h3>
-      <p id="location">Nama Gedung<br>Kabupaten, Jawa Tengah</p>
+      <h3>Lokasi Acara</h3>
+      <p id="location">Ds. Sumber, Kec. Sumber<br>Kabupaten Rembang, Jawa Tengah</p>
       <a class="btn" id="maps" target="_blank">Buka Google Maps</a>
     </div>
   </div>
@@ -153,12 +147,11 @@ textarea.field{min-height:100px;resize:vertical}
     <div class="kecil">Momen Bahagia</div>
     <h2>Galeri</h2>
     <div class="gallery">
-      <img src="foto1.jpg" alt="Foto 1">
-      <img src="foto2.jpg" alt="Foto 2">
-      <img src="foto3.jpg" alt="Foto 3">
-      <img src="foto4.jpg" alt="Foto 4">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500&auto=format&fit=crop" alt="Foto 1">
+      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&auto=format&fit=crop" alt="Foto 2">
+      <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&auto=format&fit=crop" alt="Foto 3">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=500&auto=format&fit=crop" alt="Foto 4">
     </div>
-    <p class="small">Masukkan foto sendiri dengan nama foto1.jpg sampai foto4.jpg.</p>
   </div>
 </section>
 
@@ -170,27 +163,27 @@ textarea.field{min-height:100px;resize:vertical}
     <h2>Ucapan Tamu</h2>
 
     <input class="field" id="guest" placeholder="Nama Anda">
-    <textarea class="field" id="wish" placeholder="Ucapan / doa"></textarea>
+    <textarea class="field" id="wish" placeholder="Tuliskan ucapan atau doa restu"></textarea>
     <button class="btn" onclick="sendWish()">Kirim via WhatsApp</button>
   </div>
 </section>
 
-<!-- HADIAH -->
+<!-- HADIAH / REKENING -->
 <section class="page dark">
   <div class="content reveal">
     <div class="kecil">Tanda Kasih</div>
-    <h2>Kirim Hadiah</h2>
+    <h2>Dompet Digital</h2>
 
     <div class="bank">
-      <h3>BCA</h3>
-      <div class="copy" id="accountNumber">1234567890</div>
-      <p>a.n. Nama Pengantin</p>
-      <button class="btn" onclick="copyText('accountNumber')">Salin Nomor</button>
+      <h3>DANA</h3>
+      <div class="copy" id="accountNumber">085879637299</div>
+      <p>a.n. Puji &amp; Sukma</p>
+      <button class="btn" onclick="copyText('accountNumber')">Salin Nomor DANA</button>
     </div>
 
     <div class="bank">
       <h3>Alamat Kado</h3>
-      <p id="giftAddress">Alamat penerima kado<br>Kabupaten, Jawa Tengah</p>
+      <p id="giftAddress">Ds. Sumber, Kec. Sumber<br>Kabupaten Rembang, Jawa Tengah</p>
     </div>
   </div>
 </section>
@@ -201,8 +194,8 @@ textarea.field{min-height:100px;resize:vertical}
     <div class="kecil">Konfirmasi Kehadiran</div>
     <h2>RSVP</h2>
     <p>Mohon konfirmasi kehadiran melalui WhatsApp.</p>
-    <input class="field" id="rsvpName" placeholder="Nama Anda">
-    <button class="btn" onclick="rsvp()">Konfirmasi WhatsApp</button>
+    <input class="field" id="rsvpName" placeholder="Nama Tamu">
+    <button class="btn" onclick="rsvp()">Konfirmasi via WhatsApp</button>
   </div>
 </section>
 
@@ -211,8 +204,8 @@ textarea.field{min-height:100px;resize:vertical}
   <div class="content reveal">
     <div class="orn">꧁ ✦ ꧂</div>
     <div class="kecil">Sampai Jumpa di Hari Bahagia</div>
-    <h2 id="footerNames">Nama &amp; Pasangan</h2>
-    <p id="footerDate">12 · 12 · 2026</p>
+    <h2 id="footerNames">Puji &amp; Sukma</h2>
+    <p id="footerDate">06 · 10 · 2026</p>
     <p class="quote">“Bukan karena bertemu lalu berjodoh,<br>tetapi karena berjodoh maka kami dipertemukan.”</p>
   </div>
 </section>
@@ -220,43 +213,33 @@ textarea.field{min-height:100px;resize:vertical}
 </main>
 
 <script>
-/* =========================================================
-   DATA UNDANGAN — BAGIAN INI YANG NANTI PALING SERING DIUBAH
-========================================================= */
 const DATA = {
-  pria: "Rizky",
-  wanita: "Dinda",
+  pria: "Puji",
+  wanita: "Sukma",
 
-  tanggalTampil: "12 Desember 2026",
-  tanggalSingkat: "12 · 12 · 2026",
-  tanggalCountdown: "December 12, 2026 08:00:00",
+  tanggalTampil: "Selasa, 06 Oktober 2026",
+  tanggalSingkat: "06 · 10 · 2026",
+  tanggalCountdown: "October 6, 2026 06:00:00",
 
-  orangTuaPria: "Bapak Slamet & Ibu Sumarni",
-  orangTuaWanita: "Bapak Wasto & Ibu Sari Lestari",
+  akad: "Selasa, 06 Oktober 2026<br>06.00 WIB — selesai",
+  resepsi: "Selasa, 06 Oktober 2026<br>08.00 WIB — selesai",
 
-  akad: "Sabtu, 12 Desember 2026<br>08.00 WIB — selesai",
-  resepsi: "Sabtu, 12 Desember 2026<br>11.00 WIB — 15.00 WIB",
+  lokasi: "Ds. Sumber, Kec. Sumber<br>Kabupaten Rembang, Jawa Tengah",
+  maps: "https://www.google.com/maps/search/?api=1&query=Ds.+Sumber+Kecamatan+Sumber+Kabupaten+Rembang",
 
-  lokasi: "Pendopo Agung<br>Kabupaten, Jawa Tengah",
-  maps: "https://maps.google.com/?q=Pendopo+Agung",
+  rekening: "085879637299",
+  namaRekening: "Puji & Sukma",
+  alamatKado: "Ds. Sumber, Kec. Sumber<br>Kabupaten Rembang, Jawa Tengah",
 
-  rekening: "1234567890",
-  namaRekening: "Nama Pengantin",
-  alamatKado: "Alamat penerima kado<br>Kabupaten, Jawa Tengah",
-
-  whatsapp: "6281234567890"
+  whatsapp: "6285879637293"
 };
 
-/* ISI DATA KE HALAMAN */
-const $ = id => document.getElementById(id);
-$("coverNames").innerHTML = `${DATA.pria}<br>&amp;<br>${DATA.wanita}`;
+const $= id => document.getElementById(id);$("coverNames").innerHTML = `${DATA.pria}<br>&amp;<br>${DATA.wanita}`;
 $("mainNames").innerHTML = `${DATA.pria}<br>&amp;<br>${DATA.wanita}`;
 $("footerNames").textContent = `${DATA.pria} & ${DATA.wanita}`;
 $("coverDate").textContent = DATA.tanggalTampil;
 $("countDate").textContent = DATA.tanggalTampil;
 $("footerDate").textContent = DATA.tanggalSingkat;
-$("parents").innerHTML =
-  `Putra dari ${DATA.orangTuaPria}<br>Putri dari ${DATA.orangTuaWanita}`;
 $("akad").innerHTML = DATA.akad;
 $("resepsi").innerHTML = DATA.resepsi;
 $("location").innerHTML = DATA.lokasi;
@@ -264,7 +247,6 @@ $("maps").href = DATA.maps;
 $("accountNumber").textContent = DATA.rekening;
 $("giftAddress").innerHTML = DATA.alamatKado;
 
-/* COUNTDOWN */
 const target = new Date(DATA.tanggalCountdown).getTime();
 function countdown(){
   const x = target - Date.now();
@@ -280,7 +262,6 @@ function countdown(){
 }
 setInterval(countdown,1000); countdown();
 
-/* BUKA UNDANGAN */
 function openInvitation(){
   $("cover").classList.add("hidden");
   $("main").classList.remove("hidden");
@@ -290,7 +271,6 @@ function openInvitation(){
   );
 }
 
-/* ANIMASI SAAT SCROLL */
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting) e.target.classList.add("show");
@@ -298,7 +278,6 @@ const observer = new IntersectionObserver(entries=>{
 },{threshold:.15});
 document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-/* MUSIK */
 function toggleMusic(){
   const audio = $("music");
   const btn = $("musicBtn");
@@ -306,7 +285,7 @@ function toggleMusic(){
     audio.play().then(()=>{
       btn.classList.add("playing");
       btn.textContent="♫";
-    }).catch(()=>alert("Tambahkan file musik.mp3 ke folder undangan."));
+    }).catch(()=>alert("Tambahkan file musik.mp3 ke folder jika ingin memutar musik."));
   }else{
     audio.pause();
     btn.classList.remove("playing");
@@ -314,24 +293,21 @@ function toggleMusic(){
   }
 }
 
-/* SALIN REKENING */
 function copyText(id){
   navigator.clipboard.writeText($(id).textContent.trim())
-    .then(()=>alert("Nomor rekening berhasil disalin."));
+    .then(()=>alert("Nomor DANA berhasil disalin: " + $(id).textContent.trim()));
 }
 
-/* RSVP */
 function rsvp(){
-  const name = $("rsvpName").value.trim() || "Tamu";
-  const msg = `Halo ${DATA.pria} & ${DATA.wanita}, saya ${name} ingin mengonfirmasi kehadiran di acara pernikahan.`;
+  const name = $("rsvpName").value.trim() || "Tamu Undangan";
+  const msg = `Halo Puji & Sukma, saya *${name}* ingin mengonfirmasi kehadiran pada acara pernikahan Selasa, 06 Oktober 2026. Terima kasih!`;
   window.open(`https://wa.me/${DATA.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank");
 }
 
-/* UCAPAN */
 function sendWish(){
-  const name = $("guest").value.trim() || "Tamu";
-  const wish = $("wish").value.trim() || "Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.";
-  const msg = `Ucapan dari ${name} untuk ${DATA.pria} & ${DATA.wanita}: ${wish}`;
+  const name = $("guest").value.trim() || "Tamu Undangan";
+  const wish = $("wish").value.trim() || "Selamat menempuh hidup baru Puji & Sukma, semoga samawa!";
+  const msg = `Halo Puji & Sukma, ucapan & doa dari *${name}*:\n\n"${wish}"`;
   window.open(`https://wa.me/${DATA.whatsapp}?text=${encodeURIComponent(msg)}`,"_blank");
 }
 </script>
