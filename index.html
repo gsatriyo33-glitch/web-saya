@@ -47,6 +47,52 @@ body {
 .serif { font-family: 'Cormorant Garamond', serif; }
 .arabic { font-family: 'Amiri', serif; }
 
+/* ================= ANIMASI SCROLL REVEAL (PERSIS VIDEO) ================= */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.anim-zoom {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* KORSASIE BUNGA BERGOYANG HALUS */
+@keyframes floralSway {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(2.5deg) scale(1.02); }
+}
+
+/* PANAH MEMBAL (CHEVRON BOUNCE) */
+@keyframes bounceChevron {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+.chevrons-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin: 20px 0;
+  color: #9c7f6b;
+  font-size: 15px;
+}
+.chevrons-down span:nth-child(1) { animation: bounceChevron 1.6s infinite ease-in-out; }
+.chevrons-down span:nth-child(2) { animation: bounceChevron 1.6s infinite ease-in-out 0.2s; }
+.chevrons-down span:nth-child(3) { animation: bounceChevron 1.6s infinite ease-in-out 0.4s; }
+
+/* ORNAMEN BOHO PAMPAS & BUNGA KERING */
 .floral-divider {
   width: 100%;
   max-width: 440px;
@@ -118,6 +164,7 @@ body {
   width: 110px;
   height: 80px;
   pointer-events: none;
+  animation: floralSway 5s ease-in-out infinite;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90"><path d="M10,80 C40,40 70,20 110,10 C80,30 60,60 50,85 Z" fill="%23c4a482" opacity="0.85"/><path d="M25,85 C55,55 85,35 115,25 C85,45 75,70 65,88 Z" fill="%238b6e58" opacity="0.9"/><circle cx="55" cy="65" r="16" fill="%23ebdcd0"/><circle cx="55" cy="65" r="9" fill="%23c4a482"/></svg>');
@@ -159,17 +206,6 @@ body {
   font-weight: 600;
   box-shadow: 0 6px 16px rgba(139, 110, 88, 0.2);
   margin-top: 6px;
-}
-
-.chevrons-down {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  margin: 18px 0;
-  color: #9c7f6b;
-  font-size: 14px;
-  opacity: 0.7;
 }
 
 .btn-ig {
@@ -340,6 +376,12 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
+/* KAPSUL AUTO SCROLL AKTIF DENGAN PULSE GLOW */
+@keyframes pillPulse {
+  0%, 100% { box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45); }
+  50% { box-shadow: 0 8px 30px rgba(79, 70, 229, 0.8); }
+}
+
 .auto-scroll-pill {
   position: fixed;
   bottom: 24px;
@@ -351,17 +393,18 @@ body {
   font-weight: 600;
   padding: 10px 22px;
   border-radius: 50px;
-  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.45);
   cursor: pointer;
   z-index: 99999;
   display: flex;
   align-items: center;
   gap: 6px;
   border: none;
+  animation: pillPulse 2.5s infinite ease-in-out;
 }
 .pill-paused {
   background: #64748b !important;
-  box-shadow: 0 8px 24px rgba(100, 116, 139, 0.3) !important;
+  animation: none !important;
+  box-shadow: 0 6px 16px rgba(100, 116, 139, 0.3) !important;
 }
 
 .music-floating-btn {
@@ -396,7 +439,7 @@ body {
 
 <!-- COVER -->
 <section id="coverPage">
-  <div class="cover-card">
+  <div class="cover-card anim-zoom is-visible">
     <p class="serif" style="font-size: 12px; letter-spacing: 4px; color: #ebdcd0; text-transform: uppercase;">The Wedding of</p>
     <h1 class="script" style="font-size: 58px; color: #ffffff; margin: 6px 0 16px;">Puji & Sukma</h1>
 
@@ -409,7 +452,7 @@ body {
   </div>
 </section>
 
-<!-- TOMBOL KAPSUL AUTO SCROLL -->
+<!-- TOMBOL KAPSUL AUTO SCROLL AKTIF -->
 <button class="auto-scroll-pill hidden" id="autoScrollBadge" onclick="toggleAutoScroll()">
   Auto Scroll Active
 </button>
@@ -418,83 +461,84 @@ body {
 
   <!-- AYAT AR-RUM -->
   <section class="content-box">
-    <div class="circle-frame-wrap">
+    <div class="circle-frame-wrap anim-zoom">
       <img src="foto1.jpg" alt="Puji & Sukma" class="circle-img">
       <div class="floral-corsage"></div>
     </div>
 
-    <h2 class="script" style="font-size: 50px; color: var(--boho-brown); margin-bottom: 22px;">The Wedding of Puji & Sukma</h2>
+    <h2 class="script anim-fade-up" style="font-size: 50px; color: var(--boho-brown); margin-bottom: 22px;">The Wedding of Puji & Sukma</h2>
 
-    <p class="arabic" style="font-size: 21px; line-height: 2.2; color: #332720; margin-bottom: 14px; direction: rtl;">
+    <p class="arabic anim-fade-up" style="font-size: 21px; line-height: 2.2; color: #332720; margin-bottom: 14px; direction: rtl;">
       وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
     </p>
 
-    <p style="font-size: 13.5px; line-height: 1.8; color: var(--text-muted); margin-bottom: 12px;">
+    <p class="anim-fade-up" style="font-size: 13.5px; line-height: 1.8; color: var(--text-muted); margin-bottom: 12px;">
       Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
     </p>
 
-    <p style="font-size: 13px; font-weight: 700; color: #332720; margin-bottom: 26px;">- Ar-Rum • Ayat 21 -</p>
+    <p class="anim-fade-up" style="font-size: 13px; font-weight: 700; color: #332720; margin-bottom: 26px;">- Ar-Rum • Ayat 21 -</p>
 
-    <div class="count-grid">
+    <div class="count-grid anim-zoom">
       <div class="count-cell"><b id="days">0</b><span>DAY</span></div>
       <div class="count-cell"><b id="hours">0</b><span>HOUR</span></div>
       <div class="count-cell"><b id="minutes">0</b><span>MINUTE</span></div>
       <div class="count-cell"><b id="seconds">0</b><span>SECOND</span></div>
     </div>
 
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Puji+%26+Sukma&dates=20261006T060000/20261006T150000&details=Pernikahan+Puji+dan+Sukma+di+Rembang&location=Ds.+Sumber,+Kecamatan+Sumber,+Kabupaten+Rembang" target="_blank" class="btn-calendar">
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Puji+%26+Sukma&dates=20261006T060000/20261006T150000&details=Pernikahan+Puji+dan+Sukma+di+Rembang&location=Ds.+Sumber,+Kecamatan+Sumber,+Kabupaten+Rembang" target="_blank" class="btn-calendar anim-fade-up">
       Save To Calendar
     </a>
 
+    <!-- TRIPLE CHEVRONS BOUNCE -->
     <div class="chevrons-down">
       <span>∨</span>
       <span>∨</span>
       <span>∨</span>
     </div>
 
-    <div class="floral-divider"></div>
+    <div class="floral-divider anim-fade-up"></div>
 
-    <p class="arabic" style="font-size: 26px; color: var(--boho-dark); margin: 15px 0;">
+    <p class="arabic anim-fade-up" style="font-size: 26px; color: var(--boho-dark); margin: 15px 0;">
       السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
     </p>
 
-    <p style="font-size: 13.5px; line-height: 1.8; color: var(--text-muted); max-width: 400px; margin: 0 auto 30px;">
+    <p class="anim-fade-up" style="font-size: 13.5px; line-height: 1.8; color: var(--text-muted); max-width: 400px; margin: 0 auto 30px;">
       Atas Rahmat Tuhan Yang Maha Esa, kami bermaksud mengundang Anda di acara Kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu pada:
     </p>
 
     <!-- MEMPELAI PRIA -->
     <div style="margin-top: 30px;">
-      <div class="circle-frame-wrap">
+      <div class="circle-frame-wrap anim-zoom">
         <img src="foto2.jpg" alt="Puji" class="circle-img">
         <div class="floral-corsage"></div>
       </div>
-      <h3 class="script" style="font-size: 46px; color: var(--boho-brown);">Puji</h3>
-      <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Putra dari Bpk. ... & Ibu ...</p>
-      <p style="font-size: 13px; color: var(--text-muted);">Beralamat di Rembang</p>
-      <a href="https://instagram.com/" target="_blank" class="btn-ig">📷 Instagram</a>
+      <h3 class="script anim-fade-up" style="font-size: 46px; color: var(--boho-brown);">Puji</h3>
+      <p class="anim-fade-up" style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Putra dari Bpk. ... & Ibu ...</p>
+      <p class="anim-fade-up" style="font-size: 13px; color: var(--text-muted);">Beralamat di Rembang</p>
+      <a href="https://instagram.com/" target="_blank" class="btn-ig anim-fade-up">📷 Instagram</a>
     </div>
 
-    <div class="script" style="font-size: 42px; color: var(--boho-tan); margin: 20px 0;">&</div>
+    <div class="script anim-zoom" style="font-size: 42px; color: var(--boho-tan); margin: 20px 0;">&</div>
 
     <!-- MEMPELAI WANITA -->
     <div>
-      <div class="circle-frame-wrap">
+      <div class="circle-frame-wrap anim-zoom">
         <img src="foto3.jpg" alt="Sukma" class="circle-img">
         <div class="floral-corsage"></div>
       </div>
-      <h3 class="script" style="font-size: 46px; color: var(--boho-brown);">Sukma</h3>
-      <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Putri dari Bpk. ... & Ibu ...</p>
-      <p style="font-size: 13px; color: var(--text-muted);">Beralamat di Rembang</p>
-      <a href="https://instagram.com/" target="_blank" class="btn-ig">📷 Instagram</a>
+      <h3 class="script anim-fade-up" style="font-size: 46px; color: var(--boho-brown);">Sukma</h3>
+      <p class="anim-fade-up" style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Putri dari Bpk. ... & Ibu ...</p>
+      <p class="anim-fade-up" style="font-size: 13px; color: var(--text-muted);">Beralamat di Rembang</p>
+      <a href="https://instagram.com/" target="_blank" class="btn-ig anim-fade-up">📷 Instagram</a>
     </div>
   </section>
 
   <!-- ACARA OMBAK -->
   <div class="wave-top"></div>
   <section class="wave-section">
-    <h2 class="script" style="font-size: 52px; color: #ffffff; margin-bottom: 20px;">Save The Date Acara</h2>
+    <h2 class="script anim-fade-up" style="font-size: 52px; color: #ffffff; margin-bottom: 20px;">Save The Date Acara</h2>
 
-    <div class="event-card">
+    <div class="event-card anim-fade-up">
       <h3 class="serif" style="font-size: 28px; color: var(--boho-brown);">Resepsi Pernikahan</h3>
       <p style="font-size: 16px; font-weight: 700; margin: 8px 0;">Selasa, 06 Oktober 2026</p>
       <p style="font-size: 13px; color: var(--text-muted);">Pukul 08.00 WIB — Selesai</p>
@@ -502,7 +546,7 @@ body {
       <a href="https://www.google.com/maps/search/?api=1&query=Ds.+Sumber+Kecamatan+Sumber+Kabupaten+Rembang" target="_blank" class="btn-maps">Maps Lokasi Acara</a>
     </div>
 
-    <div class="event-card">
+    <div class="event-card anim-fade-up">
       <h3 class="serif" style="font-size: 28px; color: var(--boho-brown);">Akad Pernikahan</h3>
       <p style="font-size: 16px; font-weight: 700; margin: 8px 0;">Selasa, 06 Oktober 2026</p>
       <p style="font-size: 13px; color: var(--text-muted);">Pukul 06.00 WIB — Selesai</p>
@@ -514,10 +558,10 @@ body {
 
   <!-- GALERI -->
   <section class="content-box">
-    <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--boho-tan); text-transform: uppercase;">Momen Indah Kita Berdua</p>
-    <h2 class="script" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 14px;">Our Gallery</h2>
+    <p class="serif anim-fade-up" style="font-size: 12px; letter-spacing: 3px; color: var(--boho-tan); text-transform: uppercase;">Momen Indah Kita Berdua</p>
+    <h2 class="script anim-fade-up" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 14px;">Our Gallery</h2>
 
-    <div class="gallery-grid">
+    <div class="gallery-grid anim-zoom">
       <img src="foto1.jpg" alt="Galeri 1">
       <img src="foto2.jpg" alt="Galeri 2">
       <img src="foto3.jpg" alt="Galeri 3">
@@ -527,9 +571,9 @@ body {
 
   <!-- FORM UCAPAN -->
   <section class="content-box">
-    <h2 class="script" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 10px;">Kehadiran</h2>
+    <h2 class="script anim-fade-up" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 10px;">Kehadiran</h2>
 
-    <div class="form-box">
+    <div class="form-box anim-fade-up">
       <form id="formKehadiran" onsubmit="tambahUcapan(event)">
         <label style="font-size: 13px; font-weight: 600; color: var(--text-muted);">Nama</label>
         <input class="input-field" id="inputNama" placeholder="Nama Anda" required>
@@ -547,20 +591,20 @@ body {
       </form>
     </div>
 
-    <div class="stats-bar">
+    <div class="stats-bar anim-fade-up">
       <span>🔵 <b id="statTotal">17</b> Total Ucapan</span>
       <span>🟢 <b id="statHadir">128</b> Orang Menyatakan Hadir</span>
     </div>
 
-    <div class="wishes-list" id="wishesContainer"></div>
+    <div class="wishes-list anim-fade-up" id="wishesContainer"></div>
   </section>
 
   <!-- DANA -->
   <section class="content-box">
-    <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--boho-tan); text-transform: uppercase;">Titipan Kasih</p>
-    <h2 class="script" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 20px;">Amplop Digital</h2>
+    <p class="serif anim-fade-up" style="font-size: 12px; letter-spacing: 3px; color: var(--boho-tan); text-transform: uppercase;">Titipan Kasih</p>
+    <h2 class="script anim-fade-up" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 20px;">Amplop Digital</h2>
 
-    <div class="bank-card">
+    <div class="bank-card anim-zoom">
       <div class="emv-chip"></div>
       <p style="font-size: 12px; font-weight: 700; color: #118eea; letter-spacing: 1px;">DANA</p>
       <div class="bank-number">085879637299</div>
@@ -572,17 +616,18 @@ body {
   <!-- PENUTUP -->
   <div class="wave-top"></div>
   <section class="wave-section" style="padding-bottom: 80px;">
-    <div class="circle-frame-wrap">
+    <div class="circle-frame-wrap anim-zoom">
       <img src="foto4.jpg" alt="Puji & Sukma" class="circle-img">
       <div class="floral-corsage"></div>
     </div>
-    <p style="font-size: 14px; color: #f2e9df; margin-top: 10px;">Terimakasih</p>
-    <h2 class="script" style="font-size: 54px; color: #ffffff; margin-top: 4px;">Puji & Sukma</h2>
+    <p class="anim-fade-up" style="font-size: 14px; color: #f2e9df; margin-top: 10px;">Terimakasih</p>
+    <h2 class="script anim-fade-up" style="font-size: 54px; color: #ffffff; margin-top: 4px;">Puji & Sukma</h2>
   </section>
 
 </main>
 
 <script>
+// DETEKSI NAMA TAMU
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('kpd') || urlParams.get('to');
 if (namaTamu) {
@@ -596,6 +641,21 @@ const autoScrollBadge = document.getElementById("autoScrollBadge");
 
 let isAutoScrolling = false;
 let scrollInterval = null;
+
+// OBSERVER UNTUK ANIMASI SCROLL REVEAL (MUNCUL OTOMATIS SAAT TERTEMU DI LAYAR)
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+function activateAnimations() {
+  document.querySelectorAll('.anim-fade-up, .anim-zoom').forEach(el => {
+    revealObserver.observe(el);
+  });
+}
 
 function openInvitation() {
   const cover = document.getElementById("coverPage");
@@ -611,6 +671,9 @@ function openInvitation() {
     autoScrollBadge.classList.remove("hidden");
     window.scrollTo(0, 0);
 
+    // Aktifkan pemantau animasi kemunculan elemen
+    activateAnimations();
+
     setTimeout(startAutoScroll, 1200);
   }, 700);
 
@@ -619,6 +682,7 @@ function openInvitation() {
   }).catch(() => {});
 }
 
+// AUTO SCROLL KECEPATAN 10
 function startAutoScroll() {
   if (isAutoScrolling) return;
   isAutoScrolling = true;
@@ -662,6 +726,7 @@ function toggleMusic() {
   }
 }
 
+// COUNTDOWN
 const targetDate = new Date("October 6, 2026 06:00:00").getTime();
 setInterval(() => {
   const dist = targetDate - Date.now();
@@ -678,6 +743,7 @@ function salinDana() {
   });
 }
 
+// BUKU TAMU
 let dataKomentar = JSON.parse(localStorage.getItem('boho_wishes')) || [
   { nama: "Bapak Budi", tgl: "2026-09-22 14:10:20", pesan: "Selamat untuk Mas Puji & Mbak Sukma, semoga samawa selamanya!" },
   { nama: "Desak Putu", tgl: "2026-09-21 10:05:12", pesan: "Selamat menempuh hidup baru yaa! Lancar acaranya." }
@@ -691,7 +757,7 @@ function renderKomentar() {
 
   dataKomentar.forEach(item => {
     const div = document.createElement("div");
-    div.className = "wish-card";
+    div.className = "wish-card anim-fade-up is-visible";
     div.innerHTML = `
       <div style="font-weight: 700; font-size: 13.5px; color: var(--boho-brown);">${item.nama} <span style="font-weight: 400; font-size: 11px; color: #a4978e; margin-left: 6px;">• ${item.tgl}</span></div>
       <p style="font-size: 13px; line-height: 1.5; color: #4a3e35; margin-top: 4px;">${item.pesan}</p>
