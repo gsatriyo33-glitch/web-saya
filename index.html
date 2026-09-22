@@ -6,12 +6,14 @@
 <meta name="theme-color" content="#f7f3ec">
 <title>The Wedding of Puji & Sukma</title>
 
+<!-- PREVIEW RESMI WHATSAPP -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Wedding of Puji & Sukma">
 <meta property="og:description" content="Selasa, 06 Oktober 2026 — Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di hari bahagia kami.">
 <meta property="og:image" content="https://gsatriyo33-glitch.github.io/web-saya/foto1.jpg">
 <meta property="og:url" content="https://gsatriyo33-glitch.github.io/web-saya/">
 
+<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital@0;1&display=swap" rel="stylesheet">
@@ -24,7 +26,6 @@
   --boho-dark: #4a3b32;
   --boho-tan: #c4a482;
   --boho-soft: #f2e9df;
-  --wave-mid: #9c7f6b;
   --text-main: #3d312a;
   --text-muted: #7d6b60;
   --border-card: rgba(196, 164, 130, 0.35);
@@ -46,7 +47,6 @@ body {
 .serif { font-family: 'Cormorant Garamond', serif; }
 .arabic { font-family: 'Amiri', serif; }
 
-/* ORNAMEN BOHO PAMPAS & BUNGA KERING (SVG) */
 .floral-divider {
   width: 100%;
   max-width: 440px;
@@ -123,7 +123,6 @@ body {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 90"><path d="M10,80 C40,40 70,20 110,10 C80,30 60,60 50,85 Z" fill="%23c4a482" opacity="0.85"/><path d="M25,85 C55,55 85,35 115,25 C85,45 75,70 65,88 Z" fill="%238b6e58" opacity="0.9"/><circle cx="55" cy="65" r="16" fill="%23ebdcd0"/><circle cx="55" cy="65" r="9" fill="%23c4a482"/></svg>');
 }
 
-/* SECTION UMUM */
 .content-box {
   max-width: 480px;
   margin: 0 auto;
@@ -131,7 +130,7 @@ body {
   text-align: center;
 }
 
-/* COUNTDOWN ALA VIDEO */
+/* COUNTDOWN */
 .count-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -173,7 +172,6 @@ body {
   opacity: 0.7;
 }
 
-/* TOMBOL INSTAGRAM */
 .btn-ig {
   display: inline-flex;
   align-items: center;
@@ -187,7 +185,7 @@ body {
   margin-top: 10px;
 }
 
-/* SECTION OMBAK / WAVE */
+/* TRANSISI OMBAK */
 .wave-top {
   width: 100%;
   height: 60px;
@@ -198,7 +196,6 @@ body {
   height: 60px;
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,60 C400,10 900,90 1200,0 L1200,0 L0,0 Z" fill="%238f7464"/></svg>') bottom center/100% 100% no-repeat;
 }
-
 .wave-section {
   background: #8f7464;
   color: #ffffff;
@@ -207,7 +204,6 @@ body {
   position: relative;
 }
 
-/* KARTU ACARA */
 .event-card {
   background: #ffffff;
   color: var(--text-main);
@@ -229,7 +225,6 @@ body {
   margin-top: 12px;
 }
 
-/* GALERI */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -245,7 +240,7 @@ body {
   box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
-/* KARTU E-WALLET / ATM ELEGAN (PERSIS SEPERTI DI MENIT 01:26) */
+/* KARTU ATM DANA */
 .bank-card {
   background: linear-gradient(135deg, #ffffff 0%, #f7f1eb 100%);
   border: 1px solid var(--border-card);
@@ -285,7 +280,7 @@ body {
   margin-top: -38px;
 }
 
-/* BUKU TAMU / FORM KEHADIRAN & UCAPAN (PERSIS DI MENIT 01:11 - 01:25) */
+/* BUKU TAMU */
 .form-box {
   background: #ffffff;
   border-radius: 20px;
@@ -345,7 +340,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
-/* INDIKATOR TOMBOL "Auto Scroll Active" (PERSIS SEPERTI DI BAGIAN BAWAH VIDEO) */
 .auto-scroll-pill {
   position: fixed;
   bottom: 24px;
@@ -398,9 +392,9 @@ body {
 <body>
 
 <audio id="audioTrack" loop src="musik.mp3"></audio>
-
 <button class="music-floating-btn hidden" id="musicBtn" onclick="toggleMusic()">♫</button>
 
+<!-- COVER -->
 <section id="coverPage">
   <div class="cover-card">
     <p class="serif" style="font-size: 12px; letter-spacing: 4px; color: #ebdcd0; text-transform: uppercase;">The Wedding of</p>
@@ -415,14 +409,15 @@ body {
   </div>
 </section>
 
+<!-- TOMBOL KAPSUL AUTO SCROLL -->
 <button class="auto-scroll-pill hidden" id="autoScrollBadge" onclick="toggleAutoScroll()">
   Auto Scroll Active
 </button>
 
 <main id="mainPage" class="hidden">
 
+  <!-- AYAT AR-RUM -->
   <section class="content-box">
-    
     <div class="circle-frame-wrap">
       <img src="foto1.jpg" alt="Puji & Sukma" class="circle-img">
       <div class="floral-corsage"></div>
@@ -467,6 +462,7 @@ body {
       Atas Rahmat Tuhan Yang Maha Esa, kami bermaksud mengundang Anda di acara Kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu pada:
     </p>
 
+    <!-- MEMPELAI PRIA -->
     <div style="margin-top: 30px;">
       <div class="circle-frame-wrap">
         <img src="foto2.jpg" alt="Puji" class="circle-img">
@@ -480,6 +476,7 @@ body {
 
     <div class="script" style="font-size: 42px; color: var(--boho-tan); margin: 20px 0;">&</div>
 
+    <!-- MEMPELAI WANITA -->
     <div>
       <div class="circle-frame-wrap">
         <img src="foto3.jpg" alt="Sukma" class="circle-img">
@@ -490,9 +487,9 @@ body {
       <p style="font-size: 13px; color: var(--text-muted);">Beralamat di Rembang</p>
       <a href="https://instagram.com/" target="_blank" class="btn-ig">📷 Instagram</a>
     </div>
-
   </section>
 
+  <!-- ACARA OMBAK -->
   <div class="wave-top"></div>
   <section class="wave-section">
     <h2 class="script" style="font-size: 52px; color: #ffffff; margin-bottom: 20px;">Save The Date Acara</h2>
@@ -515,6 +512,7 @@ body {
   </section>
   <div class="wave-bottom"></div>
 
+  <!-- GALERI -->
   <section class="content-box">
     <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--boho-tan); text-transform: uppercase;">Momen Indah Kita Berdua</p>
     <h2 class="script" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 14px;">Our Gallery</h2>
@@ -527,6 +525,7 @@ body {
     </div>
   </section>
 
+  <!-- FORM UCAPAN -->
   <section class="content-box">
     <h2 class="script" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 10px;">Kehadiran</h2>
 
@@ -556,6 +555,7 @@ body {
     <div class="wishes-list" id="wishesContainer"></div>
   </section>
 
+  <!-- DANA -->
   <section class="content-box">
     <p class="serif" style="font-size: 12px; letter-spacing: 3px; color: var(--boho-tan); text-transform: uppercase;">Titipan Kasih</p>
     <h2 class="script" style="font-size: 48px; color: var(--boho-brown); margin-bottom: 20px;">Amplop Digital</h2>
@@ -569,6 +569,7 @@ body {
     </div>
   </section>
 
+  <!-- PENUTUP -->
   <div class="wave-top"></div>
   <section class="wave-section" style="padding-bottom: 80px;">
     <div class="circle-frame-wrap">
@@ -582,7 +583,6 @@ body {
 </main>
 
 <script>
-// DETEKSI NAMA TAMU DARI ?to= ATAU ?kpd=
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('kpd') || urlParams.get('to');
 if (namaTamu) {
@@ -590,7 +590,6 @@ if (namaTamu) {
   document.getElementById('inputNama').value = namaTamu;
 }
 
-// BUKA UNDANGAN & AUTO SCROLL
 const audio = document.getElementById("audioTrack");
 const musicBtn = document.getElementById("musicBtn");
 const autoScrollBadge = document.getElementById("autoScrollBadge");
@@ -620,7 +619,6 @@ function openInvitation() {
   }).catch(() => {});
 }
 
-// SISTEM AUTO-SCROLL KECEPATAN 10 (SESUAI VIDEO)
 function startAutoScroll() {
   if (isAutoScrolling) return;
   isAutoScrolling = true;
@@ -650,7 +648,6 @@ function toggleAutoScroll() {
   }
 }
 
-// JIKA LAYAR DISENTUH, BERHENTI SEMENTARA
 window.addEventListener("touchstart", () => {
   if (isAutoScrolling) stopAutoScroll();
 }, { passive: true });
@@ -665,7 +662,6 @@ function toggleMusic() {
   }
 }
 
-// COUNTDOWN KE 06 OKTOBER 2026
 const targetDate = new Date("October 6, 2026 06:00:00").getTime();
 setInterval(() => {
   const dist = targetDate - Date.now();
@@ -682,7 +678,6 @@ function salinDana() {
   });
 }
 
-// BUKU TAMU PERSIS SEPERTI DI MENIT 01:15 - 01:25
 let dataKomentar = JSON.parse(localStorage.getItem('boho_wishes')) || [
   { nama: "Bapak Budi", tgl: "2026-09-22 14:10:20", pesan: "Selamat untuk Mas Puji & Mbak Sukma, semoga samawa selamanya!" },
   { nama: "Desak Putu", tgl: "2026-09-21 10:05:12", pesan: "Selamat menempuh hidup baru yaa! Lancar acaranya." }
