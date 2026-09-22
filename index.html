@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f7f3ee">
+<meta name="theme-color" content="#fcf9f5">
 <title>The Wedding of Puji & Sukma</title>
 
-<!-- PREVIEW RESMI WHATSAPP -->
+<!-- PREVIEW WHATSAPP -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Wedding of Puji & Sukma">
 <meta property="og:description" content="Selasa, 06 Oktober 2026 — Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di hari bahagia kami.">
 <meta property="og:image" content="https://gsatriyo33-glitch.github.io/web-saya/foto1.jpg">
 <meta property="og:url" content="https://gsatriyo33-glitch.github.io/web-saya/">
 
-<!-- GOOGLE FONTS AESTHETIC ROMANCE -->
+<!-- GOOGLE FONTS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,400&family=Sacramento&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -43,7 +43,7 @@ body {
 .garamond { font-family: 'Cormorant Garamond', serif; }
 .script { font-family: 'Sacramento', cursive; }
 
-/* COVER SECTION (AESTHETIC ROMANCE) */
+/* COVER SECTION */
 #coverPage {
   position: fixed;
   inset: 0;
@@ -85,7 +85,6 @@ body {
   padding: 16px 20px;
   margin: 24px 0 28px;
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .guest-to {
@@ -102,7 +101,7 @@ body {
   font-weight: 600;
 }
 
-.btn-open {
+.btn-primary {
   background: linear-gradient(135deg, #d8b888, #9e794f);
   color: #ffffff;
   font-weight: 600;
@@ -116,9 +115,9 @@ body {
   box-shadow: 0 10px 25px rgba(140, 106, 78, 0.4);
   transition: transform 0.2s;
 }
-.btn-open:active { transform: scale(0.96); }
+.btn-primary:active { transform: scale(0.96); }
 
-/* KONTEN SECTIONS */
+/* SECTIONS */
 .section {
   padding: 70px 20px;
   text-align: center;
@@ -145,7 +144,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* ARCH FRAME ALA INDOINVITE */
 .arch-frame {
   width: 190px;
   height: 250px;
@@ -164,7 +162,6 @@ body {
   border-radius: 115px 115px 12px 12px;
 }
 
-/* CARDS */
 .card-aesthetic {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
@@ -190,7 +187,6 @@ body {
 .timer-cell b { font-size: 24px; display: block; color: var(--primary-color); font-family: 'Playfair Display', serif; }
 .timer-cell span { font-size: 9px; letter-spacing: 1px; color: var(--text-muted); }
 
-/* GALERI */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -205,15 +201,88 @@ body {
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
 }
 
-.form-input {
+/* FORM INPUT BUKU TAMU */
+.form-input, .form-select {
   width: 100%;
   background: #fff;
   border: 1px solid #d8ccc0;
-  border-radius: 12px;
-  padding: 13px;
-  margin: 8px 0;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 7px 0;
   outline: none;
   font-size: 14px;
+  font-family: inherit;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+.form-input:focus, .form-select:focus {
+  border-color: var(--primary-color);
+}
+
+/* DAFTAR UCAPAN / BUKU TAMU CARD */
+.wishes-wrapper {
+  margin-top: 25px;
+  text-align: left;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.wishes-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+.wishes-wrapper::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 10px;
+}
+
+.wish-item {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  animation: fadeIn 0.4s ease;
+}
+
+.wish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.wish-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--primary-color);
+}
+
+.wish-badge {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.badge-hadir { background: #e8f5e9; color: #2e7d32; }
+.badge-tidak { background: #f5f5f5; color: #757575; }
+
+.wish-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #4a3e35;
+  word-break: break-word;
+}
+
+.wish-time {
+  font-size: 10px;
+  color: #a4978e;
+  margin-top: 6px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* FLOATING CONTROLS */
@@ -243,7 +312,7 @@ body {
 .spin { animation: spin 5s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* BOTTOM NAVBAR ALA INDOINVITE */
+/* BOTTOM NAVBAR */
 .bottom-bar {
   position: fixed;
   bottom: 20px;
@@ -280,13 +349,13 @@ body {
 
 <audio id="audioTrack" loop src="musik.mp3"></audio>
 
-<!-- KONTROL ATAS (MUSIK & AUTO-SCROLL) -->
+<!-- KONTROL ATAS -->
 <div class="top-action-bar hidden" id="topActionBar">
   <button class="action-circle" id="scrollBtn" onclick="toggleAutoScroll()" title="Auto Scroll">⏬</button>
   <button class="action-circle" id="musicBtn" onclick="toggleMusic()" title="Musik">♫</button>
 </div>
 
-<!-- COVER PEMBUKA AESTHETIC ROMANCE -->
+<!-- COVER PEMBUKA -->
 <section id="coverPage">
   <div class="cover-container">
     <p class="cover-badge">WEDDING INVITATION</p>
@@ -298,14 +367,14 @@ body {
       <h3 class="serif guest-name-text" id="guestName">Nama Tamu</h3>
     </div>
 
-    <button class="btn-open" onclick="openInvitation()">✉ Buka Undangan</button>
+    <button class="btn-primary" onclick="openInvitation()">✉ Buka Undangan</button>
   </div>
 </section>
 
-<!-- KONTEN UTAMA SETELAH DIBUKA -->
+<!-- KONTEN UTAMA -->
 <main id="mainPage" style="padding-bottom: 95px;">
 
-  <!-- SECTION 1: QUOTE / AYAT -->
+  <!-- SECTION 1: AYAT -->
   <section class="section" id="beranda">
     <div class="wrap">
       <span class="tag-label">AR-RUM : 21</span>
@@ -348,7 +417,6 @@ body {
       <span class="tag-label">SAVE THE DATE</span>
       <h2 class="serif section-head">Rangkaian Acara</h2>
 
-      <!-- COUNTDOWN TIMER -->
       <div class="timer-grid">
         <div class="timer-cell"><b id="days">0</b><span>HARI</span></div>
         <div class="timer-cell"><b id="hours">0</b><span>JAM</span></div>
@@ -360,7 +428,6 @@ body {
         📅 Simpan ke Google Calendar
       </a>
 
-      <!-- AKAD & RESEPSI -->
       <div class="card-aesthetic">
         <h3 class="serif" style="color: var(--primary-color); font-size: 19px;">AKAD NIKAH</h3>
         <p style="font-weight: 600; margin: 10px 0 4px;">Selasa, 06 Oktober 2026</p>
@@ -378,7 +445,7 @@ body {
         <p style="font-size: 14px; line-height: 1.6; margin: 10px 0 16px;">
           Ds. Sumber, Kec. Sumber<br>Kabupaten Rembang, Jawa Tengah
         </p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Ds.+Sumber+Kecamatan+Sumber+Kabupaten+Rembang" target="_blank" class="btn-open" style="display:inline-block; text-decoration:none; padding:11px 26px; font-size:12px;">
+        <a href="https://www.google.com/maps/search/?api=1&query=Ds.+Sumber+Kecamatan+Sumber+Kabupaten+Rembang" target="_blank" class="btn-primary" style="display:inline-block; text-decoration:none; padding:11px 26px; font-size:12px;">
           📍 Petunjuk Google Maps
         </a>
       </div>
@@ -400,7 +467,7 @@ body {
     </div>
   </section>
 
-  <!-- SECTION 5: AMPLOP & RSVP -->
+  <!-- SECTION 5: AMPLOP & BUKU TAMU ON-SITE -->
   <section class="section" id="ucapan">
     <div class="wrap">
       <span class="tag-label">WEDDING GIFT</span>
@@ -415,23 +482,43 @@ body {
         </button>
       </div>
 
+      <!-- FORM BUKU TAMU LANGSUNG DI WEB -->
       <div style="margin-top: 45px;">
         <span class="tag-label">WISHES &amp; RSVP</span>
         <h2 class="serif section-head">Doa &amp; Kehadiran</h2>
 
-        <input class="form-input" id="namaTamuInput" placeholder="Nama Anda">
-        <textarea class="form-input" id="pesanInput" rows="3" placeholder="Tuliskan ucapan serta doa restu..."></textarea>
+        <form id="wishesForm" onsubmit="tambahUcapan(event)">
+          <input class="form-input" id="inputNama" placeholder="Nama Anda" required>
+          
+          <select class="form-select" id="inputKehadiran" required>
+            <option value="Hadir">✓ Konfirmasi: Hadir</option>
+            <option value="Berhalangan">✗ Konfirmasi: Berhalangan Hadir</option>
+          </select>
 
-        <button class="btn-open" style="width: 100%; margin-top: 10px;" onclick="kirimRSVP()">
-          Kirim via WhatsApp
-        </button>
+          <textarea class="form-input" id="inputPesan" rows="3" placeholder="Tuliskan ucapan serta doa restu..." required></textarea>
+
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">
+            Kirim Ucapan
+          </button>
+        </form>
+
+        <!-- KOTAK TAMPILAN DAFTAR UCAPAN TAMU -->
+        <div style="margin-top: 30px; text-align: left;">
+          <p style="font-size: 13px; font-weight: 600; color: var(--primary-color); margin-bottom: 10px;">
+            💬 Doa &amp; Ucapan (<span id="totalUcapan">0</span>)
+          </p>
+          <div class="wishes-wrapper" id="wishesList">
+            <!-- Daftar komentar muncul di sini secara otomatis -->
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- BOTTOM NAVIGATION BAR ALA INDOINVITE -->
+<!-- BOTTOM NAVBAR -->
 <nav class="bottom-bar hidden" id="bottomBar">
   <a href="#beranda" class="bottom-btn"><span>🏠</span>Beranda</a>
   <a href="#mempelai" class="bottom-btn"><span>💍</span>Mempelai</a>
@@ -441,12 +528,12 @@ body {
 </nav>
 
 <script>
-// DETEKSI OTOMATIS DARI ?kpd= MAUPUN ?to=
+// DETEKSI NAMA TAMU OTOMATIS
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('kpd') || urlParams.get('to');
 if (namaTamu) {
   document.getElementById('guestName').textContent = namaTamu;
-  document.getElementById('namaTamuInput').value = namaTamu;
+  document.getElementById('inputNama').value = namaTamu;
 }
 
 // BUKA UNDANGAN & AUTO SCROLL
@@ -470,7 +557,6 @@ function openInvitation() {
     bottomBar.classList.remove("hidden");
     window.scrollTo(0, 0);
 
-    // Mulai auto-scroll otomatis
     setTimeout(startAutoScroll, 1200);
   }, 800);
 
@@ -479,7 +565,7 @@ function openInvitation() {
   }).catch(() => {});
 }
 
-// AUTO SCROLL KECEPATAN 10 (SESUAI REQUEST)
+// AUTO SCROLL KECEPATAN 10
 function startAutoScroll() {
   if (isAutoScrolling) return;
   isAutoScrolling = true;
@@ -509,7 +595,6 @@ function toggleAutoScroll() {
   }
 }
 
-// HENTIKAN JIKA LAYAR DISENTUH
 window.addEventListener("touchstart", () => {
   if (isAutoScrolling) stopAutoScroll();
 }, { passive: true });
@@ -524,7 +609,7 @@ function toggleMusic() {
   }
 }
 
-// COUNTDOWN KE 06 OKTOBER 2026
+// COUNTDOWN
 const targetDate = new Date("October 6, 2026 06:00:00").getTime();
 setInterval(() => {
   const distance = targetDate - Date.now();
@@ -541,13 +626,71 @@ function salinDana() {
   });
 }
 
-function kirimRSVP() {
-  const nama = document.getElementById("namaTamuInput").value.trim() || "Tamu Undangan";
-  const pesan = document.getElementById("pesanInput").value.trim() || "Selamat menempuh hidup baru Puji & Sukma!";
-  const noWA = "6285879637293";
-  const textWA = `Halo Puji & Sukma,\n\nSaya *${nama}* mengonfirmasi kehadiran pada acara pernikahan Selasa, 06 Oktober 2026.\n\nDoa restu:\n"${pesan}"`;
-  window.open(`https://wa.me/${noWA}?text=${encodeURIComponent(textWA)}`, "_blank");
+// SISTEM BUKU TAMU / DAFTAR UCAPAN LANGSUNG DI WEB
+let daftarUcapan = JSON.parse(localStorage.getItem('wishes_puji_sukma')) || [
+  {
+    nama: "Keluarga Besar Bpk. Ahmad",
+    kehadiran: "Hadir",
+    pesan: "Selamat menempuh hidup baru untuk Mas Puji & Mbak Sukma. Semoga senantiasa sakinah, mawaddah, warahmah.",
+    waktu: "Baru saja"
+  },
+  {
+    nama: "Budi Santoso",
+    kehadiran: "Hadir",
+    pesan: "Barakallahu lakum wa baraka alaikum. Selamat ya Puji, lancar sampai hari H!",
+    waktu: "1 jam yang lalu"
+  }
+];
+
+function renderUcapan() {
+  const container = document.getElementById("wishesList");
+  const total = document.getElementById("totalUcapan");
+  container.innerHTML = "";
+  total.textContent = daftarUcapan.length;
+
+  daftarUcapan.forEach(item => {
+    const badgeClass = item.kehadiran === "Hadir" ? "badge-hadir" : "badge-tidak";
+    const badgeIcon = item.kehadiran === "Hadir" ? "✓" : "✗";
+
+    const div = document.createElement("div");
+    div.className = "wish-item";
+    div.innerHTML = `
+      <div class="wish-header">
+        <span class="wish-name">${item.nama}</span>
+        <span class="wish-badge ${badgeClass}">${badgeIcon} ${item.kehadiran}</span>
+      </div>
+      <p class="wish-text">${item.pesan}</p>
+      <p class="wish-time">${item.waktu}</p>
+    `;
+    container.appendChild(div);
+  });
 }
+
+function tambahUcapan(e) {
+  e.preventDefault();
+  const nama = document.getElementById("inputNama").value.trim();
+  const kehadiran = document.getElementById("inputKehadiran").value;
+  const pesan = document.getElementById("inputPesan").value.trim();
+
+  if (!nama || !pesan) return;
+
+  const dataBaru = {
+    nama: nama,
+    kehadiran: kehadiran,
+    pesan: pesan,
+    waktu: "Baru saja"
+  };
+
+  daftarUcapan.unshift(dataBaru);
+  localStorage.setItem('wishes_puji_sukma', JSON.stringify(daftarUcapan));
+  renderUcapan();
+
+  document.getElementById("inputPesan").value = "";
+  alert("Terima kasih! Doa dan ucapan Anda berhasil dikirim.");
+}
+
+// Tampilkan ucapan awal saat halaman dimuat
+renderUcapan();
 </script>
 
 </body>
