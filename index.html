@@ -1,26 +1,22 @@
 <!DOCTYPE html>
-<html class="no-js" lang="id">
+<html lang="id">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Wedding of Puji & Sukma</title>
 
 <meta property="og:type" content="article" />
 <meta property="og:title" content="The Wedding of Puji & Sukma"/>
+<meta property="og:description" content="Selasa, 06 Oktober 2026 — Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Hadir di Hari Bahagia Kami."/>
 <meta property="og:image" content="https://gsatriyo33-glitch.github.io/web-saya/foto1.jpg"/>
 <meta property="og:url" content="https://gsatriyo33-glitch.github.io/web-saya/"/>
-<meta property="og:description" content="Selasa, 06 Oktober 2026 — Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Hadir di Hari Bahagia Kami."/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&family=Assistant:wght@300;400;500;600&family=Amiri&family=Golos+Text&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Assistant:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://indoinvite.com/nikah/css/bootstrap.css">
-<link rel="stylesheet" href="https://indoinvite.com/nikah/css/style.css?v=1.0.1">
-<link rel="stylesheet" href="https://indoinvite.com/splide/css/splide.min.css">
 <link rel="stylesheet" href="https://indoinvite.com/css/aos.css">
-<link rel="stylesheet" href="https://indoinvite.com/css/tailwind.min.css">
 
 <style>
 :root {
@@ -30,10 +26,13 @@
     --p-color: #212529;
 }
 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     color: var(--p-color);
-    background-color: #f2f2f2;
+    background-color: #1a1a1a;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     font-family: "Assistant", sans-serif;
@@ -48,106 +47,96 @@ h3, button { font-family: "Montserrat", sans-serif; }
     margin: auto;
     max-width: 440px;
     position: relative;
-    background: #fff;
-    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    min-height: 100vh;
 }
 
-/* COVER SECTION */
+/* ================= COVER SCREEN (PAS DI LAYAR, TIDAK KEPOTONG) ================= */
 .awal {
     position: fixed;
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    left: 0;
+    inset: 0;
     z-index: 10000000;
     display: flex;
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #12100e;
+    overflow-y: auto;
 }
 
 .awal-overlay {
-    background-color: var(--color-primary);
-    background-image: url("foto1.jpg");
-    background-position: top center;
-    background-size: cover;
-    display: flex;
-    position: relative;
     width: 100%;
-    justify-content: center;
-}
-
-.awal-content {
-    background-image: linear-gradient(180deg, #00000026 0%, #00000094 100%);
-    backdrop-filter: blur(4px);
-    position: relative;
     max-width: 440px;
-    width: 100%;
-    min-height: 100vh;
-    padding: 30px 20px;
+    min-height: 100svh;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.88) 100%), url("foto1.jpg") center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px 24px;
     text-align: center;
+    color: #fff;
 }
 
-.wrapper-element h2 {
-    color: var(--h-color);
+.top-title-wrap h2 {
+    color: #f3f3f3;
     font-size: 11px;
     font-weight: 400;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+}
+.top-title-wrap h1 {
+    color: #ffffff;
+    font-size: 34px;
+    margin-top: 4px;
 }
 
-#aca-fun-h1-id1 {
-    font-size: 32px;
-    color: var(--h-color);
-    margin: 6px 0 12px;
-}
-
-.masking-wrapper {
+/* BINGKAI KUBAH LENGKUNG (ANTI GAGAL & FOTO UTUH PENUH) */
+.arch-frame-cover {
+    width: min(220px, 58vw);
+    height: min(300px, 42vh);
+    margin: 10px auto;
+    border-radius: 120px 120px 16px 16px;
+    padding: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     position: relative;
-    width: 100%;
-    text-align: center;
-    margin: 5px auto;
 }
 
-.masking-sampul-awal {
-    width: 245px;
-    height: 383px;
+.arch-frame-cover img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    -webkit-mask-size: contain;
-    -webkit-mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask: url(https://indoinvite.com/nikah/template/aesthetic-romance/masking-1.webp);
-    -webkit-mask-image: url(https://indoinvite.com/nikah/template/aesthetic-romance/masking-1.webp);
-    display: inline-block;
+    border-radius: 114px 114px 12px 12px;
+    display: block;
 }
 
-.frame-sampul-awal {
-    width: 250px;
-    height: 400px;
-    object-fit: cover;
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
+.guest-info-wrap {
+    width: 100%;
+    margin-top: 5px;
 }
-
-.kepada-wrapper .guest {
-    color: var(--h-color);
-    font-size: 24px;
+.guest-info-wrap p {
+    color: #ddd;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.guest-info-wrap .guest-name {
+    color: #ffffff;
+    font-size: 23px;
     font-weight: 700;
-    margin: 6px 0 10px;
+    margin: 4px 0 14px;
 }
 
 .btn-aesthetic-romance {
     font-size: 11px;
     line-height: 1.2rem;
-    padding: 10px 24px;
+    padding: 11px 26px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
     color: #FFFFFF !important;
     background-color: #000000;
     border: 0.5px solid #FFFFFF;
@@ -157,58 +146,41 @@ h3, button { font-family: "Montserrat", sans-serif; }
     align-items: center;
     justify-content: center;
     text-decoration: none !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
 }
+.btn-aesthetic-romance:active { transform: scale(0.96); }
 
-/* PARALLAX & SLIDER 1 */
-.parallax1 {
+/* ================= SECTION UTAMA SETELAH DIBUKA ================= */
+.hero-box {
     position: relative;
-    height: 100vh;
     width: 100%;
-    overflow: hidden;
-}
-
-.fixed-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-}
-
-.box-1 {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-}
-
-.box-1-content {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(180deg, #000000D9 0%, #00000094 100%);
+    height: 90vh;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.9) 100%), url('foto1.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    z-index: 2;
+    color: #fff;
     text-align: center;
+    padding: 20px;
 }
 
-.box-1-image img {
+.hero-box .circle-avatar {
     width: 165px;
     height: 165px;
-    object-fit: cover;
     border-radius: 50%;
+    object-fit: cover;
     border: 3px solid #fff;
-    margin: 15px auto;
+    margin: 18px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
-/* SECTION 2 (MEMPELAI) */
+/* SECTION MEMPELAI */
 .box-2 {
     position: relative;
-    background-color: var(--color-primary);
-    padding: 40px 15px 60px;
+    background-color: #FFFFFF;
+    padding: 50px 20px;
     text-align: center;
 }
 
@@ -226,9 +198,10 @@ h3, button { font-family: "Montserrat", sans-serif; }
 
 .foto-wrapper {
     width: 100%;
-    height: 250px;
+    height: 270px;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 .foto-wrapper img {
     width: 100%;
@@ -248,21 +221,21 @@ h3, button { font-family: "Montserrat", sans-serif; }
 .nama-panggilan-box h2 {
     color: #FFFFFF;
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .sparator {
-    font-size: 32px;
+    font-size: 34px;
     color: var(--color-secondary);
     margin: 25px 0;
 }
 
-/* SECTION 3 (MENGHITUNG HARI & COUNTDOWN) */
+/* SECTION COUNTDOWN */
 .box-3 {
     position: relative;
     background: #181513;
     color: #FFFFFF;
-    padding: 60px 20px 40px;
+    padding: 60px 20px 45px;
     text-align: center;
 }
 
@@ -270,31 +243,30 @@ h3, button { font-family: "Montserrat", sans-serif; }
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
-    margin: 25px auto 18px;
-    max-width: 320px;
+    margin: 24px auto 20px;
+    max-width: 330px;
 }
 .count-box {
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    padding: 10px 4px;
+    padding: 12px 4px;
 }
 .count-box b { font-size: 24px; display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; }
-.count-box span { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; }
+.count-box span { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #ddd; }
 
-/* SECTION 4 (ACARA PARALLAX CARDS) */
+/* SECTION ACARA */
 .box-4 {
-    position: relative;
-    background-color: var(--color-primary);
-    padding: 40px 15px 30px;
+    background-color: #FFFFFF;
+    padding: 45px 18px 30px;
 }
 
 .parallax-card {
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
     margin-bottom: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -309,13 +281,12 @@ h3, button { font-family: "Montserrat", sans-serif; }
 .card-content {
     position: relative;
     z-index: 2;
-    padding: 24px 20px;
+    padding: 26px 20px;
 }
 
-/* SECTION TIMELINE SUSUNAN ACARA */
 .timeline-article {
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     border-left: 2px dashed #4E4E4E;
     margin-left: 20px;
     padding-left: 18px;
@@ -324,37 +295,38 @@ h3, button { font-family: "Montserrat", sans-serif; }
 .timeline-dot {
     position: absolute;
     left: -7px;
-    top: 0;
+    top: 2px;
     width: 12px;
     height: 12px;
     background: #000;
     border-radius: 50%;
 }
 
-/* SECTION 5 (OUR STORY & GALERI) */
+/* SECTION GALERI */
 .story-aesthetic {
-    background: linear-gradient(180deg, #FFFFFF 30%, #1f1b18 100%);
-    padding: 50px 15px 30px;
+    background: linear-gradient(180deg, #FFFFFF 30%, #1a1715 100%);
+    padding: 50px 18px 35px;
     text-align: center;
 }
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 18px;
 }
 .gallery-grid img {
     width: 100%;
-    height: 190px;
+    height: 195px;
     object-fit: cover;
     border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* SECTION 6 (TITIP HADIAH & RSVP KEHADIRAN) */
+/* SECTION TITIP HADIAH & RSVP */
 .box-6 {
     background-color: var(--color-secondary);
     color: var(--h-color);
-    padding: 40px 20px;
+    padding: 45px 20px;
     text-align: center;
 }
 
@@ -362,10 +334,10 @@ h3, button { font-family: "Montserrat", sans-serif; }
     background: #FFFFFF;
     color: #212529;
     border-radius: 12px;
-    padding: 20px;
+    padding: 22px;
     margin: 18px 0;
     text-align: left;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .input-field-custom {
@@ -375,7 +347,7 @@ h3, button { font-family: "Montserrat", sans-serif; }
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 12px 14px;
-    font-size: 13px;
+    font-size: 13.5px;
     margin-bottom: 10px;
     outline: none;
 }
@@ -399,9 +371,7 @@ h3, button { font-family: "Montserrat", sans-serif; }
 .box-akhir-content {
     position: relative;
     min-height: 80vh;
-    background-image: url('foto1.jpg');
-    background-size: cover;
-    background-position: center;
+    background: url('foto1.jpg') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -413,10 +383,10 @@ h3, button { font-family: "Montserrat", sans-serif; }
 .overlay-akhir {
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.95) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.95) 100%);
 }
 
-/* BOTTOM NAVIGATION MENU (IKON LENGKAP RESMI INDOINVITE) */
+/* ================= BOTTOM NAVBAR DENGAN INLINE SVG ================= */
 .fix-menu {
     position: fixed;
     bottom: 0;
@@ -442,16 +412,13 @@ h3, button { font-family: "Montserrat", sans-serif; }
     flex-direction: column;
     align-items: center;
     padding: 4px;
-}
-.nav-item img {
-    width: 22px;
-    height: 22px;
+    color: #444;
 }
 
 .notif_scroll {
     position: absolute;
     top: -34px;
-    right: 52px;
+    right: 48px;
     background: #4970ea;
     color: #ffffff;
     font-size: 10px;
@@ -469,76 +436,45 @@ h3, button { font-family: "Montserrat", sans-serif; }
 
     <audio id="playAudio" loop src="musik.mp3"></audio>
 
-    <div id="kucing_imut" style="display: table; height: 100vh; background-color: #fffffffa; position: fixed; z-index: 99999999; width: 100vw; max-width: 440px;">
-        <div style="display: table-cell; vertical-align: middle; text-align: center;">
-            <p style="font-family: 'Italiana', serif; font-size: 26px; font-weight: 700; color: #333; letter-spacing: 2px;">THE WEDDING</p>
-            <p style="font-size: 12px; color: #777; margin-top: 6px;">Menyiapkan undangan Anda...</p>
-        </div>
-    </div>
-
     <section class="awal" id="coverScreen">
         <div class="awal-overlay">
-            <section class="awal-content">
-                <div class="wrapper-element">
-                    <h2>Happy Wedding</h2>
-                    <h1 id="aca-fun-h1-id1">Puji & Sukma</h1>
-                </div>
+            
+            <div class="top-title-wrap">
+                <h2>Happy Wedding</h2>
+                <h1>Puji & Sukma</h1>
+            </div>
 
-                <div class="masking-wrapper">
-                    <img src="foto1.jpg" class="masking-sampul-awal" alt="Puji & Sukma">
-                    <img src="https://indoinvite.com/nikah/template/aesthetic-romance/frame-1.webp" class="frame-sampul-awal" alt="Frame">
-                </div>
+            <div class="arch-frame-cover">
+                <img src="foto1.jpg" alt="Puji & Sukma">
+            </div>
 
-                <div class="kepada-wrapper">
-                    <div class="wrapper-element">
-                        <h2>Kepada</h2>
-                        <h2 class="guest" id="kpd">Nama Tamu</h2>
-                        <h2 style="font-size: 11px; text-transform: capitalize; opacity: 0.85; margin-bottom: 16px;">
-                            Tanpa Mengurangi Rasa Hormat, Kami Mengundang Bapak/Ibu/Saudara/i untuk Hadir di Acara Kami.
-                        </h2>
-                    </div>
+            <div class="guest-info-wrap">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h2 class="guest-name" id="kpd">Nama Tamu</h2>
 
-                    <a class="btn btn-aesthetic-romance" role="button" onclick="bukaUndangan()">
-                        <span style="display: flex; align-items:center;">
-                            <svg style="width: 1.6em; height:auto; margin-right:8px; fill:#fff;" viewBox="0 0 70 55">
-                                <path d="M1.497 13.701A936554.388 936554.388 0 0 1 68.303 2.736l-.78-2.583a8171.854 8171.854 0 0 1-40.169 23.224 6380.323 6380.323 0 0 1-11.657 6.675l1.283.033C10.964 25.129 5.134 19.123 2.422 11.669 1.807 9.977-.45 11.494.105 13.02c2.864 7.872 9.046 14.219 15.399 19.45.356.293.907.248 1.284.033A7151.742 7151.742 0 0 0 56.998 9.35a9498 9498 0 0 0 11.616-6.746c1.263-.734.771-2.837-.778-2.582l-51.96 8.529L1.03 10.988c-1.593.261-1.262 2.997.467 2.713"></path>
-                            </svg>
-                            <span>Buka Sampul</span>
-                        </span>
-                    </a>
-                </div>
-            </section>
+                <button class="btn btn-aesthetic-romance" onclick="bukaUndangan()">
+                    <svg style="width: 16px; height:16px; margin-right:8px; fill:#fff;" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    Buka Sampul
+                </button>
+            </div>
+
         </div>
     </section>
 
-    <main id="mainPage" style="display: none; padding-bottom: 60px;">
+    <main id="mainPage" style="display: none; padding-bottom: 65px;">
 
-        <div class="parallax1" id="page">
-            <div class="fixed-content">
-                <section class="box-1">
-                    <div id="splide" class="splide" style="position: absolute; inset: 0;">
-                        <div class="splide__track" style="height: 100%;">
-                            <ul class="splide__list">
-                                <li class="splide__slide" style="background: url('foto1.jpg') center/cover; height: 100vh;"></li>
-                                <li class="splide__slide" style="background: url('foto2.jpg') center/cover; height: 100vh;"></li>
-                                <li class="splide__slide" style="background: url('foto3.jpg') center/cover; height: 100vh;"></li>
-                            </ul>
-                        </div>
-                    </div>
+        <section class="hero-box" id="page">
+            <h2 style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #ddd;">The Wedding of</h2>
+            <h1 style="font-size: 40px; margin: 4px 0;">Puji & Sukma</h1>
+            
+            <img src="foto1.jpg" class="circle-avatar" alt="Puji & Sukma">
 
-                    <div class="box-1-content">
-                        <h2 style="color: #ddd; font-size: 12px; letter-spacing: 3px; text-transform: uppercase;">The Wedding of</h2>
-                        <h1 style="color: #fff; font-size: 40px; margin: 4px 0 10px;">Puji & Sukma</h1>
-                        <div class="box-1-image">
-                            <img src="foto1.jpg" alt="Puji & Sukma">
-                        </div>
-                        <p style="color: #fff; font-size: 13px; font-weight: 500;">Selasa, 06 Oktober 2026</p>
-                    </div>
-                </section>
-            </div>
-        </div>
+            <p style="font-size: 14px; font-weight: 500;">Selasa, 06 Oktober 2026</p>
+        </section>
 
-        <div class="box-2" id="mempelaiSec">
+        <section class="box-2" id="mempelaiSec">
             <div class="shape">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 10" preserveAspectRatio="none">
                     <path class="shape-fill" d="M360 0L350 9.9 340 0 0 0 0 10 700 10 700 0"></path>
@@ -549,7 +485,7 @@ h3, button { font-family: "Montserrat", sans-serif; }
                 السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
             </p>
 
-            <p style="font-size: 13px; line-height: 1.8; color: #555; margin-bottom: 30px;" data-aos="zoom-in">
+            <p style="font-size: 13.5px; line-height: 1.8; color: #555; margin-bottom: 30px;" data-aos="zoom-in">
                 Atas Rahmat Tuhan Yang Maha Esa, kami bermaksud mengundang Anda di acara Kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga, apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu pada:
             </p>
 
@@ -560,11 +496,10 @@ h3, button { font-family: "Montserrat", sans-serif; }
                 <div class="nama-panggilan-box">
                     <h2>Puji</h2>
                 </div>
-                <div style="text-align: left; padding: 8px 15px 0;">
+                <div style="text-align: left; padding: 10px 15px 0;">
                     <h3 style="font-size: 20px; font-weight: 700; color: #171717;">Puji</h3>
                     <p style="font-size: 13px; color: #555; margin: 4px 0;">Putra dari Pasangan Bpk. ... & Ibu ...</p>
                     <p style="font-size: 12px; color: #777;">Beralamat di Ds. Sumber, Rembang</p>
-                    <a href="https://instagram.com/" target="_blank" style="display:inline-block; margin-top:6px; font-size:11px; color:#4E4E4E; text-decoration:none; font-weight:600;">📷 Instagram</a>
                 </div>
             </div>
 
@@ -577,16 +512,15 @@ h3, button { font-family: "Montserrat", sans-serif; }
                 <div class="nama-panggilan-box" style="text-align: right; margin-right: 15px; margin-left: 0;">
                     <h2>Sukma</h2>
                 </div>
-                <div style="text-align: right; padding: 8px 15px 0;">
+                <div style="text-align: right; padding: 10px 15px 0;">
                     <h3 style="font-size: 20px; font-weight: 700; color: #171717;">Sukma</h3>
                     <p style="font-size: 13px; color: #555; margin: 4px 0;">Putri dari Pasangan Bpk. ... & Ibu ...</p>
                     <p style="font-size: 12px; color: #777;">Beralamat di Ds. Sumber, Rembang</p>
-                    <a href="https://instagram.com/" target="_blank" style="display:inline-block; margin-top:6px; font-size:11px; color:#4E4E4E; text-decoration:none; font-weight:600;">📷 Instagram</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="box-3">
+        <section class="box-3">
             <h1 style="font-size: 28px; font-weight: 700; margin-bottom: 16px;" data-aos="fade-up">Menghitung Hari</h1>
 
             <p style="font-family: 'Amiri', serif; font-size: 19px; line-height: 2.2; direction: rtl; margin-bottom: 12px;" data-aos="fade-up">
@@ -609,9 +543,9 @@ h3, button { font-family: "Montserrat", sans-serif; }
             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Puji+%26+Sukma&dates=20261006T060000/20261006T150000&details=Pernikahan+Puji+dan+Sukma+di+Rembang&location=Ds.+Sumber,+Kecamatan+Sumber,+Kabupaten+Rembang" target="_blank" class="btn-aesthetic-romance" style="background:#fff; color:#000 !important; border:none; margin-top:10px;" data-aos="fade-up">
                 Save To Calendar
             </a>
-        </div>
+        </section>
 
-        <div class="box-4" id="acaraSec">
+        <section class="box-4" id="acaraSec">
             <h1 style="font-size: 30px; font-weight: bold; text-align: center; margin-bottom: 25px;" data-aos="fade-up">Save The Date Acara</h1>
 
             <div class="parallax-card" style="background-image: url('foto2.jpg');" data-aos="fade-up">
@@ -620,10 +554,10 @@ h3, button { font-family: "Montserrat", sans-serif; }
                     <h2 style="font-size: 26px; font-weight: 600;">Resepsi Pernikahan</h2>
                     <div style="margin: 15px 0;">
                         <h3 style="font-size: 18px; font-weight: 700;">Selasa, 06 Oktober 2026</h3>
-                        <p style="font-size: 13px; opacity: 0.9;">Pukul 08.00 WIB — Selesai</p>
+                        <p style="font-size: 13.5px; opacity: 0.9;">Pukul 08.00 WIB — Selesai</p>
                         <p style="font-size: 12px; margin-top: 4px; opacity: 0.85;">Ds. Sumber, Kec. Sumber, Kab. Rembang</p>
                     </div>
-                    <a href="http://googleusercontent.com/maps.google.com/4" target="_blank" class="btn-aesthetic-romance" style="background:#fff; color:#000 !important; border:none; font-size:10px;">
+                    <a href="http://googleusercontent.com/maps.google.com/6" target="_blank" class="btn-aesthetic-romance" style="background:#fff; color:#000 !important; border:none; font-size:10px;">
                         📍 Maps Lokasi Acara
                     </a>
                 </div>
@@ -635,10 +569,10 @@ h3, button { font-family: "Montserrat", sans-serif; }
                     <h2 style="font-size: 26px; font-weight: 600;">Akad Pernikahan</h2>
                     <div style="margin: 15px 0;">
                         <h3 style="font-size: 18px; font-weight: 700;">Selasa, 06 Oktober 2026</h3>
-                        <p style="font-size: 13px; opacity: 0.9;">Pukul 06.00 WIB — Selesai</p>
+                        <p style="font-size: 13.5px; opacity: 0.9;">Pukul 06.00 WIB — Selesai</p>
                         <p style="font-size: 12px; margin-top: 4px; opacity: 0.85;">Ds. Sumber, Kec. Sumber, Kab. Rembang</p>
                     </div>
-                    <a href="http://googleusercontent.com/maps.google.com/4" target="_blank" class="btn-aesthetic-romance" style="background:#fff; color:#000 !important; border:none; font-size:10px;">
+                    <a href="http://googleusercontent.com/maps.google.com/6" target="_blank" class="btn-aesthetic-romance" style="background:#fff; color:#000 !important; border:none; font-size:10px;">
                         📍 Maps Lokasi Acara
                     </a>
                 </div>
@@ -668,36 +602,21 @@ h3, button { font-family: "Montserrat", sans-serif; }
                     <p style="font-size: 13px; margin-top: 4px;">Hiburan, jamuan santap siang, dan foto bersama.</p>
                 </div>
             </div>
+        </section>
 
-            <div style="margin-top: 30px;" data-aos="zoom-in">
-                <iframe src="http://googleusercontent.com/maps.google.com/5" width="100%" height="280" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+        <section class="story-aesthetic" id="galeriSec">
+            <h1 style="font-size: 32px; font-weight: 700; color: #fff;" data-aos="fade-up">Our Gallery</h1>
+            <p style="font-size: 12px; color: #bbb; margin-bottom: 20px;" data-aos="fade-up">Momen Indah Kita Berdua</p>
+
+            <div class="gallery-grid" data-aos="fade-up">
+                <img src="foto1.jpg" alt="Galeri 1">
+                <img src="foto2.jpg" alt="Galeri 2">
+                <img src="foto3.jpg" alt="Galeri 3">
+                <img src="foto4.jpg" alt="Galeri 4">
             </div>
-        </div>
+        </section>
 
-        <div class="story-aesthetic" id="galeriSec">
-            <h1 style="font-size: 32px; font-weight: 700;" data-aos="fade-up">Our Story</h1>
-            <p style="font-size: 12px; color: #666; margin-bottom: 25px;" data-aos="fade-up">Momen indah kita berdua</p>
-
-            <div style="background:#fff; border-radius:12px; overflow:hidden; margin-bottom:20px; text-align:left;" data-aos="fade-up">
-                <img src="foto1.jpg" style="width:100%; height:220px; object-fit:cover;" alt="Story 1">
-                <div style="padding: 16px;">
-                    <h3 style="font-size: 17px; font-weight:700;">Awal Perjumpaan</h3>
-                    <p style="font-size: 12.5px; color:#555; margin-top:4px;">Pertemuan sederhana yang membawa cerita penuh makna dan keyakinan untuk melangkah bersama.</p>
-                </div>
-            </div>
-
-            <div style="margin-top: 40px;">
-                <h2 style="font-size: 32px; color:#fff;" data-aos="fade-up">Our Gallery</h2>
-                <div class="gallery-grid" data-aos="fade-up">
-                    <img src="foto1.jpg" alt="Galeri 1">
-                    <img src="foto2.jpg" alt="Galeri 2">
-                    <img src="foto3.jpg" alt="Galeri 3">
-                    <img src="foto4.jpg" alt="Galeri 4">
-                </div>
-            </div>
-        </div>
-
-        <div class="box-6" id="ucapanSec">
+        <section class="box-6" id="ucapanSec">
             <h1 style="font-size: 30px; margin-bottom: 12px;" data-aos="fade-up">Titip Hadiah</h1>
             <p style="font-size: 12.5px; line-height: 1.7; opacity: 0.85; margin-bottom: 20px;" data-aos="fade-up">
                 Doa restu Bapak/Ibu sekalian merupakan karunia yang sangat berarti bagi kami. Dan jika memberi merupakan ungkapan tanda kasih, Bapak/Ibu dapat memberi kado secara cashless:
@@ -735,59 +654,55 @@ h3, button { font-family: "Montserrat", sans-serif; }
 
                 <div class="wishes-list-box" id="boxUcapan"></div>
             </div>
-        </div>
+        </section>
 
-        <div class="content akhir">
-            <div class="box-akhir-content">
-                <div class="overlay-akhir"></div>
-                <div style="position: relative; z-index: 10;">
-                    <h1 style="font-size: 42px; margin-bottom: 6px;">Puji & Sukma</h1>
-                    <p style="font-size: 14px; opacity: 0.85;">Terimakasih</p>
-                    <p style="font-size: 11px; opacity: 0.6; margin-top: 15px;">The Wedding Celebration · 2026</p>
-                </div>
+        <section class="box-akhir-content">
+            <div class="overlay-akhir"></div>
+            <div style="position: relative; z-index: 10;">
+                <h1 style="font-size: 42px; margin-bottom: 6px;">Puji & Sukma</h1>
+                <p style="font-size: 14px; opacity: 0.85;">Terimakasih</p>
+                <p style="font-size: 11px; opacity: 0.6; margin-top: 15px;">The Wedding Celebration · 2026</p>
             </div>
-        </div>
+        </section>
 
     </main>
 
-    <div class="fix-menu" id="menu_id" style="display: none;">
-        <button class="nav-item" onclick="keBagian('page')">
-            <img src="https://indoinvite.com/nikah/home.svg" alt="Home">
+    <nav class="fix-menu" id="menu_id" style="display: none;">
+        <button class="nav-item" onclick="keBagian('page')" title="Home">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
         </button>
 
-        <button class="nav-item" onclick="keBagian('mempelaiSec')">
-            <img src="https://indoinvite.com/nikah/people.svg" alt="Mempelai">
+        <button class="nav-item" onclick="keBagian('mempelaiSec')" title="Mempelai">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
         </button>
 
-        <button class="nav-item" onclick="keBagian('acaraSec')">
-            <img src="https://indoinvite.com/nikah/map.svg" alt="Acara">
+        <button class="nav-item" onclick="keBagian('acaraSec')" title="Acara">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
         </button>
 
-        <button class="nav-item" onclick="keBagian('galeriSec')">
-            <img src="https://indoinvite.com/nikah/picture.svg" alt="Galeri">
+        <button class="nav-item" onclick="keBagian('galeriSec')" title="Galeri">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
         </button>
 
         <div style="position: relative;">
             <div class="notif_scroll" id="scrollTag">Auto Scroll Active</div>
-            <button class="nav-item" id="auto_scroll_btn" onclick="toggleAutoScroll()" style="background-color: #4970ea; border-radius: 4px; padding: 4px 6px;">
-                <img src="https://indoinvite.com/nikah/down.png" alt="Auto Scroll">
+            <button class="nav-item" id="auto_scroll_btn" onclick="toggleAutoScroll()" style="background-color: #4970ea; border-radius: 4px; padding: 4px 6px; color: #fff;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
             </button>
         </div>
 
-        <button class="nav-item" id="volume_btn" onclick="toggleAudio()" style="background-color: #4970ea; border-radius: 4px; padding: 4px 6px;">
-            <img src="https://indoinvite.com/nikah/sound.svg" alt="Volume">
+        <button class="nav-item" id="volume_btn" onclick="toggleAudio()" style="background-color: #4970ea; border-radius: 4px; padding: 4px 6px; color: #fff;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
         </button>
-    </div>
+    </nav>
 
 </div>
 
 <script src="https://indoinvite.com/nikah/js/jquery.min.js"></script>
-<script src="https://indoinvite.com/splide/js/splide.min.js"></script>
-<script src="https://indoinvite.com/js/anime.min.js"></script>
 <script src="https://indoinvite.com/js/aos.js"></script>
 
 <script>
-// DETEKSI NAMA TAMU OTOMATIS (?kpd= ATAU ?to=)
+// AMBIL NAMA TAMU DARI URL (?kpd= / ?to=)
 const urlParams = new URLSearchParams(window.location.search);
 const namaTamu = urlParams.get('kpd') || urlParams.get('to');
 if (namaTamu) {
@@ -795,54 +710,30 @@ if (namaTamu) {
     document.getElementById('inputNama').value = namaTamu;
 }
 
-// TUTUP LOADING SCREEN SETELAH 1 DETIK
-setTimeout(() => {
-    anime({
-        targets: '#kucing_imut',
-        opacity: 0,
-        duration: 600,
-        complete: () => { document.getElementById('kucing_imut').style.display = 'none'; }
-    });
-}, 900);
-
-// BUKA UNDANGAN
 const audio = document.getElementById("playAudio");
 let isAutoScrolling = false;
 let scrollInterval = null;
 
 function bukaUndangan() {
-    anime({
-        targets: '#coverScreen',
-        translateY: 400,
-        opacity: 0,
-        duration: 600,
-        easing: 'easeInOutSine',
-        complete: () => {
-            document.getElementById('coverScreen').style.display = 'none';
-            document.getElementById('mainPage').style.display = 'block';
-            document.getElementById('menu_id').style.display = 'flex';
-            window.scrollTo(0, 0);
+    const cover = document.getElementById('coverScreen');
+    cover.style.transition = 'transform 0.7s ease, opacity 0.7s ease';
+    cover.style.transform = 'translateY(-100%)';
+    cover.style.opacity = '0';
 
-            // Inisialisasi AOS & Splide
-            AOS.init({ duration: 1000 });
-            new Splide('#splide', {
-                type: 'fade',
-                rewind: true,
-                autoplay: true,
-                interval: 3500,
-                arrows: false,
-                pagination: false
-            }).mount();
+    setTimeout(() => {
+        cover.style.display = 'none';
+        document.getElementById('mainPage').style.display = 'block';
+        document.getElementById('menu_id').style.display = 'flex';
+        window.scrollTo(0, 0);
 
-            // Jalankan Auto Scroll Kecepatan 10
-            setTimeout(startAutoScroll, 1200);
-        }
-    });
+        AOS.init({ duration: 900 });
+        setTimeout(startAutoScroll, 1200);
+    }, 650);
 
     audio.play().catch(() => {});
 }
 
-// SISTEM AUTO-SCROLL KECEPATAN 10
+// AUTO SCROLL KECEPATAN 10
 function startAutoScroll() {
     if (isAutoScrolling) return;
     isAutoScrolling = true;
@@ -860,7 +751,7 @@ function startAutoScroll() {
 function stopAutoScroll() {
     isAutoScrolling = false;
     clearInterval(scrollInterval);
-    $('#auto_scroll_btn').css('background-color', 'transparent');
+    $('#auto_scroll_btn').css('background-color', '#6b7280');
     $('#scrollTag').hide();
 }
 
@@ -879,7 +770,7 @@ function toggleAudio() {
         $('#volume_btn').css('background-color', '#4970ea');
     } else {
         audio.pause();
-        $('#volume_btn').css('background-color', 'transparent');
+        $('#volume_btn').css('background-color', '#6b7280');
     }
 }
 
@@ -904,10 +795,10 @@ function salinDana() {
     });
 }
 
-// BUKU TAMU LOKAL REALTIME
-let daftarUcapan = JSON.parse(localStorage.getItem('wishes_199_puji_sukma')) || [
-    { nama: "Bapak Budi", kehadiran: "Hadir", pesan: "Selamat menempuh hidup baru Puji & Sukma, semoga langgeng dan samawa!" },
-    { nama: "Keluarga Besar Bpk. Joko", kehadiran: "Hadir", pesan: "Nderek mangayubagya, mugi dados kaluwarga ingkang sakinah mawaddah warahmah." }
+// BUKU TAMU
+let daftarUcapan = JSON.parse(localStorage.getItem('wishes_fix_199')) || [
+    { nama: "Bapak Budi", kehadiran: "Hadir", pesan: "Selamat menempuh hidup baru Mas Puji & Mbak Sukma, semoga langgeng dan samawa selalu!" },
+    { nama: "Keluarga Besar Bpk. Joko", kehadiran: "Hadir", pesan: "Nderek mangayubagya, mugi berkah lan tentrem salaminya." }
 ];
 
 function tampilkanUcapan() {
@@ -931,7 +822,7 @@ function kirimKomentar(e) {
     const pesan = document.getElementById("inputPesan").value.trim();
 
     daftarUcapan.unshift({ nama, kehadiran, pesan });
-    localStorage.setItem('wishes_199_puji_sukma', JSON.stringify(daftarUcapan));
+    localStorage.setItem('wishes_fix_199', JSON.stringify(daftarUcapan));
     tampilkanUcapan();
 
     document.getElementById("inputPesan").value = "";
