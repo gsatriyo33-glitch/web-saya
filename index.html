@@ -1,127 +1,77 @@
 <!DOCTYPE html>
-<html lang="id" data-bs-theme="light">
+<html lang="id">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>The Wedding of Puji & Sukma</title>
+  <title>The Wedding of Puji & Sukma — Luxury Romance</title>
 
+  <!-- META PREVIEW WHATSAPP -->
   <meta property="og:type" content="article" />
   <meta property="og:title" content="The Wedding of Puji & Sukma"/>
-  <meta property="og:description" content="Selasa, 06 Oktober 2026 — Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk Hadir di Hari Bahagia Kami."/>
+  <meta property="og:description" content="A celebration of love, laughter & forever — Selasa, 06 Oktober 2026."/>
   <meta property="og:image" content="foto1.jpg"/>
 
+  <!-- CDN LIBRARIES -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
+  <!-- GOOGLE FONTS (EDITORIAL LUXURY SERIF) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Josefin+Sans:wght@300;400;600;700&family=Noto+Naskh+Arabic&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
 
   <style>
-    /* ================= GABUNGAN CSS ASLI DEWANAKL (animation, common, guest) ================= */
     :root {
-      --bs-primary: #9b5a6c;
-      --bs-primary-rgb: 155, 90, 108;
-      --theme-bg: #faf7f2;
+      --burgundy: #641C2A;
+      --burgundy-dark: #45101a;
+      --ivory: #F8F5EF;
+      --ivory-card: #FFFFFF;
+      --charcoal: #171717;
+      --charcoal-soft: #242424;
+      --gold: #C8A96B;
+      --gold-light: #e5cb96;
+      --font-serif: 'Cinzel', serif;
+      --font-editorial: 'Cormorant Garamond', serif;
+      --font-sans: 'Montserrat', sans-serif;
     }
 
-    * { box-sizing: border-box; }
-    
-    html {
-      scroll-behavior: smooth !important;
-      scrollbar-width: none !important;
-      -ms-overflow-style: none !important;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Josefin Sans', sans-serif !important;
-      padding: 0 !important;
-      width: 100% !important;
-      overflow-x: hidden !important;
-      background-color: var(--theme-bg);
-      color: #2c2523;
+      font-family: var(--font-sans);
+      background-color: var(--ivory);
+      color: var(--charcoal);
+      overflow-x: hidden;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
-    /* TYPOGRAPHY */
-    .font-esthetic {
-      font-family: 'Sacramento', cursive !important;
+    /* TYPOGRAPHY HELPERS */
+    .title-serif {
+      font-family: var(--font-serif);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .title-editorial {
+      font-family: var(--font-editorial);
+      font-weight: 500;
     }
 
-    .font-arabic {
-      font-family: 'Noto Naskh Arabic', serif !important;
-    }
-
-    /* MOUSE SCROLL ANIMATION */
-    @keyframes scroll {
-      0% { transform: translateY(1rem); opacity: 0; }
-      10% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(0); opacity: 0; }
-    }
-
-    .mouse-animation {
-      height: 2rem;
-      width: 1.2rem;
-      border: 2px solid rgba(255, 255, 255, 0.7);
-      border-radius: 1rem;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      padding-top: 4px;
-    }
-
-    .mouse-animation > .scroll-animation {
-      width: 0.25rem;
-      height: 0.5rem;
-      background-color: #fff;
-      border-radius: 50%;
-      animation: scroll 2.5s linear infinite;
-    }
-
-    /* SPINNING DISC ANIMATION */
-    @keyframes spin-icon {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .spin-button {
-      animation: spin-icon 5s linear infinite;
-    }
-
-    /* LOVE ANIMATION */
-    @keyframes love {
-      50% { transform: translateY(0.8rem); }
-    }
-
-    .animate-love {
-      animation: love 4s ease-in-out infinite;
-    }
-
-    /* IMAGE CENTER CROP ASLI */
-    .img-center-crop {
-      width: 13rem;
-      height: 13rem;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #ffffff;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    /* COVER SCREEN */
+    /* COVER SCREEN (CINEMATIC BURGUNDY OVERLAY) */
     #coverScreen {
       position: fixed;
       inset: 0;
       z-index: 999999;
-      background: linear-gradient(180deg, rgba(20, 16, 17, 0.45) 0%, rgba(20, 16, 17, 0.85) 100%), url('foto1.jpg') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(100, 28, 42, 0.4) 0%, rgba(23, 23, 23, 0.88) 100%), url('foto1.jpg') center/cover no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: #ffffff;
-      padding: 24px;
-      transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+      color: var(--ivory);
+      padding: 30px 24px;
+      transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.9s ease;
     }
 
     .cover-card {
@@ -129,190 +79,395 @@
       width: 100%;
     }
 
-    .cover-avatar {
-      width: 165px;
-      height: 165px;
-      margin: 15px auto 20px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    .cover-card .sub-tag {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .cover-card h1 {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--ivory);
+      margin: 10px 0;
+      line-height: 1.15;
+    }
+
+    .cover-card .tagline {
+      font-family: var(--font-editorial);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(248, 245, 239, 0.85);
+      margin-bottom: 24px;
     }
 
     .guest-tag {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 16px;
-      padding: 14px 18px;
-      margin: 15px 0 24px;
+      background: rgba(23, 23, 23, 0.45);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 20px 0 28px;
       backdrop-filter: blur(6px);
     }
-
-    .btn-open {
-      background: var(--bs-primary);
-      color: #fff;
-      font-weight: 600;
-      border: none;
-      border-radius: 50px;
-      padding: 12px 34px;
-      font-size: 13.5px;
-      letter-spacing: 1.5px;
+    .guest-tag p {
+      font-size: 10px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(155, 90, 108, 0.45);
-      transition: all 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      color: var(--gold-light);
+      margin-bottom: 4px;
     }
-    .btn-open:hover { transform: translateY(-2px); color: #fff; opacity: 0.95; }
-
-    /* CONTENT SECTIONS */
-    .section-wrap {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 70px 20px;
-      text-align: center;
+    .guest-tag h3 {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--ivory);
+      margin-bottom: 0;
+      letter-spacing: 1px;
     }
 
-    .sub-title {
-      font-size: 12px;
+    .btn-luxury {
+      background: var(--burgundy);
+      color: var(--ivory);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 13px 36px;
+      font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--bs-primary);
-      font-weight: 700;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(100, 28, 42, 0.5);
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-luxury:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+      border-color: var(--gold);
+    }
+
+    /* MAIN CONTAINER */
+    .mob-container {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--ivory);
+      position: relative;
+      box-shadow: 0 0 40px rgba(0,0,0,0.15);
+    }
+
+    .section-wrap {
+      padding: 75px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .editorial-label {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .editorial-title {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--burgundy);
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+    }
+
+    /* HERO OPENED SECTION */
+    .hero-opened {
+      position: relative;
+      height: 85vh;
+      background: linear-gradient(180deg, rgba(23, 23, 23, 0.2) 0%, rgba(100, 28, 42, 0.85) 100%), url('foto1.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px 24px;
+      color: var(--ivory);
+      text-align: left;
+    }
+    .hero-opened h2 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      letter-spacing: 2px;
       margin-bottom: 6px;
+    }
+    .hero-opened p {
+      font-family: var(--font-editorial);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    /* COUPLE EDITORIAL SECTION */
+    .couple-portrait {
+      position: relative;
+      margin: 25px 0 35px;
+      border: 1px solid var(--gold);
+      padding: 8px;
+      background: #fff;
+    }
+    .couple-portrait img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
       display: block;
     }
 
-    .main-title {
-      font-size: 3.6rem;
-      color: var(--bs-primary);
-      margin-bottom: 20px;
-      line-height: 1.1;
+    .couple-desc {
+      padding: 10px 0;
+      text-align: center;
+    }
+    .couple-name {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--burgundy);
+      letter-spacing: 3px;
+      margin: 8px 0;
+    }
+    .couple-parent {
+      font-size: 13px;
+      color: #666;
     }
 
-    /* COUNTDOWN */
+    .ampersand {
+      font-family: var(--font-editorial);
+      font-size: 3.5rem;
+      color: var(--gold);
+      font-style: italic;
+      margin: 10px 0;
+      line-height: 1;
+    }
+
+    /* WEDDING DETAILS & COUNTDOWN */
+    .details-section {
+      background: var(--charcoal);
+      color: var(--ivory);
+    }
+    .details-section .editorial-title {
+      color: var(--gold);
+    }
+    .details-section .editorial-label {
+      color: var(--gold-light);
+    }
+
+    .card-ivory {
+      background: var(--ivory-card);
+      color: var(--charcoal);
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      padding: 30px 22px;
+      margin: 20px 0;
+      text-align: left;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .card-ivory .event-tag {
+      font-family: var(--font-serif);
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--burgundy);
+      font-weight: 700;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .card-ivory h3 {
+      font-family: var(--font-editorial);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+
+    /* COUNTDOWN BAR */
     .count-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      margin: 25px 0;
+      gap: 8px;
+      margin: 30px 0 20px;
     }
-
     .count-cell {
-      background: #ffffff;
-      border: 1px solid rgba(155, 90, 108, 0.2);
-      border-radius: 14px;
+      border: 1px solid rgba(200, 169, 107, 0.4);
+      background: rgba(255,255,255,0.04);
       padding: 14px 4px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
     }
-    .count-cell b { font-size: 24px; display: block; color: var(--bs-primary); line-height: 1; margin-bottom: 4px; }
-    .count-cell span { font-size: 10px; letter-spacing: 1px; color: #777; font-weight: 600; }
-
-    /* CARDS */
-    .card-custom {
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 26px 20px;
-      margin: 18px 0;
-      border: 1px solid rgba(155, 90, 108, 0.15);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-      text-align: left;
+    .count-cell b {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .count-cell span {
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #aaa;
     }
 
-    /* STORY TIMELINE */
+    /* OUR STORY TIMELINE */
     .story-card {
       position: relative;
-      padding-left: 26px;
-      margin-bottom: 25px;
-      border-left: 2px dashed var(--bs-primary);
+      padding-left: 28px;
+      margin-bottom: 30px;
+      border-left: 1.5px solid var(--gold);
       text-align: left;
     }
     .story-dot {
       position: absolute;
-      left: -8px;
+      left: -6px;
       top: 2px;
-      width: 14px;
-      height: 14px;
+      width: 11px;
+      height: 11px;
+      background: var(--burgundy);
+      border: 2px solid var(--gold);
       border-radius: 50%;
-      background: var(--bs-primary);
-      border: 3px solid #fff;
+    }
+    .story-step {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      font-weight: 700;
+    }
+    .story-card h4 {
+      font-family: var(--font-editorial);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin: 3px 0 6px;
     }
 
-    /* GALLERY */
-    .gallery-grid {
+    /* GALLERY EDITORIAL MAGAZINE STYLE */
+    .gallery-editorial {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(12, 1fr);
       gap: 12px;
+      margin-top: 20px;
     }
-    .gallery-grid img {
+    .g-col-12 { grid-column: span 12; }
+    .g-col-6 { grid-column: span 6; }
+    .g-col-7 { grid-column: span 7; }
+    .g-col-5 { grid-column: span 5; }
+
+    .magazine-photo {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--gold);
+      background: #fff;
+      padding: 4px;
+    }
+    .magazine-photo img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .magazine-photo:hover img { transform: scale(1.03); }
+
+    /* WEDDING GIFTS */
+    .gift-box {
+      border: 1px solid var(--gold);
+      background: #fff;
+      padding: 28px 20px;
+      margin-top: 20px;
+      text-align: left;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    }
+    .gift-box .badge-dana {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #118eea;
+    }
+    .gift-box h4 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      margin: 8px 0;
     }
 
-    /* FORM & WISHES */
-    .input-box {
+    /* RSVP & GUESTBOOK */
+    .input-editorial {
       width: 100%;
-      background: #ffffff;
-      border: 1px solid #dcd4cc;
-      border-radius: 12px;
-      padding: 13px 15px;
-      font-size: 14px;
+      background: #fff;
+      border: 1px solid #d5cbbf;
+      border-radius: 2px;
+      padding: 12px 14px;
+      font-size: 13.5px;
       margin-bottom: 12px;
       outline: none;
+      color: var(--charcoal);
       font-family: inherit;
     }
+    .input-editorial:focus { border-color: var(--burgundy); }
 
-    .wish-item {
-      background: #ffffff;
-      border-radius: 14px;
+    .wish-card {
+      background: #fff;
+      border-left: 3px solid var(--burgundy);
+      border-bottom: 1px solid #eae5de;
       padding: 14px 16px;
       margin-bottom: 10px;
-      border-left: 4px solid var(--bs-primary);
       text-align: left;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
     }
 
-    /* FLOATING CONTROLLERS (AUDIO & AUTO-SCROLL) */
+    /* FLOATING CONTROLLERS */
     .floating-audio-btn {
       position: fixed;
       bottom: 24px;
       right: 20px;
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
-      background: var(--bs-primary);
-      color: #fff;
+      background: var(--burgundy);
+      color: var(--gold);
+      border: 1px solid var(--gold);
       display: none;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
       z-index: 99999;
-      box-shadow: 0 6px 18px rgba(155, 90, 108, 0.45);
-      border: none;
+      box-shadow: 0 6px 20px rgba(100, 28, 42, 0.4);
     }
+    .rotating { animation: spinDisc 5s linear infinite; }
+    @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     .floating-scroll-btn {
       position: fixed;
       bottom: 24px;
       left: 20px;
-      background: #252220;
-      color: #fff;
+      background: var(--charcoal);
+      color: var(--ivory);
+      border: 1px solid var(--gold);
       border-radius: 50px;
-      padding: 9px 18px;
-      font-size: 12px;
+      padding: 8px 16px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       font-weight: 600;
       border: none;
       display: none;
       align-items: center;
       gap: 6px;
       z-index: 99999;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
       cursor: pointer;
     }
   </style>
@@ -322,75 +477,91 @@
 
   <audio id="audioTrack" loop src="musik.mp3"></audio>
 
+  <!-- COVER SCREEN (CINEMATIC LUXURY ROMANCE) -->
   <section id="coverScreen">
     <div class="cover-card">
-      <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #eee;">THE WEDDING OF</span>
-      <h1 class="font-esthetic" style="font-size: 4.2rem; margin: 6px 0;">Puji & Sukma</h1>
-
-      <img src="foto1.jpg" alt="Puji & Sukma" class="cover-avatar">
+      <p class="sub-tag">The Wedding Celebration Of</p>
+      <h1>Puji &amp; Sukma</h1>
+      <p class="tagline">“A celebration of love, laughter &amp; forever”</p>
 
       <div class="guest-tag">
-        <p style="font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 4px; color: #eee;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-        <h3 id="guestName" style="font-size: 21px; font-weight: 700; margin-bottom: 0;">Nama Tamu</h3>
+        <p>Special Invitation For:</p>
+        <h3 id="guestName">Tamu Undangan</h3>
       </div>
 
-      <button class="btn-open" onclick="bukaUndangan()">
+      <button class="btn-luxury" onclick="bukaUndangan()">
         <i class="fa-regular fa-envelope-open"></i> Buka Undangan
       </button>
-
-      <div class="mt-4">
-        <div class="mouse-animation">
-          <div class="scroll-animation"></div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <main id="mainContent" style="display: none;">
+  <!-- KONTEN UTAMA SETELAH DIBUKA -->
+  <div class="mob-container" id="mainContent" style="display: none;">
 
-    <section class="section-wrap">
+    <!-- HERO EDITORIAL OPENED -->
+    <div class="hero-opened">
+      <p>Save The Date</p>
+      <h2>Puji &amp; Sukma</h2>
+      <p>Selasa, 06 Oktober 2026 — Rembang, Jawa Tengah</p>
+    </div>
+
+    <!-- AYAT AR-RUM -->
+    <section class="section-wrap" style="padding-bottom: 40px;">
       <div data-aos="fade-up">
-        <p class="font-arabic" style="font-size: 21px; line-height: 2.2; direction: rtl; color: #222; margin-bottom: 14px;">
-          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+        <p style="font-family: 'Amiri', serif; font-size: 20px; line-height: 2.3; direction: rtl; color: var(--burgundy); margin-bottom: 12px;">
+          وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
         </p>
-        <p style="font-size: 13.5px; line-height: 1.8; color: #666; font-style: italic; margin-bottom: 8px;">
-          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”
+        <p style="font-family: var(--font-editorial); font-size: 1.25rem; font-style: italic; color: #555; margin-bottom: 6px;">
+          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya...”
         </p>
-        <p style="font-weight: 700; font-size: 12px; color: var(--bs-primary);">- QS. AR-RUM: 21 -</p>
+        <span style="font-size: 11px; letter-spacing: 2px; color: var(--gold); font-weight: 700;">- AR-RUM: 21 -</span>
       </div>
     </section>
 
-    <section class="section-wrap" style="background: #ffffff; border-radius: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-      <span class="sub-title" data-aos="fade-up">GROOM & BRIDE</span>
-      <h2 class="main-title font-esthetic" data-aos="fade-up">Mempelai</h2>
+    <!-- COUPLE SECTION (EDITORIAL STYLE) -->
+    <section class="section-wrap" style="background: #ffffff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
+      <span class="editorial-label" data-aos="fade-up">The Groom &amp; The Bride</span>
+      <h2 class="editorial-title" data-aos="fade-up">Pasangan Mempelai</h2>
 
-      <div data-aos="fade-up" class="mb-4">
-        <img src="foto2.jpg" alt="Puji" class="img-center-crop mb-3">
-        <h3 style="font-size: 24px; font-weight: 700; color: #222;">Puji</h3>
-        <p style="font-size: 13px; color: #666; margin-top: 4px;">Putra Tercinta dari Bpk. ... & Ibu ...</p>
-        <p style="font-size: 12.5px; color: #888;">Ds. Sumber, Rembang</p>
-        <a href="https://instagram.com/" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill px-3 mt-1" style="font-size: 11px;">
-          <i class="fa-brands fa-instagram me-1"></i> Instagram
-        </a>
+      <!-- PUJI -->
+      <div data-aos="fade-up">
+        <div class="couple-portrait">
+          <img src="foto2.jpg" alt="Puji">
+        </div>
+        <div class="couple-desc">
+          <h3 class="couple-name">Puji</h3>
+          <p class="couple-parent">Putra Tercinta dari Bpk. ... &amp; Ibu ...</p>
+          <p style="font-size: 12px; color: #888;">Ds. Sumber, Rembang</p>
+          <a href="https://instagram.com/" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 600; letter-spacing: 1px;">
+            <i class="fa-brands fa-instagram me-1"></i> @puji
+          </a>
+        </div>
       </div>
 
-      <div class="font-esthetic animate-love" style="font-size: 3rem; color: var(--bs-primary); margin: 5px 0;">&</div>
+      <div class="ampersand" data-aos="zoom-in">&amp;</div>
 
-      <div data-aos="fade-up" class="mt-2">
-        <img src="foto3.jpg" alt="Sukma" class="img-center-crop mb-3">
-        <h3 style="font-size: 24px; font-weight: 700; color: #222;">Sukma</h3>
-        <p style="font-size: 13px; color: #666; margin-top: 4px;">Putri Tercinta dari Bpk. ... & Ibu ...</p>
-        <p style="font-size: 12.5px; color: #888;">Ds. Sumber, Rembang</p>
-        <a href="https://instagram.com/" target="_blank" class="btn btn-sm btn-outline-danger rounded-pill px-3 mt-1" style="font-size: 11px;">
-          <i class="fa-brands fa-instagram me-1"></i> Instagram
-        </a>
+      <!-- SUKMA -->
+      <div data-aos="fade-up">
+        <div class="couple-portrait">
+          <img src="foto3.jpg" alt="Sukma">
+        </div>
+        <div class="couple-desc">
+          <h3 class="couple-name">Sukma</h3>
+          <p class="couple-parent">Putri Tercinta dari Bpk. ... &amp; Ibu ...</p>
+          <p style="font-size: 12px; color: #888;">Ds. Sumber, Rembang</p>
+          <a href="https://instagram.com/" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 600; letter-spacing: 1px;">
+            <i class="fa-brands fa-instagram me-1"></i> @sukma
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="section-wrap">
-      <span class="sub-title" data-aos="fade-up">SAVE THE DATE</span>
-      <h2 class="main-title font-esthetic" data-aos="fade-up">Rangkaian Acara</h2>
+    <!-- WEDDING DETAILS & COUNTDOWN (CHARCOAL + GOLD BORDER) -->
+    <section class="section-wrap details-section">
+      <span class="editorial-label" data-aos="fade-up">Wedding Ceremony &amp; Reception</span>
+      <h2 class="editorial-title" data-aos="fade-up">Waktu &amp; Tempat</h2>
 
+      <!-- COUNTDOWN -->
       <div class="count-grid" data-aos="fade-up">
         <div class="count-cell"><b id="days">0</b><span>HARI</span></div>
         <div class="count-cell"><b id="hours">0</b><span>JAM</span></div>
@@ -398,122 +569,140 @@
         <div class="count-cell"><b id="seconds">0</b><span>DETIK</span></div>
       </div>
 
-      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Pernikahan+Puji+%26+Sukma&dates=20261006T060000/20261006T150000&details=Pernikahan+Puji+dan+Sukma+di+Rembang&location=Ds.+Sumber,+Kecamatan+Sumber,+Kabupaten+Rembang" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3 mb-4" data-aos="fade-up">
-        <i class="fa-regular fa-calendar-plus me-1"></i> Simpan ke Google Calendar
-      </a>
-
-      <div class="card-custom" data-aos="fade-up">
-        <h4 style="font-weight: 700; color: var(--bs-primary); margin-bottom: 10px;">Akad Nikah</h4>
-        <p style="font-size: 13.5px; margin: 4px 0;"><i class="fa-regular fa-calendar me-2 text-danger"></i> Selasa, 06 Oktober 2026</p>
-        <p style="font-size: 13.5px; margin: 4px 0;"><i class="fa-regular fa-clock me-2 text-danger"></i> Pukul 06.00 WIB — Selesai</p>
-        <p style="font-size: 13px; color: #777; margin: 4px 0;"><i class="fa-solid fa-location-dot me-2 text-danger"></i> Ds. Sumber, Kec. Sumber, Rembang</p>
+      <!-- CARD AKAD -->
+      <div class="card-ivory" data-aos="fade-up">
+        <span class="event-tag">Akad Nikah</span>
+        <h3>Ijab &amp; Kabul</h3>
+        <p style="margin-bottom: 4px;"><i class="fa-regular fa-calendar me-2" style="color: var(--gold);"></i> Selasa, 06 Oktober 2026</p>
+        <p style="margin-bottom: 4px;"><i class="fa-regular fa-clock me-2" style="color: var(--gold);"></i> 06.00 WIB — Selesai</p>
+        <p style="margin-bottom: 0; color: #666;"><i class="fa-solid fa-location-dot me-2" style="color: var(--gold);"></i> Ds. Sumber, Kec. Sumber, Rembang</p>
       </div>
 
-      <div class="card-custom" data-aos="fade-up">
-        <h4 style="font-weight: 700; color: var(--bs-primary); margin-bottom: 10px;">Resepsi Pernikahan</h4>
-        <p style="font-size: 13.5px; margin: 4px 0;"><i class="fa-regular fa-calendar me-2 text-danger"></i> Selasa, 06 Oktober 2026</p>
-        <p style="font-size: 13.5px; margin: 4px 0;"><i class="fa-regular fa-clock me-2 text-danger"></i> Pukul 08.00 WIB — Selesai</p>
-        <p style="font-size: 13px; color: #777; margin: 4px 0;"><i class="fa-solid fa-location-dot me-2 text-danger"></i> Ds. Sumber, Kec. Sumber, Rembang</p>
+      <!-- CARD RESEPSI -->
+      <div class="card-ivory" data-aos="fade-up">
+        <span class="event-tag">The Celebration</span>
+        <h3>Resepsi Pernikahan</h3>
+        <p style="margin-bottom: 4px;"><i class="fa-regular fa-calendar me-2" style="color: var(--gold);"></i> Selasa, 06 Oktober 2026</p>
+        <p style="margin-bottom: 4px;"><i class="fa-regular fa-clock me-2" style="color: var(--gold);"></i> 08.00 WIB — Selesai</p>
+        <p style="margin-bottom: 0; color: #666;"><i class="fa-solid fa-location-dot me-2" style="color: var(--gold);"></i> Ds. Sumber, Kec. Sumber, Rembang</p>
       </div>
 
-      <a href="http://googleusercontent.com/maps.google.com/9" target="_blank" class="btn-open mt-2" data-aos="fade-up">
-        <i class="fa-solid fa-map-location-dot"></i> Buka Google Maps
-      </a>
-    </section>
-
-    <section class="section-wrap" style="background: #ffffff; border-radius: 30px;">
-      <span class="sub-title" data-aos="fade-up">OUR JOURNEY</span>
-      <h2 class="main-title font-esthetic" data-aos="fade-up">Cerita Kita</h2>
-
-      <div style="margin-top: 25px;">
-        <div class="story-card" data-aos="fade-up">
-          <div class="story-dot"></div>
-          <h5 style="font-weight: 700; font-size: 16px;">Pertama Bertemu</h5>
-          <span style="font-size: 11px; color: var(--bs-primary); font-weight: 700;">Tahun 2021</span>
-          <p style="font-size: 13px; color: #666; margin-top: 4px;">Pertemuan sederhana yang membawa cerita hangat dan keyakinan untuk melangkah bersama.</p>
-        </div>
-
-        <div class="story-card" data-aos="fade-up">
-          <div class="story-dot"></div>
-          <h5 style="font-weight: 700; font-size: 16px;">Komitmen Suci</h5>
-          <span style="font-size: 11px; color: var(--bs-primary); font-weight: 700;">Tahun 2024</span>
-          <p style="font-size: 13px; color: #666; margin-top: 4px;">Dengan doa dan restu keluarga, kami memantapkan niat suci menuju gerbang pernikahan.</p>
-        </div>
-
-        <div class="story-card" data-aos="fade-up">
-          <div class="story-dot"></div>
-          <h5 style="font-weight: 700; font-size: 16px;">Hari Bahagia</h5>
-          <span style="font-size: 11px; color: var(--bs-primary); font-weight: 700;">06 Oktober 2026</span>
-          <p style="font-size: 13px; color: #666; margin-top: 4px;">Hari di mana janji suci diikrarkan disaksikan oleh keluarga dan sahabat terkasih.</p>
-        </div>
+      <div class="mt-4" data-aos="fade-up">
+        <a href="http://googleusercontent.com/maps.google.com/10" target="_blank" class="btn-luxury" style="background: transparent; border-color: var(--gold);">
+          <i class="fa-solid fa-map-pin"></i> Petunjuk Google Maps
+        </a>
       </div>
     </section>
 
+    <!-- OUR STORY (MINIMAL TIMELINE) -->
     <section class="section-wrap">
-      <span class="sub-title" data-aos="fade-up">OUR MOMENTS</span>
-      <h2 class="main-title font-esthetic" data-aos="fade-up">Galeri Foto</h2>
+      <span class="editorial-label" data-aos="fade-up">The Chapters of Us</span>
+      <h2 class="editorial-title" data-aos="fade-up">Our Story</h2>
 
-      <div class="gallery-grid" data-aos="fade-up">
-        <img src="foto1.jpg" alt="Foto 1">
-        <img src="foto2.jpg" alt="Foto 2">
-        <img src="foto3.jpg" alt="Foto 3">
-        <img src="foto4.jpg" alt="Foto 4">
+      <div style="margin-top: 30px;">
+        <div class="story-card" data-aos="fade-up">
+          <div class="story-dot"></div>
+          <span class="story-step">Chapter I — 2021</span>
+          <h4>First Meet</h4>
+          <p style="color: #666; font-size: 13px;">Sebuah perjumpaan sederhana yang membuka jalan bagi dua hati untuk saling mendengarkan dan mengenal lebih dalam.</p>
+        </div>
+
+        <div class="story-card" data-aos="fade-up">
+          <div class="story-dot"></div>
+          <span class="story-step">Chapter II — 2024</span>
+          <h4>Falling in Love &amp; Commitment</h4>
+          <p style="color: #666; font-size: 13px;">Melewati suka dan duka bersama hingga tiba keyakinan untuk menyatukan niat dalam ikatan suci pernikahan.</p>
+        </div>
+
+        <div class="story-card" data-aos="fade-up">
+          <div class="story-dot"></div>
+          <span class="story-step">Chapter III — 06 Oktober 2026</span>
+          <h4>Forever &amp; Always</h4>
+          <p style="color: #666; font-size: 13px;">Mengikat janji sehidup semati di hadapan Sang Pencipta, disaksikan oleh keluarga besar dan para sahabat terkasih.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section-wrap" style="background: #ffffff; border-radius: 30px;">
-      <span class="sub-title" data-aos="fade-up">WEDDING GIFT</span>
-      <h2 class="main-title font-esthetic" data-aos="fade-up">Tanda Kasih</h2>
+    <!-- GALLERY (EDITORIAL MAGAZINE LAYOUT) -->
+    <section class="section-wrap" style="background: #ffffff;">
+      <span class="editorial-label" data-aos="fade-up">Visual Diary</span>
+      <h2 class="editorial-title" data-aos="fade-up">Our Gallery</h2>
 
-      <p style="font-size: 13px; color: #666; margin-bottom: 20px;" data-aos="fade-up">
-        Doa restu Anda merupakan karunia terindah bagi kami. Namun jika ingin memberikan tanda kasih secara cashless:
+      <div class="gallery-editorial" data-aos="fade-up">
+        <!-- FOTO BESAR HERO MAGAZINE -->
+        <div class="magazine-photo g-col-12" style="height: 320px;">
+          <img src="foto1.jpg" alt="Editorial 1">
+        </div>
+        <!-- ASYMMETRIC FOTO 2 & 3 -->
+        <div class="magazine-photo g-col-7" style="height: 230px;">
+          <img src="foto2.jpg" alt="Editorial 2">
+        </div>
+        <div class="magazine-photo g-col-5" style="height: 230px;">
+          <img src="foto3.jpg" alt="Editorial 3">
+        </div>
+        <!-- FOTO DUDUK/PORTRAIT 4 -->
+        <div class="magazine-photo g-col-12" style="height: 260px;">
+          <img src="foto4.jpg" alt="Editorial 4">
+        </div>
+      </div>
+    </section>
+
+    <!-- WEDDING GIFTS / DANA -->
+    <section class="section-wrap">
+      <span class="editorial-label" data-aos="fade-up">Token of Love</span>
+      <h2 class="editorial-title" data-aos="fade-up">Wedding Gift</h2>
+      <p style="color: #666; font-size: 13px; max-width: 380px; margin: 0 auto 20px;" data-aos="fade-up">
+        Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih secara cashless:
       </p>
 
-      <div class="card-custom" data-aos="fade-up" style="border-left: 4px solid #118eea;">
-        <p style="font-weight: 800; font-size: 15px; color: #118eea; margin-bottom: 6px;">DANA</p>
-        <h4 style="font-weight: 800; letter-spacing: 1.5px; font-size: 24px; color: #222; margin-bottom: 4px;">085879637299</h4>
-        <p style="font-size: 13px; color: #777; margin-bottom: 14px;">a.n. Puji & Sukma</p>
-        <button class="btn btn-sm btn-outline-danger rounded-pill px-3" onclick="salinDana()">
-          <i class="fa-regular fa-copy me-1"></i> Salin Nomor DANA
+      <div class="gift-box" data-aos="fade-up">
+        <span class="badge-dana">DOMPET DIGITAL DANA</span>
+        <h4>085879637299</h4>
+        <p style="color: #777; font-size: 13px; margin-bottom: 14px;">a.n. Puji &amp; Sukma</p>
+        <button class="btn-luxury" onclick="salinDana()" style="padding: 9px 20px; font-size: 10px;">
+          <i class="fa-regular fa-copy me-1"></i> Salin Nomor
         </button>
       </div>
     </section>
 
-    <section class="section-wrap">
-      <span class="sub-title" data-aos="fade-up">WISHES & PRAYERS</span>
-      <h2 class="main-title font-esthetic" data-aos="fade-up">Buku Tamu</h2>
+    <!-- RSVP & BUKU TAMU -->
+    <section class="section-wrap" style="background: #ffffff; border-top: 1px solid #eee;">
+      <span class="editorial-label" data-aos="fade-up">Guest Book</span>
+      <h2 class="editorial-title" data-aos="fade-up">Wishes &amp; Prayers</h2>
 
       <form id="wishesForm" onsubmit="tambahUcapan(event)" style="text-align: left;" data-aos="fade-up">
-        <input class="input-box" id="inputNama" required placeholder="Nama Anda">
+        <input class="input-editorial" id="inputNama" required placeholder="Nama Anda">
         
-        <select class="input-box" id="inputKehadiran" required>
-          <option value="Hadir">✓ Hadir di Acara</option>
+        <select class="input-editorial" id="inputKehadiran" required>
+          <option value="Hadir">✓ Hadir di Hari Bahagia</option>
           <option value="Berhalangan">✗ Berhalangan Hadir</option>
         </select>
 
-        <textarea class="input-box" id="inputPesan" rows="3" required placeholder="Tuliskan ucapan dan doa restu..."></textarea>
+        <textarea class="input-editorial" id="inputPesan" rows="3" required placeholder="Tulis ucapan serta doa restu..."></textarea>
 
-        <button type="submit" class="btn-open w-100 justify-content-center" style="border-radius: 12px;">
-          <i class="fa-regular fa-paper-plane"></i> Kirim Doa Restu
+        <button type="submit" class="btn-luxury w-100 justify-content-center" style="border-radius: 2px;">
+          Kirim Ucapan
         </button>
       </form>
 
       <div style="margin-top: 35px;" data-aos="fade-up">
-        <h5 style="text-align: left; font-size: 14px; font-weight: 700; color: #555; margin-bottom: 12px;">
-          <i class="fa-regular fa-comments me-2 text-danger"></i>Ucapan Doa Restu
+        <h5 style="text-align: left; font-family: var(--font-serif); font-size: 12px; letter-spacing: 2px; color: var(--burgundy); margin-bottom: 14px;">
+          PESAN &amp; DOA RESTU
         </h5>
         <div id="boxUcapan"></div>
       </div>
     </section>
 
-    <footer style="padding: 60px 20px 80px; text-align: center; background: #1c1819; color: #fff;">
-      <h2 class="font-esthetic" style="font-size: 3.8rem; color: #fff; margin-bottom: 6px;">Puji & Sukma</h2>
-      <p style="font-size: 13px; color: #aaa;">Matur Nuwun Atas Doa & Kehadirannya</p>
-      <p style="font-size: 11px; color: #666; margin-top: 20px;">The Wedding Celebration · 2026</p>
+    <!-- FOOTER -->
+    <footer style="padding: 60px 24px 80px; text-align: center; background: var(--charcoal); color: var(--ivory);">
+      <h2 class="title-serif" style="font-size: 2rem; color: var(--gold); letter-spacing: 3px; margin-bottom: 8px;">Puji &amp; Sukma</h2>
+      <p style="font-family: var(--font-editorial); font-size: 1.2rem; font-style: italic; color: #bbb;">Matur Nuwun Atas Doa &amp; Kehadirannya</p>
+      <p style="font-size: 10px; letter-spacing: 2px; color: #666; margin-top: 20px; text-transform: uppercase;">The Wedding Celebration · 2026</p>
     </footer>
 
-  </main>
+  </div>
 
+  <!-- FLOATING BUTTONS (AUDIO & AUTO-SCROLL) -->
   <button class="floating-audio-btn" id="audioBtn" onclick="toggleAudio()">
     <i class="fa-solid fa-compact-disc"></i>
   </button>
@@ -522,11 +711,12 @@
     <i class="fa-solid fa-angles-down"></i> Auto Scroll: ON
   </button>
 
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
   <script>
-    // 1. AMBIL PARAMETER TAMU DARI URL (?to= / ?kpd= / ?n=)
+    // 1. PARAMETER NAMA TAMU (?to= / ?kpd=)
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('to') || urlParams.get('kpd') || urlParams.get('n');
     if (guestParam) {
@@ -541,13 +731,13 @@
     let isAutoScrolling = false;
     let scrollInterval = null;
 
-    // 2. BUKA UNDANGAN DENGAN CANVAS CONFETTI
+    // 2. BUKA UNDANGAN (GOLD & BURGUNDY CONFETTI)
     function bukaUndangan() {
-      // Hujan konfeti meletus di layar
       confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
+        particleCount: 80,
+        spread: 60,
+        origin: { y: 0.6 },
+        colors: ['#641C2A', '#C8A96B', '#F8F5EF']
       });
 
       const cover = document.getElementById("coverScreen");
@@ -562,33 +752,30 @@
         window.scrollTo(0, 0);
 
         AOS.init({ duration: 900 });
-
-        // Mulai auto-scroll kecepatan 10
         setTimeout(startAutoScroll, 1200);
-      }, 700);
+      }, 750);
 
       audio.play().then(() => {
-        audioBtn.classList.add("spin-button");
+        audioBtn.classList.add("rotating");
       }).catch(() => {});
     }
 
-    // 3. AUDIO CONTROLLER DENGAN SPIN-BUTTON
     function toggleAudio() {
       if (audio.paused) {
         audio.play();
-        audioBtn.classList.add("spin-button");
+        audioBtn.classList.add("rotating");
       } else {
         audio.pause();
-        audioBtn.classList.remove("spin-button");
+        audioBtn.classList.remove("rotating");
       }
     }
 
-    // 4. AUTO SCROLL KECEPATAN 10
+    // 3. AUTO SCROLL KECEPATAN 10
     function startAutoScroll() {
       if (isAutoScrolling) return;
       isAutoScrolling = true;
       scrollBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Auto Scroll: ON';
-      scrollBtn.style.background = 'var(--bs-primary)';
+      scrollBtn.style.background = 'var(--burgundy)';
 
       scrollInterval = setInterval(() => {
         window.scrollBy(0, 1);
@@ -602,7 +789,7 @@
       isAutoScrolling = false;
       clearInterval(scrollInterval);
       scrollBtn.innerHTML = '<i class="fa-solid fa-angles-down"></i> Auto Scroll: OFF';
-      scrollBtn.style.background = '#252220';
+      scrollBtn.style.background = 'var(--charcoal)';
     }
 
     function toggleAutoScroll() {
@@ -614,7 +801,7 @@
       if (isAutoScrolling) stopAutoScroll();
     }, { passive: true });
 
-    // 5. COUNTDOWN 06 OKTOBER 2026
+    // 4. COUNTDOWN KE 06 OKTOBER 2026
     const targetDate = new Date("October 6, 2026 06:00:00").getTime();
     setInterval(() => {
       const dist = targetDate - Date.now();
@@ -625,17 +812,17 @@
       document.getElementById("seconds").textContent = Math.floor((dist / 1000) % 60);
     }, 1000);
 
-    // 6. SALIN DANA
+    // 5. SALIN DANA
     function salinDana() {
       navigator.clipboard.writeText("085879637299").then(() => {
         alert("Nomor DANA 085879637299 berhasil disalin!");
       });
     }
 
-    // 7. BUKU TAMU
-    let dataKomentar = JSON.parse(localStorage.getItem('dewanakl_wishes_puji_sukma')) || [
-      { nama: "Bapak Budi", status: "Hadir", pesan: "Selamat menempuh hidup baru Puji & Sukma! Semoga senantiasa sakinah mawaddah warahmah." },
-      { nama: "Keluarga Bpk. Santoso", status: "Hadir", pesan: "Nderek mangayubagya, mugi langgeng lan tansah pinaringan kabagyan salaminya." }
+    // 6. BUKU TAMU REALTIME
+    let dataKomentar = JSON.parse(localStorage.getItem('luxury_wishes_puji_sukma')) || [
+      { nama: "Bapak Budi", status: "Hadir", pesan: "Selamat menempuh hidup baru Puji & Sukma. Semoga menjadi keluarga sakinah mawaddah warahmah!" },
+      { nama: "Keluarga Bpk. Santoso", status: "Hadir", pesan: "Nderek mangayubagya, mugi langgeng lan berkah salaminya." }
     ];
 
     function renderKomentar() {
@@ -644,12 +831,12 @@
       dataKomentar.forEach(item => {
         const badgeColor = item.status === "Hadir" ? "#2e7d32" : "#757575";
         const div = document.createElement("div");
-        div.className = "wish-item";
+        div.className = "wish-card";
         div.innerHTML = `
-          <div style="font-weight: 700; font-size: 13.5px; color: #222;">
-            ${item.nama} <span style="font-weight: 500; font-size: 10px; color: ${badgeColor}; margin-left: 6px;">(${item.status})</span>
+          <div style="font-family: var(--font-serif); font-size: 13px; font-weight: 700; color: var(--burgundy);">
+            ${item.nama} <span style="font-family: var(--font-sans); font-size: 10px; font-weight: 500; color: ${badgeColor}; margin-left: 6px;">(${item.status})</span>
           </div>
-          <p style="font-size: 13px; color: #555; margin-top: 4px; line-height: 1.5;">${item.pesan}</p>
+          <p style="font-size: 12.5px; color: #555; margin-top: 4px; line-height: 1.5;">${item.pesan}</p>
         `;
         container.appendChild(div);
       });
@@ -664,7 +851,7 @@
       if (!nama || !pesan) return;
 
       dataKomentar.unshift({ nama, status, pesan });
-      localStorage.setItem('dewanakl_wishes_puji_sukma', JSON.stringify(dataKomentar));
+      localStorage.setItem('luxury_wishes_puji_sukma', JSON.stringify(dataKomentar));
       renderKomentar();
 
       document.getElementById("inputPesan").value = "";
