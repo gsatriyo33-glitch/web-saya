@@ -16,21 +16,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-  <!-- GOOGLE FONTS (EDITORIAL LUXURY SERIF) -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --burgundy: #641C2A;
-      --burgundy-dark: #45101a;
-      --ivory: #F8F5EF;
+      --burgundy-dark: #3f0e18;
+      --ivory: #F9F6F0;
       --ivory-card: #FFFFFF;
       --charcoal: #171717;
-      --charcoal-soft: #242424;
       --gold: #C8A96B;
-      --gold-light: #e5cb96;
+      --gold-light: #F4E7C5;
+      --gold-glow: rgba(200, 169, 107, 0.45);
       --font-serif: 'Cinzel', serif;
       --font-editorial: 'Cormorant Garamond', serif;
       --font-sans: 'Montserrat', sans-serif;
@@ -41,30 +41,69 @@
 
     body {
       font-family: var(--font-sans);
-      background-color: var(--ivory);
+      background-color: #121010;
       color: var(--charcoal);
       overflow-x: hidden;
       font-size: 14px;
       line-height: 1.7;
     }
 
-    /* TYPOGRAPHY HELPERS */
-    .title-serif {
-      font-family: var(--font-serif);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .title-editorial {
-      font-family: var(--font-editorial);
-      font-weight: 500;
+    /* PARTIKEL CANVAS OVERLAY */
+    #particleCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 99998;
     }
 
-    /* COVER SCREEN (CINEMATIC BURGUNDY OVERLAY) */
+    /* EFEK TEKS KILAU EMAS (SHIMMER EFFECT) */
+    @keyframes shimmerGold {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .shimmer-text {
+      background: linear-gradient(90deg, #C8A96B 0%, #FFF4D2 50%, #C8A96B 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmerGold 4s ease-in-out infinite;
+    }
+
+    /* PENDARAN EMAS MEWAH */
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(200, 169, 107, 0.35), 0 4px 20px rgba(100, 28, 42, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(200, 169, 107, 0.75), 0 6px 28px rgba(100, 28, 42, 0.6);
+      }
+    }
+
+    /* SAPUAN KILAP PADA TOMBOL (SWEEP LIGHT) */
+    @keyframes btnSweep {
+      0% { transform: translateX(-120%) rotate(25deg); }
+      100% { transform: translateX(250%) rotate(25deg); }
+    }
+
+    /* ELEMEN MENGAMBANG LEMBUT */
+    @keyframes softFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .floating-anim {
+      animation: softFloat 4s ease-in-out infinite;
+    }
+
+    /* COVER SCREEN */
     #coverScreen {
       position: fixed;
       inset: 0;
       z-index: 999999;
-      background: linear-gradient(180deg, rgba(100, 28, 42, 0.4) 0%, rgba(23, 23, 23, 0.88) 100%), url('foto1.jpg') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(100, 28, 42, 0.45) 0%, rgba(18, 16, 16, 0.92) 100%), url('foto1.jpg') center/cover no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -79,56 +118,49 @@
       width: 100%;
     }
 
-    .cover-card .sub-tag {
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 8px;
-    }
-
     .cover-card h1 {
       font-family: var(--font-serif);
-      font-size: 2.8rem;
-      font-weight: 700;
+      font-size: 2.9rem;
       letter-spacing: 3px;
-      color: var(--ivory);
       margin: 10px 0;
       line-height: 1.15;
     }
 
     .cover-card .tagline {
       font-family: var(--font-editorial);
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-style: italic;
-      color: rgba(248, 245, 239, 0.85);
+      color: rgba(248, 245, 239, 0.9);
       margin-bottom: 24px;
     }
 
     .guest-tag {
-      background: rgba(23, 23, 23, 0.45);
+      background: rgba(23, 23, 23, 0.55);
       border: 1px solid var(--gold);
       border-radius: 12px;
-      padding: 16px 20px;
+      padding: 18px 20px;
       margin: 20px 0 28px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
     }
     .guest-tag p {
       font-size: 10px;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--gold-light);
       margin-bottom: 4px;
     }
     .guest-tag h3 {
       font-family: var(--font-serif);
-      font-size: 18px;
-      color: var(--ivory);
+      font-size: 19px;
+      color: #FFFFFF;
       margin-bottom: 0;
       letter-spacing: 1px;
     }
 
     .btn-luxury {
+      position: relative;
+      overflow: hidden;
       background: var(--burgundy);
       color: var(--ivory);
       border: 1px solid var(--gold);
@@ -139,12 +171,23 @@
       text-transform: uppercase;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(100, 28, 42, 0.5);
+      animation: pulseGlow 3s infinite;
       transition: all 0.3s;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 10px;
+    }
+    .btn-luxury::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 40px;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.4);
+      transform: rotate(25deg);
+      animation: btnSweep 3.5s infinite;
     }
     .btn-luxury:hover {
       background: var(--gold);
@@ -152,17 +195,17 @@
       border-color: var(--gold);
     }
 
-    /* MAIN CONTAINER */
+    /* CONTAINER UTAMA */
     .mob-container {
       max-width: 480px;
       margin: 0 auto;
       background: var(--ivory);
       position: relative;
-      box-shadow: 0 0 40px rgba(0,0,0,0.15);
+      box-shadow: 0 0 50px rgba(0,0,0,0.5);
     }
 
     .section-wrap {
-      padding: 75px 24px;
+      padding: 80px 24px;
       text-align: center;
       position: relative;
     }
@@ -172,24 +215,24 @@
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--burgundy);
-      font-weight: 600;
+      font-weight: 700;
       display: block;
       margin-bottom: 8px;
     }
 
     .editorial-title {
       font-family: var(--font-serif);
-      font-size: 2.2rem;
+      font-size: 2.25rem;
       color: var(--burgundy);
       margin-bottom: 24px;
       letter-spacing: 2px;
     }
 
-    /* HERO OPENED SECTION */
+    /* HERO OPENED */
     .hero-opened {
       position: relative;
       height: 85vh;
-      background: linear-gradient(180deg, rgba(23, 23, 23, 0.2) 0%, rgba(100, 28, 42, 0.85) 100%), url('foto1.jpg') center/cover no-repeat;
+      background: linear-gradient(180deg, rgba(23, 23, 23, 0.15) 0%, rgba(100, 28, 42, 0.88) 100%), url('foto1.jpg') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -199,25 +242,41 @@
     }
     .hero-opened h2 {
       font-family: var(--font-serif);
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       letter-spacing: 2px;
       margin-bottom: 6px;
     }
     .hero-opened p {
       font-family: var(--font-editorial);
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-style: italic;
       color: var(--gold-light);
     }
 
-    /* COUPLE EDITORIAL SECTION */
+    /* BINGKAI FOTO SUDUT ORNAMEN KLASIK (LUXURY CORNER FRAME) */
     .couple-portrait {
       position: relative;
-      margin: 25px 0 35px;
-      border: 1px solid var(--gold);
-      padding: 8px;
-      background: #fff;
+      margin: 25px auto 35px;
+      padding: 10px;
+      background: #FFFFFF;
+      border: 1px solid rgba(200, 169, 107, 0.6);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease;
     }
+    .couple-portrait:hover {
+      transform: translateY(-4px);
+    }
+    .couple-portrait::before, .couple-portrait::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--gold);
+      pointer-events: none;
+    }
+    .couple-portrait::before { top: 4px; left: 4px; border-right: none; border-bottom: none; }
+    .couple-portrait::after { bottom: 4px; right: 4px; border-left: none; border-top: none; }
+
     .couple-portrait img {
       width: 100%;
       height: 380px;
@@ -225,10 +284,6 @@
       display: block;
     }
 
-    .couple-desc {
-      padding: 10px 0;
-      text-align: center;
-    }
     .couple-name {
       font-family: var(--font-serif);
       font-size: 2rem;
@@ -236,31 +291,24 @@
       letter-spacing: 3px;
       margin: 8px 0;
     }
-    .couple-parent {
-      font-size: 13px;
-      color: #666;
-    }
 
     .ampersand {
       font-family: var(--font-editorial);
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       color: var(--gold);
       font-style: italic;
-      margin: 10px 0;
+      margin: 8px 0;
       line-height: 1;
     }
 
-    /* WEDDING DETAILS & COUNTDOWN */
+    /* SECTION DETAIL WAKTU */
     .details-section {
       background: var(--charcoal);
       color: var(--ivory);
+      position: relative;
     }
-    .details-section .editorial-title {
-      color: var(--gold);
-    }
-    .details-section .editorial-label {
-      color: var(--gold-light);
-    }
+    .details-section .editorial-title { color: var(--gold); }
+    .details-section .editorial-label { color: var(--gold-light); }
 
     .card-ivory {
       background: var(--ivory-card);
@@ -270,7 +318,13 @@
       padding: 30px 22px;
       margin: 20px 0;
       text-align: left;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-ivory:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(200, 169, 107, 0.2);
     }
     .card-ivory .event-tag {
       font-family: var(--font-serif);
@@ -286,7 +340,7 @@
     }
     .card-ivory h3 {
       font-family: var(--font-editorial);
-      font-size: 1.8rem;
+      font-size: 1.85rem;
       font-weight: 700;
       color: var(--charcoal);
       margin-bottom: 10px;
@@ -304,6 +358,7 @@
       background: rgba(255,255,255,0.04);
       padding: 14px 4px;
       border-radius: 4px;
+      backdrop-filter: blur(4px);
     }
     .count-cell b {
       font-family: var(--font-serif);
@@ -320,7 +375,7 @@
       color: #aaa;
     }
 
-    /* OUR STORY TIMELINE */
+    /* TIMELINE CERITA */
     .story-card {
       position: relative;
       padding-left: 28px;
@@ -331,12 +386,13 @@
     .story-dot {
       position: absolute;
       left: -6px;
-      top: 2px;
-      width: 11px;
-      height: 11px;
+      top: 3px;
+      width: 12px;
+      height: 12px;
       background: var(--burgundy);
       border: 2px solid var(--gold);
       border-radius: 50%;
+      box-shadow: 0 0 10px var(--gold);
     }
     .story-step {
       font-size: 10px;
@@ -353,7 +409,7 @@
       margin: 3px 0 6px;
     }
 
-    /* GALLERY EDITORIAL MAGAZINE STYLE */
+    /* GALERI EDITORIAL MAGAZINE */
     .gallery-editorial {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -361,7 +417,6 @@
       margin-top: 20px;
     }
     .g-col-12 { grid-column: span 12; }
-    .g-col-6 { grid-column: span 6; }
     .g-col-7 { grid-column: span 7; }
     .g-col-5 { grid-column: span 5; }
 
@@ -369,42 +424,41 @@
       position: relative;
       overflow: hidden;
       border: 1px solid var(--gold);
-      background: #fff;
-      padding: 4px;
+      background: #FFFFFF;
+      padding: 5px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
     .magazine-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s ease;
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
     }
-    .magazine-photo:hover img { transform: scale(1.03); }
+    .magazine-photo:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.05);
+    }
 
-    /* WEDDING GIFTS */
+    /* KARTU DOMPET DANA */
     .gift-box {
       border: 1px solid var(--gold);
-      background: #fff;
-      padding: 28px 20px;
+      background: #FFFFFF;
+      padding: 30px 20px;
       margin-top: 20px;
       text-align: left;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-    }
-    .gift-box .badge-dana {
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: #118eea;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      position: relative;
     }
     .gift-box h4 {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
+      font-size: 1.65rem;
       letter-spacing: 2px;
       color: var(--charcoal);
       margin: 8px 0;
     }
 
-    /* RSVP & GUESTBOOK */
+    /* BUKU TAMU */
     .input-editorial {
       width: 100%;
       background: #fff;
@@ -415,37 +469,42 @@
       margin-bottom: 12px;
       outline: none;
       color: var(--charcoal);
-      font-family: inherit;
+      transition: border-color 0.3s;
     }
-    .input-editorial:focus { border-color: var(--burgundy); }
+    .input-editorial:focus {
+      border-color: var(--burgundy);
+      box-shadow: 0 0 8px rgba(100, 28, 42, 0.15);
+    }
 
     .wish-card {
-      background: #fff;
+      background: #FFFFFF;
       border-left: 3px solid var(--burgundy);
       border-bottom: 1px solid #eae5de;
       padding: 14px 16px;
       margin-bottom: 10px;
       text-align: left;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
     }
 
-    /* FLOATING CONTROLLERS */
+    /* TOMBOL KONTROL MELAYANG */
     .floating-audio-btn {
       position: fixed;
       bottom: 24px;
       right: 20px;
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--burgundy);
       color: var(--gold);
-      border: 1px solid var(--gold);
+      border: 1.5px solid var(--gold);
       display: none;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
+      font-size: 19px;
       cursor: pointer;
       z-index: 99999;
-      box-shadow: 0 6px 20px rgba(100, 28, 42, 0.4);
+      box-shadow: 0 6px 22px rgba(100, 28, 42, 0.6);
+      animation: pulseGlow 4s infinite;
     }
     .rotating { animation: spinDisc 5s linear infinite; }
     @keyframes spinDisc { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -458,33 +517,39 @@
       color: var(--ivory);
       border: 1px solid var(--gold);
       border-radius: 50px;
-      padding: 8px 16px;
+      padding: 9px 18px;
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       font-weight: 600;
-      border: none;
       display: none;
       align-items: center;
       gap: 6px;
       z-index: 99999;
       cursor: pointer;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 
 <body>
 
+  <!-- KANVAS PARTIKEL HUJAN KELOPAK & DEBU EMAS -->
+  <canvas id="particleCanvas"></canvas>
+
   <audio id="audioTrack" loop src="musik.mp3"></audio>
 
   <!-- COVER SCREEN (CINEMATIC LUXURY ROMANCE) -->
   <section id="coverScreen">
     <div class="cover-card">
-      <p class="sub-tag">The Wedding Celebration Of</p>
-      <h1>Puji &amp; Sukma</h1>
+      <p style="font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">
+        The Wedding Celebration Of
+      </p>
+      
+      <h1 class="shimmer-text">Puji &amp; Sukma</h1>
       <p class="tagline">“A celebration of love, laughter &amp; forever”</p>
 
-      <div class="guest-tag">
+      <div class="guest-tag floating-anim">
         <p>Special Invitation For:</p>
         <h3 id="guestName">Tamu Undangan</h3>
       </div>
@@ -501,36 +566,36 @@
     <!-- HERO EDITORIAL OPENED -->
     <div class="hero-opened">
       <p>Save The Date</p>
-      <h2>Puji &amp; Sukma</h2>
+      <h2 class="shimmer-text">Puji &amp; Sukma</h2>
       <p>Selasa, 06 Oktober 2026 — Rembang, Jawa Tengah</p>
     </div>
 
     <!-- AYAT AR-RUM -->
     <section class="section-wrap" style="padding-bottom: 40px;">
       <div data-aos="fade-up">
-        <p style="font-family: 'Amiri', serif; font-size: 20px; line-height: 2.3; direction: rtl; color: var(--burgundy); margin-bottom: 12px;">
+        <p style="font-family: 'Amiri', serif; font-size: 21px; line-height: 2.3; direction: rtl; color: var(--burgundy); margin-bottom: 14px;">
           وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
         </p>
-        <p style="font-family: var(--font-editorial); font-size: 1.25rem; font-style: italic; color: #555; margin-bottom: 6px;">
+        <p style="font-family: var(--font-editorial); font-size: 1.3rem; font-style: italic; color: #555; margin-bottom: 8px;">
           “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya...”
         </p>
         <span style="font-size: 11px; letter-spacing: 2px; color: var(--gold); font-weight: 700;">- AR-RUM: 21 -</span>
       </div>
     </section>
 
-    <!-- COUPLE SECTION (EDITORIAL STYLE) -->
+    <!-- COUPLE SECTION (EDITORIAL STYLE WITH LUXURY CORNER ACCENTS) -->
     <section class="section-wrap" style="background: #ffffff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
       <span class="editorial-label" data-aos="fade-up">The Groom &amp; The Bride</span>
-      <h2 class="editorial-title" data-aos="fade-up">Pasangan Mempelai</h2>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Pasangan Mempelai</h2>
 
       <!-- PUJI -->
       <div data-aos="fade-up">
         <div class="couple-portrait">
           <img src="foto2.jpg" alt="Puji">
         </div>
-        <div class="couple-desc">
+        <div>
           <h3 class="couple-name">Puji</h3>
-          <p class="couple-parent">Putra Tercinta dari Bpk. ... &amp; Ibu ...</p>
+          <p style="font-size: 13px; color: #666;">Putra Tercinta dari Bpk. ... &amp; Ibu ...</p>
           <p style="font-size: 12px; color: #888;">Ds. Sumber, Rembang</p>
           <a href="https://instagram.com/" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 600; letter-spacing: 1px;">
             <i class="fa-brands fa-instagram me-1"></i> @puji
@@ -538,16 +603,16 @@
         </div>
       </div>
 
-      <div class="ampersand" data-aos="zoom-in">&amp;</div>
+      <div class="ampersand floating-anim" data-aos="zoom-in">&amp;</div>
 
       <!-- SUKMA -->
       <div data-aos="fade-up">
         <div class="couple-portrait">
           <img src="foto3.jpg" alt="Sukma">
         </div>
-        <div class="couple-desc">
+        <div>
           <h3 class="couple-name">Sukma</h3>
-          <p class="couple-parent">Putri Tercinta dari Bpk. ... &amp; Ibu ...</p>
+          <p style="font-size: 13px; color: #666;">Putri Tercinta dari Bpk. ... &amp; Ibu ...</p>
           <p style="font-size: 12px; color: #888;">Ds. Sumber, Rembang</p>
           <a href="https://instagram.com/" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 600; letter-spacing: 1px;">
             <i class="fa-brands fa-instagram me-1"></i> @sukma
@@ -559,7 +624,7 @@
     <!-- WEDDING DETAILS & COUNTDOWN (CHARCOAL + GOLD BORDER) -->
     <section class="section-wrap details-section">
       <span class="editorial-label" data-aos="fade-up">Wedding Ceremony &amp; Reception</span>
-      <h2 class="editorial-title" data-aos="fade-up">Waktu &amp; Tempat</h2>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Waktu &amp; Tempat</h2>
 
       <!-- COUNTDOWN -->
       <div class="count-grid" data-aos="fade-up">
@@ -588,7 +653,7 @@
       </div>
 
       <div class="mt-4" data-aos="fade-up">
-        <a href="http://googleusercontent.com/maps.google.com/10" target="_blank" class="btn-luxury" style="background: transparent; border-color: var(--gold);">
+        <a href="http://googleusercontent.com/maps.google.com/11" target="_blank" class="btn-luxury" style="background: transparent; border-color: var(--gold);">
           <i class="fa-solid fa-map-pin"></i> Petunjuk Google Maps
         </a>
       </div>
@@ -597,7 +662,7 @@
     <!-- OUR STORY (MINIMAL TIMELINE) -->
     <section class="section-wrap">
       <span class="editorial-label" data-aos="fade-up">The Chapters of Us</span>
-      <h2 class="editorial-title" data-aos="fade-up">Our Story</h2>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Our Story</h2>
 
       <div style="margin-top: 30px;">
         <div class="story-card" data-aos="fade-up">
@@ -623,24 +688,21 @@
       </div>
     </section>
 
-    <!-- GALLERY (EDITORIAL MAGAZINE LAYOUT) -->
+    <!-- GALLERY (EDITORIAL MAGAZINE LAYOUT WITH HOVER ZOOM) -->
     <section class="section-wrap" style="background: #ffffff;">
       <span class="editorial-label" data-aos="fade-up">Visual Diary</span>
-      <h2 class="editorial-title" data-aos="fade-up">Our Gallery</h2>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Our Gallery</h2>
 
       <div class="gallery-editorial" data-aos="fade-up">
-        <!-- FOTO BESAR HERO MAGAZINE -->
         <div class="magazine-photo g-col-12" style="height: 320px;">
           <img src="foto1.jpg" alt="Editorial 1">
         </div>
-        <!-- ASYMMETRIC FOTO 2 & 3 -->
         <div class="magazine-photo g-col-7" style="height: 230px;">
           <img src="foto2.jpg" alt="Editorial 2">
         </div>
         <div class="magazine-photo g-col-5" style="height: 230px;">
           <img src="foto3.jpg" alt="Editorial 3">
         </div>
-        <!-- FOTO DUDUK/PORTRAIT 4 -->
         <div class="magazine-photo g-col-12" style="height: 260px;">
           <img src="foto4.jpg" alt="Editorial 4">
         </div>
@@ -650,17 +712,17 @@
     <!-- WEDDING GIFTS / DANA -->
     <section class="section-wrap">
       <span class="editorial-label" data-aos="fade-up">Token of Love</span>
-      <h2 class="editorial-title" data-aos="fade-up">Wedding Gift</h2>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Wedding Gift</h2>
       <p style="color: #666; font-size: 13px; max-width: 380px; margin: 0 auto 20px;" data-aos="fade-up">
         Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih secara cashless:
       </p>
 
       <div class="gift-box" data-aos="fade-up">
-        <span class="badge-dana">DOMPET DIGITAL DANA</span>
+        <span style="font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #118eea;">DOMPET DIGITAL DANA</span>
         <h4>085879637299</h4>
         <p style="color: #777; font-size: 13px; margin-bottom: 14px;">a.n. Puji &amp; Sukma</p>
-        <button class="btn-luxury" onclick="salinDana()" style="padding: 9px 20px; font-size: 10px;">
-          <i class="fa-regular fa-copy me-1"></i> Salin Nomor
+        <button class="btn-luxury" onclick="salinDana()" style="padding: 10px 24px; font-size: 10px;">
+          <i class="fa-regular fa-copy me-1"></i> Salin Nomor DANA
         </button>
       </div>
     </section>
@@ -668,7 +730,7 @@
     <!-- RSVP & BUKU TAMU -->
     <section class="section-wrap" style="background: #ffffff; border-top: 1px solid #eee;">
       <span class="editorial-label" data-aos="fade-up">Guest Book</span>
-      <h2 class="editorial-title" data-aos="fade-up">Wishes &amp; Prayers</h2>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Wishes &amp; Prayers</h2>
 
       <form id="wishesForm" onsubmit="tambahUcapan(event)" style="text-align: left;" data-aos="fade-up">
         <input class="input-editorial" id="inputNama" required placeholder="Nama Anda">
@@ -695,14 +757,14 @@
 
     <!-- FOOTER -->
     <footer style="padding: 60px 24px 80px; text-align: center; background: var(--charcoal); color: var(--ivory);">
-      <h2 class="title-serif" style="font-size: 2rem; color: var(--gold); letter-spacing: 3px; margin-bottom: 8px;">Puji &amp; Sukma</h2>
-      <p style="font-family: var(--font-editorial); font-size: 1.2rem; font-style: italic; color: #bbb;">Matur Nuwun Atas Doa &amp; Kehadirannya</p>
+      <h2 class="shimmer-text" style="font-family: var(--font-serif); font-size: 2.1rem; letter-spacing: 3px; margin-bottom: 8px;">Puji &amp; Sukma</h2>
+      <p style="font-family: var(--font-editorial); font-size: 1.25rem; font-style: italic; color: #bbb;">Matur Nuwun Atas Doa &amp; Kehadirannya</p>
       <p style="font-size: 10px; letter-spacing: 2px; color: #666; margin-top: 20px; text-transform: uppercase;">The Wedding Celebration · 2026</p>
     </footer>
 
   </div>
 
-  <!-- FLOATING BUTTONS (AUDIO & AUTO-SCROLL) -->
+  <!-- FLOATING CONTROLLERS (AUDIO & AUTO-SCROLL) -->
   <button class="floating-audio-btn" id="audioBtn" onclick="toggleAudio()">
     <i class="fa-solid fa-compact-disc"></i>
   </button>
@@ -716,7 +778,70 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
   <script>
-    // 1. PARAMETER NAMA TAMU (?to= / ?kpd=)
+    // 1. PARTIKEL ANIMASI KELOPAK & EMAS (CANVAS ENGINE)
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * -canvas.height;
+        this.size = Math.random() * 6 + 2;
+        this.speedX = Math.random() * 1.5 - 0.75;
+        this.speedY = Math.random() * 1.2 + 0.6;
+        this.rotation = Math.random() * 360;
+        this.spinSpeed = Math.random() * 2 - 1;
+        this.opacity = Math.random() * 0.7 + 0.3;
+        // Palet burgundy & gold dust
+        const colors = ['#C8A96B', '#E5CB96', '#641C2A', '#8B263E', '#F8F5EF'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.01) + this.speedX;
+        this.rotation += this.spinSpeed;
+        if (this.y > canvas.height) this.reset();
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        // Bentuk kelopak bunga oval
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size, this.size * 1.6, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 28; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // 2. PARAMETER NAMA TAMU (?to= / ?kpd=)
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('to') || urlParams.get('kpd') || urlParams.get('n');
     if (guestParam) {
@@ -731,13 +856,13 @@
     let isAutoScrolling = false;
     let scrollInterval = null;
 
-    // 2. BUKA UNDANGAN (GOLD & BURGUNDY CONFETTI)
+    // 3. BUKA UNDANGAN (GOLD & BURGUNDY CONFETTI)
     function bukaUndangan() {
       confetti({
-        particleCount: 80,
-        spread: 60,
+        particleCount: 90,
+        spread: 70,
         origin: { y: 0.6 },
-        colors: ['#641C2A', '#C8A96B', '#F8F5EF']
+        colors: ['#641C2A', '#C8A96B', '#F8F5EF', '#FFFFFF']
       });
 
       const cover = document.getElementById("coverScreen");
@@ -770,7 +895,7 @@
       }
     }
 
-    // 3. AUTO SCROLL KECEPATAN 10
+    // 4. AUTO SCROLL KECEPATAN 10
     function startAutoScroll() {
       if (isAutoScrolling) return;
       isAutoScrolling = true;
@@ -801,7 +926,7 @@
       if (isAutoScrolling) stopAutoScroll();
     }, { passive: true });
 
-    // 4. COUNTDOWN KE 06 OKTOBER 2026
+    // 5. COUNTDOWN KE 06 OKTOBER 2026
     const targetDate = new Date("October 6, 2026 06:00:00").getTime();
     setInterval(() => {
       const dist = targetDate - Date.now();
@@ -812,14 +937,14 @@
       document.getElementById("seconds").textContent = Math.floor((dist / 1000) % 60);
     }, 1000);
 
-    // 5. SALIN DANA
+    // 6. SALIN DANA
     function salinDana() {
       navigator.clipboard.writeText("085879637299").then(() => {
         alert("Nomor DANA 085879637299 berhasil disalin!");
       });
     }
 
-    // 6. BUKU TAMU REALTIME
+    // 7. BUKU TAMU REALTIME
     let dataKomentar = JSON.parse(localStorage.getItem('luxury_wishes_puji_sukma')) || [
       { nama: "Bapak Budi", status: "Hadir", pesan: "Selamat menempuh hidup baru Puji & Sukma. Semoga menjadi keluarga sakinah mawaddah warahmah!" },
       { nama: "Keluarga Bpk. Santoso", status: "Hadir", pesan: "Nderek mangayubagya, mugi langgeng lan berkah salaminya." }
