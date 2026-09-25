@@ -482,7 +482,7 @@
       <div class="box-2 text-center" id="section-ucapan" style="background-color: #f7f4ee;">
         <h2 style="font-size: 34px; color: #303333; margin-bottom: 6px;" data-aos="fade-up">Konfirmasi Kehadiran</h2>
         <p style="font-size: 12.5px; color: #777; margin-bottom: 24px;" data-aos="fade-up">
-          Doa restu serta ucapan Anda akan tersimpan secara privat untuk kedua mempelai.
+          Berikan doa restu dan ucapan hangat Anda untuk kedua mempelai.
         </p>
 
         <form id="formUcapanPrivat" onsubmit="kirimUcapanPrivat(event)" style="text-align: left; max-width: 400px; margin: 0 auto;" data-aos="fade-up">
@@ -502,6 +502,7 @@
             Kirim Ucapan
           </button>
         </form>
+        <div id="kotakUcapanPublik" style="margin-top: 30px; text-align: left; max-height: 320px; overflow-y: auto; padding-right: 5px;"></div>
       </div>
 
       <!-- FOOTER -->
@@ -667,6 +668,7 @@
       const dataLama = JSON.parse(localStorage.getItem('luxury_privat_ucapan')) || [];
       dataLama.unshift({ nama, kehadiran, pesan, waktu: new Date().toLocaleString('id-ID') });
       localStorage.setItem('luxury_privat_ucapan', JSON.stringify(dataLama));
+      muatDaftarUcapan();
 
       document.getElementById("inputPesan").value = "";
       alert("Terima kasih, " + nama + "! Doa restu dan konfirmasi kehadiran Anda telah tersimpan secara privat.");
