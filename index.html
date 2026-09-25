@@ -71,7 +71,7 @@
       animation: shimmerGold 4s ease-in-out infinite;
     }
 
-    /* PENDARAN EMAS PADA TOMBOL */
+    /* PENDARAN EMAS TOMBOL */
     @keyframes pulseGlow {
       0%, 100% {
         box-shadow: 0 0 15px rgba(200, 169, 107, 0.35), 0 4px 20px rgba(100, 28, 42, 0.3);
@@ -251,7 +251,7 @@
       color: var(--gold-light);
     }
 
-    /* BINGKAI FOTO SUDUT KLASIK (LUXURY CORNER FRAME) */
+    /* BINGKAI FOTO SUDUT KLASIK */
     .couple-portrait {
       position: relative;
       margin: 25px auto 35px;
@@ -436,7 +436,7 @@
       filter: brightness(1.05);
     }
 
-    /* KARTU DOMPET DANA (DUA KARTU TERPISAH) */
+    /* KARTU DOMPET DANA */
     .gift-box {
       border: 1px solid var(--gold);
       background: #FFFFFF;
@@ -471,16 +471,6 @@
     .input-editorial:focus {
       border-color: var(--burgundy);
       box-shadow: 0 0 8px rgba(100, 28, 42, 0.15);
-    }
-
-    .wish-card {
-      background: #FFFFFF;
-      border-left: 3px solid var(--burgundy);
-      border-bottom: 1px solid #eae5de;
-      padding: 14px 16px;
-      margin-bottom: 10px;
-      text-align: left;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
     }
 
     /* TOMBOL KONTROL MELAYANG */
@@ -536,7 +526,7 @@
 
   <audio id="audioTrack" loop src="musik.mp3"></audio>
 
-  <!-- COVER SCREEN (CINEMATIC LUXURY ROMANCE) -->
+  <!-- COVER SCREEN -->
   <section id="coverScreen">
     <div class="cover-card">
       <p style="font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px;">
@@ -618,7 +608,7 @@
       </div>
     </section>
 
-    <!-- WEDDING DETAILS & COUNTDOWN (KEDUANYA DI SUMBER REMBANG) -->
+    <!-- WEDDING DETAILS & COUNTDOWN (SUMBER REMBANG) -->
     <section class="section-wrap details-section">
       <span class="editorial-label" data-aos="fade-up">Wedding Ceremony &amp; Reception</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Waktu &amp; Tempat</h2>
@@ -685,7 +675,7 @@
       </div>
     </section>
 
-    <!-- GALLERY (EDITORIAL MAGAZINE LAYOUT) -->
+    <!-- GALLERY -->
     <section class="section-wrap" style="background: #ffffff;">
       <span class="editorial-label" data-aos="fade-up">Visual Diary</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Our Gallery</h2>
@@ -706,7 +696,7 @@
       </div>
     </section>
 
-    <!-- WEDDING GIFTS (DUA KARTU DANA RESMI DENGAN TOMBOL SALIN) -->
+    <!-- WEDDING GIFTS -->
     <section class="section-wrap">
       <span class="editorial-label" data-aos="fade-up">Token of Love</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Wedding Gift</h2>
@@ -735,32 +725,31 @@
       </div>
     </section>
 
-    <!-- RSVP & BUKU TAMU -->
+    <!-- RSVP & BUKU TAMU (PRIVAT VIA WHATSAPP - TANPA DAFTAR PESAN PUBLIK) -->
     <section class="section-wrap" style="background: #ffffff; border-top: 1px solid #eee;">
-      <span class="editorial-label" data-aos="fade-up">Guest Book</span>
-      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Wishes &amp; Prayers</h2>
+      <span class="editorial-label" data-aos="fade-up">RSVP &amp; Wishes</span>
+      <h2 class="editorial-title shimmer-text" data-aos="fade-up">Konfirmasi Kehadiran</h2>
+      <p style="color: #777; font-size: 13px; max-width: 400px; margin: 0 auto 24px;" data-aos="fade-up">
+        Kirimkan konfirmasi kehadiran beserta doa restu Anda langsung ke WhatsApp mempelai secara privat.
+      </p>
 
-      <form id="wishesForm" onsubmit="tambahUcapan(event)" style="text-align: left;" data-aos="fade-up">
-        <input class="input-editorial" id="inputNama" required placeholder="Nama Anda">
+      <form id="wishesForm" onsubmit="kirimWhatsApp(event)" style="text-align: left;" data-aos="fade-up">
+        <label style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--burgundy); margin-bottom: 4px; display: block;">NAMA LENGKAP</label>
+        <input class="input-editorial" id="inputNama" required placeholder="Tuliskan nama Anda">
         
+        <label style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--burgundy); margin-bottom: 4px; display: block;">KONFIRMASI KEHADIRAN</label>
         <select class="input-editorial" id="inputKehadiran" required>
-          <option value="Hadir">✓ Hadir di Hari Bahagia</option>
-          <option value="Berhalangan">✗ Berhalangan Hadir</option>
+          <option value="Hadir di Hari Bahagia">✓ Hadir di Hari Bahagia</option>
+          <option value="Berhalangan Hadir">✗ Berhalangan Hadir</option>
         </select>
 
-        <textarea class="input-editorial" id="inputPesan" rows="3" required placeholder="Tulis ucapan serta doa restu..."></textarea>
+        <label style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--burgundy); margin-bottom: 4px; display: block;">DOA RESTU &amp; UCAPAN</label>
+        <textarea class="input-editorial" id="inputPesan" rows="3" required placeholder="Tulis ucapan serta doa restu Anda..."></textarea>
 
-        <button type="submit" class="btn-luxury w-100 justify-content-center" style="border-radius: 2px;">
-          Kirim Ucapan
+        <button type="submit" class="btn-luxury w-100 justify-content-center mt-2" style="border-radius: 2px;">
+          <i class="fa-brands fa-whatsapp fs-6"></i> Kirim Ucapan via WhatsApp
         </button>
       </form>
-
-      <div style="margin-top: 35px;" data-aos="fade-up">
-        <h5 style="text-align: left; font-family: var(--font-serif); font-size: 12px; letter-spacing: 2px; color: var(--burgundy); margin-bottom: 14px;">
-          PESAN &amp; DOA RESTU
-        </h5>
-        <div id="boxUcapan"></div>
-      </div>
     </section>
 
     <!-- FOOTER -->
@@ -941,7 +930,7 @@
       document.getElementById("seconds").textContent = Math.floor((dist / 1000) % 60);
     }, 1000);
 
-    // 6. FUNGSI SALIN DANA TERPISAH
+    // 6. FUNGSI SALIN DANA
     function salinDanaPuji() {
       navigator.clipboard.writeText("085879637299").then(() => {
         alert("Nomor DANA Puji (085879637299) berhasil disalin!");
@@ -954,46 +943,18 @@
       });
     }
 
-    // 7. BUKU TAMU REALTIME
-    let dataKomentar = JSON.parse(localStorage.getItem('luxury_wishes_puji_sukma_final')) || [
-      { nama: "Bapak Budi", status: "Hadir", pesan: "Selamat menempuh hidup baru Puji & Sukma. Semoga menjadi keluarga sakinah mawaddah warahmah!" },
-      { nama: "Keluarga Bpk. Santoso", status: "Hadir", pesan: "Nderek mangayubagya, mugi tansah pinaringan kabagyan salaminya." }
-    ];
-
-    function renderKomentar() {
-      const container = document.getElementById("boxUcapan");
-      container.innerHTML = "";
-      dataKomentar.forEach(item => {
-        const badgeColor = item.status === "Hadir" ? "#2e7d32" : "#757575";
-        const div = document.createElement("div");
-        div.className = "wish-card";
-        div.innerHTML = `
-          <div style="font-family: var(--font-serif); font-size: 13px; font-weight: 700; color: var(--burgundy);">
-            ${item.nama} <span style="font-family: var(--font-sans); font-size: 10px; font-weight: 500; color: ${badgeColor}; margin-left: 6px;">(${item.status})</span>
-          </div>
-          <p style="font-size: 12.5px; color: #555; margin-top: 4px; line-height: 1.5;">${item.pesan}</p>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function tambahUcapan(e) {
+    // 7. KIRIM UCAPAN PRIVAT VIA WHATSAPP (TANPA DAFTAR PUBLIK)
+    function kirimWhatsApp(e) {
       e.preventDefault();
       const nama = document.getElementById("inputNama").value.trim();
       const status = document.getElementById("inputKehadiran").value;
       const pesan = document.getElementById("inputPesan").value.trim();
 
-      if (!nama || !pesan) return;
-
-      dataKomentar.unshift({ nama, status, pesan });
-      localStorage.setItem('luxury_wishes_puji_sukma_final', JSON.stringify(dataKomentar));
-      renderKomentar();
-
-      document.getElementById("inputPesan").value = "";
-      alert("Terima kasih! Doa dan konfirmasi kehadiran Anda berhasil dikirim.");
+      const textWA = `Halo Puji & Sukma,%0A%0ASaya *${encodeURIComponent(nama)}* menyatakan *${encodeURIComponent(status)}* pada hari bahagia kalian.%0A%0A*Doa & Ucapan:*%0A"${encodeURIComponent(pesan)}"`;
+      
+      // Mengarahkan langsung ke WhatsApp Puji
+      window.open(`https://api.whatsapp.com/send?phone=6285879637299&text=${textWA}`, '_blank');
     }
-
-    renderKomentar();
   </script>
 </body>
 </html>
