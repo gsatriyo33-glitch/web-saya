@@ -16,21 +16,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-  <!-- GOOGLE FONTS -->
+  <!-- GOOGLE FONTS LUXURY EDITORIAL -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Amiri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Amiri&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --burgundy: #641C2A;
-      --burgundy-dark: #3f0e18;
+      --burgundy-dark: #3a0d16;
       --ivory: #F9F6F0;
       --ivory-card: #FFFFFF;
       --charcoal: #171717;
       --gold: #C8A96B;
       --gold-light: #F4E7C5;
-      --gold-glow: rgba(200, 169, 107, 0.45);
       --font-serif: 'Cinzel', serif;
       --font-editorial: 'Cormorant Garamond', serif;
       --font-sans: 'Montserrat', sans-serif;
@@ -48,7 +47,7 @@
       line-height: 1.7;
     }
 
-    /* PARTIKEL CANVAS OVERLAY */
+    /* KANVAS PARTIKEL HUJAN KELOPAK & DEBU EMAS */
     #particleCanvas {
       position: fixed;
       inset: 0;
@@ -58,7 +57,7 @@
       z-index: 99998;
     }
 
-    /* EFEK TEKS KILAU EMAS (SHIMMER EFFECT) */
+    /* KILAU TEKS EMAS (GOLD SHIMMER) */
     @keyframes shimmerGold {
       0% { background-position: -200% 0; }
       100% { background-position: 200% 0; }
@@ -72,7 +71,7 @@
       animation: shimmerGold 4s ease-in-out infinite;
     }
 
-    /* PENDARAN EMAS MEWAH */
+    /* PENDARAN EMAS MEWAH PADA TOMBOL */
     @keyframes pulseGlow {
       0%, 100% {
         box-shadow: 0 0 15px rgba(200, 169, 107, 0.35), 0 4px 20px rgba(100, 28, 42, 0.3);
@@ -82,13 +81,12 @@
       }
     }
 
-    /* SAPUAN KILAP PADA TOMBOL (SWEEP LIGHT) */
+    /* SAPUAN CAHAYA PADA TOMBOL UTAMA */
     @keyframes btnSweep {
       0% { transform: translateX(-120%) rotate(25deg); }
       100% { transform: translateX(250%) rotate(25deg); }
     }
 
-    /* ELEMEN MENGAMBANG LEMBUT */
     @keyframes softFloat {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-7px); }
@@ -253,7 +251,7 @@
       color: var(--gold-light);
     }
 
-    /* BINGKAI FOTO SUDUT ORNAMEN KLASIK (LUXURY CORNER FRAME) */
+    /* BINGKAI FOTO MEWAH SUDUT KLASIK (LUXURY CORNER FRAME) */
     .couple-portrait {
       position: relative;
       margin: 25px auto 35px;
@@ -263,14 +261,12 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: transform 0.4s ease;
     }
-    .couple-portrait:hover {
-      transform: translateY(-4px);
-    }
+    .couple-portrait:hover { transform: translateY(-4px); }
     .couple-portrait::before, .couple-portrait::after {
       content: '';
       position: absolute;
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       border: 2px solid var(--gold);
       pointer-events: none;
     }
@@ -301,7 +297,7 @@
       line-height: 1;
     }
 
-    /* SECTION DETAIL WAKTU */
+    /* SECTION DETAIL ACARA */
     .details-section {
       background: var(--charcoal);
       color: var(--ivory);
@@ -316,7 +312,7 @@
       border: 1px solid var(--gold);
       border-radius: 4px;
       padding: 30px 22px;
-      margin: 20px 0;
+      margin: 24px 0;
       text-align: left;
       position: relative;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -324,7 +320,7 @@
     }
     .card-ivory:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(200, 169, 107, 0.2);
+      box-shadow: 0 15px 35px rgba(200, 169, 107, 0.25);
     }
     .card-ivory .event-tag {
       font-family: var(--font-serif);
@@ -440,22 +436,23 @@
       filter: brightness(1.05);
     }
 
-    /* KARTU DOMPET DANA */
+    /* KARTU DOMPET DANA (DUA KARTU TERPISAH) */
     .gift-box {
       border: 1px solid var(--gold);
       background: #FFFFFF;
-      padding: 30px 20px;
-      margin-top: 20px;
+      padding: 26px 20px;
+      margin: 18px 0;
       text-align: left;
       box-shadow: 0 8px 24px rgba(0,0,0,0.05);
       position: relative;
+      border-left: 4px solid #118eea;
     }
     .gift-box h4 {
       font-family: var(--font-serif);
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       letter-spacing: 2px;
       color: var(--charcoal);
-      margin: 8px 0;
+      margin: 6px 0;
     }
 
     /* BUKU TAMU */
@@ -567,7 +564,7 @@
     <div class="hero-opened">
       <p>Save The Date</p>
       <h2 class="shimmer-text">Puji &amp; Sukma</h2>
-      <p>Selasa, 06 Oktober 2026 — Rembang, Jawa Tengah</p>
+      <p>Selasa, 06 Oktober 2026</p>
     </div>
 
     <!-- AYAT AR-RUM -->
@@ -583,7 +580,7 @@
       </div>
     </section>
 
-    <!-- COUPLE SECTION (EDITORIAL STYLE WITH LUXURY CORNER ACCENTS) -->
+    <!-- COUPLE SECTION (DENGAN INSTAGRAM RESMI) -->
     <section class="section-wrap" style="background: #ffffff; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
       <span class="editorial-label" data-aos="fade-up">The Groom &amp; The Bride</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Pasangan Mempelai</h2>
@@ -596,9 +593,9 @@
         <div>
           <h3 class="couple-name">Puji</h3>
           <p style="font-size: 13px; color: #666;">Putra Tercinta dari Bpk. ... &amp; Ibu ...</p>
-          <p style="font-size: 12px; color: #888;">Ds. Sumber, Rembang</p>
-          <a href="https://instagram.com/" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 600; letter-spacing: 1px;">
-            <i class="fa-brands fa-instagram me-1"></i> @puji
+          <p style="font-size: 12.5px; color: #888;">Dk. Guyangan, Desa Sidoluhur, Kec. Jaken, Kab. Pati</p>
+          <a href="https://www.instagram.com/pujidiningratt" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 700; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 5px; margin-top: 4px;">
+            <i class="fa-brands fa-instagram text-danger"></i> @pujidiningratt
           </a>
         </div>
       </div>
@@ -613,15 +610,15 @@
         <div>
           <h3 class="couple-name">Sukma</h3>
           <p style="font-size: 13px; color: #666;">Putri Tercinta dari Bpk. ... &amp; Ibu ...</p>
-          <p style="font-size: 12px; color: #888;">Ds. Sumber, Rembang</p>
-          <a href="https://instagram.com/" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 600; letter-spacing: 1px;">
-            <i class="fa-brands fa-instagram me-1"></i> @sukma
+          <p style="font-size: 12.5px; color: #888;">Sumber, Rembang</p>
+          <a href="https://www.instagram.com/nisa.a871" target="_blank" style="font-size: 11px; color: var(--burgundy); text-decoration: none; font-weight: 700; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 5px; margin-top: 4px;">
+            <i class="fa-brands fa-instagram text-danger"></i> @nisa.a871
           </a>
         </div>
       </div>
     </section>
 
-    <!-- WEDDING DETAILS & COUNTDOWN (CHARCOAL + GOLD BORDER) -->
+    <!-- WEDDING DETAILS & COUNTDOWN (KARTU ACARA & DUA MAPS TERPISAH) -->
     <section class="section-wrap details-section">
       <span class="editorial-label" data-aos="fade-up">Wedding Ceremony &amp; Reception</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Waktu &amp; Tempat</h2>
@@ -634,32 +631,32 @@
         <div class="count-cell"><b id="seconds">0</b><span>DETIK</span></div>
       </div>
 
-      <!-- CARD AKAD -->
+      <!-- KARTU 1: IJAB KABUL (SUMBER, REMBANG) -->
       <div class="card-ivory" data-aos="fade-up">
         <span class="event-tag">Akad Nikah</span>
         <h3>Ijab &amp; Kabul</h3>
         <p style="margin-bottom: 4px;"><i class="fa-regular fa-calendar me-2" style="color: var(--gold);"></i> Selasa, 06 Oktober 2026</p>
-        <p style="margin-bottom: 4px;"><i class="fa-regular fa-clock me-2" style="color: var(--gold);"></i> 06.00 WIB — Selesai</p>
-        <p style="margin-bottom: 0; color: #666;"><i class="fa-solid fa-location-dot me-2" style="color: var(--gold);"></i> Ds. Sumber, Kec. Sumber, Rembang</p>
+        <p style="margin-bottom: 4px;"><i class="fa-regular fa-clock me-2" style="color: var(--gold);"></i> Pukul 06.00 WIB — Selesai</p>
+        <p style="margin-bottom: 14px; color: #555;"><i class="fa-solid fa-location-dot me-2 text-danger"></i> Lokasi: Sumber, Rembang</p>
+        <a href="https://maps.app.goo.gl/7sBWCJrJY6imTFU89" target="_blank" class="btn btn-sm btn-outline-danger w-100 py-2" style="font-size: 11px; font-weight: 700; letter-spacing: 1px;">
+          <i class="fa-solid fa-map-location-dot me-1"></i> Buka Maps Ijab Kabul (Rembang)
+        </a>
       </div>
 
-      <!-- CARD RESEPSI -->
+      <!-- KARTU 2: RESEPSI PERNIKAHAN (DK. GUYANGAN, SIDOLUHUR, JAKEN, PATI) -->
       <div class="card-ivory" data-aos="fade-up">
         <span class="event-tag">The Celebration</span>
         <h3>Resepsi Pernikahan</h3>
         <p style="margin-bottom: 4px;"><i class="fa-regular fa-calendar me-2" style="color: var(--gold);"></i> Selasa, 06 Oktober 2026</p>
-        <p style="margin-bottom: 4px;"><i class="fa-regular fa-clock me-2" style="color: var(--gold);"></i> 08.00 WIB — Selesai</p>
-        <p style="margin-bottom: 0; color: #666;"><i class="fa-solid fa-location-dot me-2" style="color: var(--gold);"></i> Ds. Sumber, Kec. Sumber, Rembang</p>
-      </div>
-
-      <div class="mt-4" data-aos="fade-up">
-        <a href="http://googleusercontent.com/maps.google.com/11" target="_blank" class="btn-luxury" style="background: transparent; border-color: var(--gold);">
-          <i class="fa-solid fa-map-pin"></i> Petunjuk Google Maps
+        <p style="margin-bottom: 4px;"><i class="fa-regular fa-clock me-2" style="color: var(--gold);"></i> Pukul 08.00 WIB — Selesai</p>
+        <p style="margin-bottom: 14px; color: #555;"><i class="fa-solid fa-location-dot me-2 text-danger"></i> Lokasi: Dk. Guyangan, Desa Sidoluhur, Kec. Jaken, Kab. Pati</p>
+        <a href="https://goo.gl/maps/zFEwuQmByChXtqH49" target="_blank" class="btn btn-sm btn-outline-danger w-100 py-2" style="font-size: 11px; font-weight: 700; letter-spacing: 1px;">
+          <i class="fa-solid fa-map-location-dot me-1"></i> Buka Maps Resepsi (Pati)
         </a>
       </div>
     </section>
 
-    <!-- OUR STORY (MINIMAL TIMELINE) -->
+    <!-- OUR STORY -->
     <section class="section-wrap">
       <span class="editorial-label" data-aos="fade-up">The Chapters of Us</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Our Story</h2>
@@ -688,7 +685,7 @@
       </div>
     </section>
 
-    <!-- GALLERY (EDITORIAL MAGAZINE LAYOUT WITH HOVER ZOOM) -->
+    <!-- GALLERY (EDITORIAL MAGAZINE LAYOUT) -->
     <section class="section-wrap" style="background: #ffffff;">
       <span class="editorial-label" data-aos="fade-up">Visual Diary</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Our Gallery</h2>
@@ -709,7 +706,7 @@
       </div>
     </section>
 
-    <!-- WEDDING GIFTS / DANA -->
+    <!-- WEDDING GIFTS (DUA KARTU DANA RESMI DENGAN TOMBOL SALIN) -->
     <section class="section-wrap">
       <span class="editorial-label" data-aos="fade-up">Token of Love</span>
       <h2 class="editorial-title shimmer-text" data-aos="fade-up">Wedding Gift</h2>
@@ -717,12 +714,23 @@
         Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika Anda ingin memberikan tanda kasih secara cashless:
       </p>
 
+      <!-- DANA PUJI -->
       <div class="gift-box" data-aos="fade-up">
         <span style="font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #118eea;">DOMPET DIGITAL DANA</span>
         <h4>085879637299</h4>
-        <p style="color: #777; font-size: 13px; margin-bottom: 14px;">a.n. Puji &amp; Sukma</p>
-        <button class="btn-luxury" onclick="salinDana()" style="padding: 10px 24px; font-size: 10px;">
-          <i class="fa-regular fa-copy me-1"></i> Salin Nomor DANA
+        <p style="color: #777; font-size: 13px; margin-bottom: 14px;">a.n. Puji</p>
+        <button class="btn btn-sm btn-outline-danger px-3 py-2 rounded-pill" onclick="salinDanaPuji()" style="font-size: 11px; font-weight: 600;">
+          <i class="fa-regular fa-copy me-1"></i> Salin Nomor DANA Puji
+        </button>
+      </div>
+
+      <!-- DANA SUKMA -->
+      <div class="gift-box" data-aos="fade-up">
+        <span style="font-size: 12px; letter-spacing: 2px; font-weight: 700; color: #118eea;">DOMPET DIGITAL DANA</span>
+        <h4>085602331500</h4>
+        <p style="color: #777; font-size: 13px; margin-bottom: 14px;">a.n. Sukma</p>
+        <button class="btn btn-sm btn-outline-danger px-3 py-2 rounded-pill" onclick="salinDanaSukma()" style="font-size: 11px; font-weight: 600;">
+          <i class="fa-regular fa-copy me-1"></i> Salin Nomor DANA Sukma
         </button>
       </div>
     </section>
@@ -778,7 +786,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
   <script>
-    // 1. PARTIKEL ANIMASI KELOPAK & EMAS (CANVAS ENGINE)
+    // 1. ENGINE PARTIKEL CANVAS (KELOPAK BURGUNDY & DEBU EMAS)
     const canvas = document.getElementById('particleCanvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
@@ -791,9 +799,7 @@
     resizeCanvas();
 
     class Particle {
-      constructor() {
-        this.reset();
-      }
+      constructor() { this.reset(); }
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * -canvas.height;
@@ -803,7 +809,6 @@
         this.rotation = Math.random() * 360;
         this.spinSpeed = Math.random() * 2 - 1;
         this.opacity = Math.random() * 0.7 + 0.3;
-        // Palet burgundy & gold dust
         const colors = ['#C8A96B', '#E5CB96', '#641C2A', '#8B263E', '#F8F5EF'];
         this.color = colors[Math.floor(Math.random() * colors.length)];
       }
@@ -819,7 +824,6 @@
         ctx.rotate((this.rotation * Math.PI) / 180);
         ctx.globalAlpha = this.opacity;
         ctx.fillStyle = this.color;
-        // Bentuk kelopak bunga oval
         ctx.beginPath();
         ctx.ellipse(0, 0, this.size, this.size * 1.6, 0, 0, Math.PI * 2);
         ctx.fill();
@@ -841,7 +845,7 @@
     }
     animateParticles();
 
-    // 2. PARAMETER NAMA TAMU (?to= / ?kpd=)
+    // 2. BACA NAMA TAMU (?to= / ?kpd=)
     const urlParams = new URLSearchParams(window.location.search);
     const guestParam = urlParams.get('to') || urlParams.get('kpd') || urlParams.get('n');
     if (guestParam) {
@@ -856,7 +860,7 @@
     let isAutoScrolling = false;
     let scrollInterval = null;
 
-    // 3. BUKA UNDANGAN (GOLD & BURGUNDY CONFETTI)
+    // 3. BUKA UNDANGAN (CONFETTI & TRANSISI)
     function bukaUndangan() {
       confetti({
         particleCount: 90,
@@ -926,7 +930,7 @@
       if (isAutoScrolling) stopAutoScroll();
     }, { passive: true });
 
-    // 5. COUNTDOWN KE 06 OKTOBER 2026
+    // 5. COUNTDOWN MENUJU 06 OKTOBER 2026
     const targetDate = new Date("October 6, 2026 06:00:00").getTime();
     setInterval(() => {
       const dist = targetDate - Date.now();
@@ -937,17 +941,23 @@
       document.getElementById("seconds").textContent = Math.floor((dist / 1000) % 60);
     }, 1000);
 
-    // 6. SALIN DANA
-    function salinDana() {
+    // 6. FUNGSI SALIN DANA TERPISAH
+    function salinDanaPuji() {
       navigator.clipboard.writeText("085879637299").then(() => {
-        alert("Nomor DANA 085879637299 berhasil disalin!");
+        alert("Nomor DANA Puji (085879637299) berhasil disalin!");
+      });
+    }
+
+    function salinDanaSukma() {
+      navigator.clipboard.writeText("085602331500").then(() => {
+        alert("Nomor DANA Sukma (085602331500) berhasil disalin!");
       });
     }
 
     // 7. BUKU TAMU REALTIME
-    let dataKomentar = JSON.parse(localStorage.getItem('luxury_wishes_puji_sukma')) || [
+    let dataKomentar = JSON.parse(localStorage.getItem('luxury_wishes_puji_sukma_v2')) || [
       { nama: "Bapak Budi", status: "Hadir", pesan: "Selamat menempuh hidup baru Puji & Sukma. Semoga menjadi keluarga sakinah mawaddah warahmah!" },
-      { nama: "Keluarga Bpk. Santoso", status: "Hadir", pesan: "Nderek mangayubagya, mugi langgeng lan berkah salaminya." }
+      { nama: "Keluarga Bpk. Santoso", status: "Hadir", pesan: "Nderek mangayubagya, mugi tansah pinaringan kabagyan salaminya." }
     ];
 
     function renderKomentar() {
@@ -976,7 +986,7 @@
       if (!nama || !pesan) return;
 
       dataKomentar.unshift({ nama, status, pesan });
-      localStorage.setItem('luxury_wishes_puji_sukma', JSON.stringify(dataKomentar));
+      localStorage.setItem('luxury_wishes_puji_sukma_v2', JSON.stringify(dataKomentar));
       renderKomentar();
 
       document.getElementById("inputPesan").value = "";
