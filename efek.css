@@ -1,0 +1,79 @@
+/* 1. Latar belakang gradasi mewah warm champagne & soft ivory */
+.mob-con {
+  background: linear-gradient(180deg, #fdfbf7 0%, #f6efe5 25%, #faf6ef 50%, #f2e9dc 75%, #fdfbf7 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. Pendaran aura cahaya ambient lembut di background */
+.mob-con::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(214, 194, 169, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+  animation: pendarAura 9s ease-in-out infinite alternate;
+}
+
+.mob-con::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: -25%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(200, 180, 155, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 1;
+  animation: pendarAura 11s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pendarAura {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(60px) scale(1.2); opacity: 0.95; }
+}
+
+/* 3. Buat section transparan agar gradasi dasarnya menyatu */
+.box-2, .box-5, #section-galeri {
+  background: transparent !important;
+}
+
+/* 4. Efek Glassmorphism (kartu kaca berembun & border tipis mewah) */
+.c_acara, 
+#formUcapanPrivat, 
+.rek_each_soft_white, 
+#kotakUcapanPublik > div,
+.box-5 > div {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(146, 133, 115, 0.22) !important;
+  box-shadow: 0 10px 25px rgba(120, 105, 85, 0.08) !important;
+  border-radius: 12px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Khusus lengkungan kartu acara tetap rapi */
+.c_acara:first-of-type {
+  border-radius: 160px 160px 12px 12px !important;
+}
+.c_acara:last-of-type {
+  border-radius: 12px 12px 160px 160px !important;
+}
+
+/* 5. Bingkai foto lengkung lebih berdimensi */
+.frame-foto-mempelai {
+  box-shadow: 0 16px 32px rgba(110, 95, 75, 0.22) !important;
+  border: 3.5px solid #928573 !important;
+}
+
+/* 6. Tombol gradasi emas-mocca */
+.button-black, .btn-success-custom {
+  background: linear-gradient(135deg, #a39583 0%, #837562 100%) !important;
+  border: 1px solid #c8bcad !important;
+  box-shadow: 0 6px 18px rgba(131, 117, 98, 0.3) !important;
+}
