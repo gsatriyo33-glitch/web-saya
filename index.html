@@ -503,6 +503,7 @@
           </button>
         </form>
         <div id="kotakUcapanPublik" style="margin-top: 30px; text-align: left; max-height: 320px; overflow-y: auto; padding-right: 5px;"></div>
+        <div id="kotakUcapanPublik" style="margin-top: 30px; text-align: left; max-height: 320px; overflow-y: auto; padding-right: 5px;"></div>
       </div>
 
       <!-- FOOTER -->
@@ -668,6 +669,7 @@
       const dataLama = JSON.parse(localStorage.getItem('luxury_privat_ucapan')) || [];
       dataLama.unshift({ nama, kehadiran, pesan, waktu: new Date().toLocaleString('id-ID') });
       localStorage.setItem('luxury_privat_ucapan', JSON.stringify(dataLama));
+      muatDaftarUcapan();
       muatDaftarUcapan();
 
       document.getElementById("inputPesan").value = "";
