@@ -127,13 +127,14 @@
       z-index: 2;
     }
 
-    /* KEN BURNS: FOTO HERO ZOOM PELAN */
+    /* KEN BURNS: FOTO HERO ZOOM PELAN (VERSI RINGAN, GPU) */
     .splide__slide {
+      will-change: transform;
       animation: kenBurns 18s ease-in-out infinite alternate;
     }
     @keyframes kenBurns {
-      0% { background-size: 100% 100%; }
-      100% { background-size: 118% 118%; }
+      0% { transform: scale(1); }
+      100% { transform: scale(1.12); }
     }
 
     .simply-countdown > .simply-section {
@@ -165,7 +166,6 @@
       display: block;
     }
 
-    /* COUNTDOWN: EFEK BERDENYUT SETIAP ANGKA GANTI */
     .simply-amount.tick { animation: tickPulse 0.5s ease; }
     @keyframes tickPulse {
       0% { transform: scale(1); }
@@ -179,7 +179,6 @@
       background: transparent !important;
     }
 
-    /* ORNAMEN BINTANG DI POJOK SECTION */
     .box-2::before, .box-4::before, .box-5::before,
     .box-2::after, .box-4::after, .box-5::after {
       content: "✦";
@@ -241,7 +240,6 @@
       box-shadow: 0 0 0 2px rgba(146, 133, 115, 0.2);
     }
 
-    /* GALERI: ZOOM SAAT DITEKAN + KURSOR JADI TANGAN */
     #section-galeri img {
       pointer-events: auto;
       transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
@@ -252,7 +250,6 @@
       filter: brightness(1.05);
     }
 
-    /* LIGHTBOX FOTO FULLSCREEN */
     #lightboxFoto {
       position: fixed; inset: 0; z-index: 9999990;
       background: rgba(0,0,0,0.92);
@@ -297,7 +294,6 @@
       font-family: 'Golos Text', sans-serif;
     }
 
-    /* IKON MUSIK: MUTER KAYAK PIRINGAN HITAM SAAT AKTIF */
     #audioIcon.spin {
       animation: spinVinyl 3s linear infinite;
     }
@@ -544,7 +540,6 @@
 
     </div>
 
-    <!-- LIGHTBOX FOTO -->
     <div id="lightboxFoto" onclick="this.style.display='none'">
       <img id="lightboxImg" src="" />
     </div>
@@ -644,7 +639,6 @@
       }
     }
 
-    // LIGHTBOX FOTO GALERI
     function bukaFotoBesar(src) {
       document.getElementById("lightboxImg").src = src;
       document.getElementById("lightboxFoto").style.display = "flex";
@@ -685,7 +679,6 @@
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // COUNTDOWN TIMER + EFEK BERDENYUT
     function pulseDigit(el, value) {
       if (el.textContent !== String(value)) {
         el.textContent = value;
